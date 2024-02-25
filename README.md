@@ -2,9 +2,9 @@
 
 `Análise e Desenvolvimento de Sistemas - PUC MINAS`
 
-`Projeto: Desenvolvimento de uma Aplicação Distribuída`
+`Projeto: Desenvolvimento de um Sistema Sociotécnico Inovador`
 
-`2/2023`
+`1/2024`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
