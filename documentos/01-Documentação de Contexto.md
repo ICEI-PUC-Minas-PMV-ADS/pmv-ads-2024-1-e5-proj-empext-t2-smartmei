@@ -4,7 +4,7 @@
  
  Os microempreendedores individuais frequentemente lidam com dificuldades na organização financeira, gerência de projetos e prazos, gestão de vendas e cumprimento de obrigações fiscais. A falta de ferramentas adequadas para lidar com essas questões pode levar a problemas operacionais e financeiros significativos.
  
- Nosso objetivo é fornecer uma solução abrangente e acessível que simplifique a gestão diária dos negócios dos MEIs. O software visa facilitar os processos relacionados a gerencia de projetos e clientes além de administrar seus custos ajudando os empreendedores a tomarem decisões informadas para impulsionar o crescimento de seus negócios.
+ Nosso objetivo é fornecer uma solução abrangente e acessível que simplifique a gestão diária dos negócios dos MEIs. O software visa facilitar os processos relacionados a gerência de projetos e clientes, além de administrar seus custos ajudando os empreendedores a tomarem decisões informadas para impulsionar o crescimento de seus negócios.
  
  Este projeto nasceu da necessidade de preencher uma lacuna existente no mercado de software empresarial, onde as soluções disponíveis muitas vezes são complexas, caras e inadequadas para as necessidades específicas dos microempreendedores individuais. Acreditamos que ao oferecer uma ferramenta intuitiva e acessível, podemos capacitar esses empreendedores a alcançarem todo o potencial de seus negócios.
  
@@ -12,10 +12,10 @@
 
 ## Problema
 
-O profissional MEI Luiz Toussaint enfrenta desafios significativos em sua operação, que se concentram principalmente em dois aspectos: gestão de projetos e gestão financeira.
+O profissional MEI Luiz Toussaint enfrenta desafios significativos em sua operação, que se concentram principalmente em dois aspectos: a gestão de projetos e a gestão financeira.
 
-No que diz respeito à gestão de projetos, destacam-se duas áreas críticas:
-<ul><li>a gestão de demandas representa uma preocupação fundamental, pois envolve sua capacidade operacional de lidar com múltiplos projetos simultaneamente;</li>
+No que diz respeito à gestão de projetos, destacam-se duas áreas:
+<ul><li>a gestão de demandas, pois envolve sua capacidade operacional de lidar com múltiplos projetos simultaneamente;</li>
  <li>a gestão de prazos, pois as datas de entrega estabelecidas devem ser rigorosamente respeitadas para manter a satisfação dos clientes e as entregas contratadas.</li></ul>
 
 No âmbito da gestão financeira, nosso cliente enfrenta desafios igualmente complexos. A organização dos valores recebidos e gastos é fundamental, especialmente em relação à comprovação de renda para questões fiscais, onde conta com a assistência de um contador. Além disso, o controle do limite e teto do MEI é uma questão legal que exige atenção, já que ultrapassar esses limites de forma não planejada pode acarretar em consequências na gestão de seu negócio.
