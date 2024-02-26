@@ -8,4 +8,4 @@ Visão geral da interação do usuário com as funcionalidades que fazem parte d
 
 ## Wireframe
 
-Apresentamos abaixo o protótipo usado para demonstrar a estrutura da aplicação móvel e o relacionamento entre suas telas. Para consultar o wireframe interativo, clique <a href="https://marvelapp.com/prototype/10908134/screen/94023521"> aqui</a>.
+Apresentamos abaixo o protótipo usado para demonstrar a estrutura da aplicação web e o relacionamento entre suas telas. Para consultar o wireframe interativo, clique <a href="https://marvelapp.com/prototype/10908134/screen/94023521"> aqui</a>.
