@@ -38,4 +38,5 @@ Relacionar a situação-problema da organização com o impacto social esperado 
 
 ## Descrição do Parceiro
 
-Luiz Toussaint (CNPJ 42.244.981/0001-62), é Designer Gráfico há 16 anos e especialista em design de apresentações. É um profissional MEI há 03 anos. Atende clientes como Audi, Renault, Google, TikTok, Youtube, Natura, Nissan e Localiza. Gerencia sozinho o seu negócio. Seu empreendimento está crescendo e acredita que em breve passará para Micro Empresa. Gostaria de organizar o seu negócio, para não levar as dificuldades atuais para a nova fase.
+| ![Luiz](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/60b92694-6b73-4e8f-a85d-3beb0f597c5b)| Luiz Toussaint (CNPJ 42.244.981/0001-62), é Designer Gráfico há 16 anos e especialista em design de apresentações. É um profissional MEI há 03 anos. Atende clientes como Audi, Renault, Google, TikTok, Youtube, Natura, Nissan e Localiza. Gerencia sozinho o seu negócio. Seu empreendimento está crescendo e acredita que em breve passará para Micro Empresa. Gostaria de organizar o seu negócio, para não levar as dificuldades atuais para a nova fase.  |
+|------|-----------------------------------------|
