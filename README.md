@@ -7,7 +7,7 @@
 
 `1/2024`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Este projeto nasceu da necessidade de preencher uma lacuna existente no mercado de software empresarial, onde as soluções disponíveis muitas vezes são complexas, caras e inadequadas para as necessidades específicas dos microempreendedores individuais. Acreditamos que ao oferecer uma ferramenta intuitiva e acessível, podemos capacitar esses empreendedores a alcançarem todo o potencial de seus negócios.
 
 ## Integrantes
 
