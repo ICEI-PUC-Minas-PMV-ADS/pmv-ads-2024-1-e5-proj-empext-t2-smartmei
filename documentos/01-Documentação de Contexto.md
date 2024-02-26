@@ -3,16 +3,14 @@
 Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+Nosso cliente enfrenta desafios significativos em sua operação, que se concentram principalmente em dois aspectos: gestão de projetos e gestão financeira.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+No que diz respeito à gestão de projetos, destacam-se duas áreas críticas:
+<ul><li>a gestão de demandas representa uma preocupação fundamental, pois envolve sua capacidade operacional de lidar com múltiplos projetos simultaneamente.</li>
+ <li>a gestão de prazos, pois as datas de entrega estabelecidas devem ser rigorosamente respeitadas para manter a satisfação dos clientes e as entregas contratadas.</li></ul>
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+No âmbito da gestão financeira, nosso cliente enfrenta desafios igualmente complexos. A organização dos valores recebidos e gastos é uma preocupação central, especialmente no que diz respeito à comprovação de renda para questões fiscais, onde conta com a assistência de um contador. Além disso, o controle do limite e teto do MEI é uma questão legal que exige atenção, já que ultrapassar esses limites de forma não planejada pode acarretar em consequências na gestão de seu negócio.
 
 ## Objetivos
 
