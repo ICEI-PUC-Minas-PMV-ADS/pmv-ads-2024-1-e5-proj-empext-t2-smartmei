@@ -38,4 +38,4 @@ Relacionar a situação-problema da organização com o impacto social esperado 
 
 ## Descrição do Parceiro
 
-Apresente uma descrição resumida sobre a organização onde o projeto será desenvolvido para que possa ser compreendido o cenário sistema sociotécnico.
+Luiz Toussaint (CNPJ 42.244.981/0001-62), é Designer Gráfico há 16 anos e especialista em design de apresentações. É um profissional MEI há 03 anos. Atende clientes como Audi, Renault, Google, TikTok, Youtube, Natura, Nissan e Localiza. Gerencia sozinho o seu negócio. Seu empreendimento está crescendo e acredita que em breve passará para Micro Empresa. Gostaria de organizar o seu negócio, para não levar as dificuldades atuais para a nova fase.
