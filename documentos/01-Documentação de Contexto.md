@@ -21,13 +21,13 @@ No que diz respeito à gestão de projetos, destacam-se duas áreas:
 No âmbito da gestão financeira, nosso cliente enfrenta desafios igualmente complexos. A organização dos valores recebidos e gastos é fundamental, especialmente em relação à comprovação de renda para questões fiscais, onde conta com a assistência de um contador. Além disso, o controle do limite e teto do MEI é uma questão legal que exige atenção, já que ultrapassar esses limites de forma não planejada pode acarretar em consequências na gestão de seu negócio.
 
 ## Objetivos
+O objetivo geral deste projeto consiste na criação de uma aplicação web que permita ao profissional Luiz Toussaint uma melhor gestão de seu negócio e de suas finanças.
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Como objetivos específicos podemos destacar:
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+<ul><li> Melhor controle da cartela de clientes;</li>
+<li>Possibilitar uma gestão mais eficaz de projetos e eventos;</li>
+<li>Aprimorar a administração de custos e faturamento;</li></ul>
 
 ## Justificativa
 
