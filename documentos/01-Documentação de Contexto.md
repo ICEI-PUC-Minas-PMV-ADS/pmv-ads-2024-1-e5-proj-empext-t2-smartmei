@@ -4,7 +4,7 @@ Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o pr
 
 ## Problema
 
-Nosso cliente enfrenta desafios significativos em sua operação, que se concentram principalmente em dois aspectos: gestão de projetos e gestão financeira.
+O profissional MEI Luiz Toussaint enfrenta desafios significativos em sua operação, que se concentram principalmente em dois aspectos: gestão de projetos e gestão financeira.
 
 No que diz respeito à gestão de projetos, destacam-se duas áreas críticas:
 <ul><li>a gestão de demandas representa uma preocupação fundamental, pois envolve sua capacidade operacional de lidar com múltiplos projetos simultaneamente.</li>
