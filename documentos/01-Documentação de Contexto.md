@@ -10,9 +10,6 @@
  
  O software é direcionado a microempreendedores individuais de diversos setores, incluindo artesanato, serviços, comércio e freelancers. Destina-se a empreendedores que buscam uma solução simples e eficaz para gerir todas as facetas de seus negócios, desde a contabilidade até o controle de multiplos clientes e projetos, independentemente do seu nível de experiência em tecnologia.
 
-
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
-
 ## Problema
 
 O profissional MEI Luiz Toussaint enfrenta desafios significativos em sua operação, que se concentram principalmente em dois aspectos: gestão de projetos e gestão financeira.
