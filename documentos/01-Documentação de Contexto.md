@@ -7,7 +7,7 @@ Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o pr
 O profissional MEI Luiz Toussaint enfrenta desafios significativos em sua operação, que se concentram principalmente em dois aspectos: gestão de projetos e gestão financeira.
 
 No que diz respeito à gestão de projetos, destacam-se duas áreas críticas:
-<ul><li>a gestão de demandas representa uma preocupação fundamental, pois envolve sua capacidade operacional de lidar com múltiplos projetos simultaneamente.</li>
+<ul><li>a gestão de demandas representa uma preocupação fundamental, pois envolve sua capacidade operacional de lidar com múltiplos projetos simultaneamente;</li>
  <li>a gestão de prazos, pois as datas de entrega estabelecidas devem ser rigorosamente respeitadas para manter a satisfação dos clientes e as entregas contratadas.</li></ul>
 
 No âmbito da gestão financeira, nosso cliente enfrenta desafios igualmente complexos. A organização dos valores recebidos e gastos é uma preocupação central, especialmente no que diz respeito à comprovação de renda para questões fiscais, onde conta com a assistência de um contador. Além disso, o controle do limite e teto do MEI é uma questão legal que exige atenção, já que ultrapassar esses limites de forma não planejada pode acarretar em consequências na gestão de seu negócio.
