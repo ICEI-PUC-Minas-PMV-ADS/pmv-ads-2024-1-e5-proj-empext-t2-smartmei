@@ -22,8 +22,18 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| A aplicação deve permitir ao usuário cadastrar uma conta | ALTA | 
+|RF-002| A aplicação deve permitir ao usuário cadastrado fazer o login em sua conta   | ALTA |
+|RF-003| A aplicação deve permitir ao usuário cadastrado sair da sua conta   | MÉDIA |
+|RF-004| A aplicação deve permitir ao usuário gerenciar a sua conta   | MÉDIA |
+|RF-005| A aplicação deve permitir ao usuário redefinir sua senha   | MÉDIA |
+|RF-006| A aplicação deve permitir ao usuário gerenciar seus projetos   | ALTA |
+|RF-007| A aplicação deve permitir ao usuário administrar seus clientes   | ALTA |
+|RF-008| A aplicação deve permitir ao usuário gerenciar seus custos   | ALTA |
+|RF-009| A aplicação deve permitir ao usuário gerenciar seus eventos  | ALTA |
+|RF-010| A aplicação deve permitir ao usuário filtrar os registros específicos de clientes, eventos, projetos, custos e faturamento   | MÉDIA |
+|RF-011| A aplicação deve notificar o usuário quando o faturamento ultrapassar o limite e teto MEI   | ALTA |
+|RF-012| A aplicação deve permitir ao usuário gerenciar seu faturamento   | ALTA |
 
 ### Requisitos não Funcionais
 
