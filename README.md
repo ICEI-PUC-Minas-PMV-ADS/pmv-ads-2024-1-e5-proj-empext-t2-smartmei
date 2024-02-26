@@ -1,4 +1,5 @@
 # SmartMEI
+![Capa](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/0445e764-4c7c-4523-b392-b847778d7455)
 
 `Análise e Desenvolvimento de Sistemas - PUC MINAS`
 
