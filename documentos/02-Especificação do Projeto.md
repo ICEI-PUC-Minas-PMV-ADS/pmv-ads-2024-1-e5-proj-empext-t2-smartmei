@@ -80,7 +80,8 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 ## Diagrama de Casos de Uso
 
-![Diagrama de caso de uso SMARTMEI (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/92ca478e-f86f-4902-b1fa-797b290e6cb8)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/47e704c9-d71d-4ff0-9ba4-7ef49658c54c)
+
 
 
 ## Modelo ER (Projeto Conceitual)
