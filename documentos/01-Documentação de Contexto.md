@@ -27,7 +27,11 @@ Diante do cenário apresentado, é evidente a necessidade de Luiz Toussaint, um 
 
 ## Relação com a Extensão Universitária
 
-Relacionar a situação-problema da organização com o impacto social esperado com a implantação do sistema sociotécnico.
+Extensão Universitária e o Projeto de Suporte ao Microempreendedor Individual:
+
+A extensão universitária desempenha um papel crucial na formação acadêmica dos estudantes, promovendo a integração entre teoria e prática. Nesse contexto, é importante que os projetos desenvolvidos estejam alinhados com as demandas da sociedade.  A nossa iniciativa será voltada para o Microempreendedor Individual (MEI), que visa fortalecer e impulsionar os pequenos negócios por meio de soluções específicas.
+
+A relação entre a extensão universitária e o projeto SmartMEI é uma parceria estratégica que visa potencializar o desenvolvimento dos empreendedores. Ao focar na gestão da carteira de clientes, gestão de projetos, gestão financeira e controle dos limites do MEI, é possível criar uma colaboração valiosa que contribui não apenas para o sucesso individual dos empreendedores, mas também para o fortalecimento da economia local. Essa abordagem colaborativa demonstra o compromisso da universidade com a formação integral dos estudantes e com o impacto positivo na comunidade empreendedora.
 
 ## Descrição do Parceiro
 
