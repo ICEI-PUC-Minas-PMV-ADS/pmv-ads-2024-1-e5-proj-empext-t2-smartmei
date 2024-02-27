@@ -81,3 +81,9 @@ As ferramentas empregadas no projeto são:
 - Ferramenta de desenho de tela (_wireframing_): Marvel
 
 O IDE, Microsfot Visual Studio, foi escolhido porque ele possui uma integração com o sistema de versão. A ferramenta de gerenciamento do Github foi selecionada pela flexibilidade para criar fluxos de trabalho personalizados que atendam às necessidades da equipe. A ferramenta de comunicação, Google Meet, foi selecionada para as reuniões com o product owner do projeto. Por fim, para criar os desenhos de tela, utilizamos a ferramenta Marvel por melhor captar as necessidades da nossa solução.
+
+### Referências
+
+AMARAL, Vanessa de Araújo; OLIVEIRA, Angela Maria Fleury de; ISONI, Taciana Maria. Inovação social e metodologias ágeis: uma história de sucesso. <b>DOM</b>: a revista da Fundação Dom Cabral, Nova Lima, v. 12, n. 38, p. 66-71, maio/ago. 2019.
+
+ATLASSIAN. <b>Fluxo de trabalho de Gitflow</b>. [s. d.]. Disponível em: https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow. Acesso em: 26 fev. 2024.
