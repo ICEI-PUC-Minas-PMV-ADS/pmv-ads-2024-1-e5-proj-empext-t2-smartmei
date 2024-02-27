@@ -31,7 +31,7 @@ Como objetivos específicos podemos destacar:
 
 ## Justificativa
 
-Diante do cenário apresentado, é evidente a necessidade de Luiz Toussaint, um designer gráfico com vasta experiência e uma clientela diversificada, em organizar e estruturar seu negócio para acompanhar seu crescimento e transição para uma Micro Empresa. Gerenciar múltiplos projetos e prazos, controlar financeiramente ganhos e gastos, além de garantir conformidade legal como MEI, são aspectos cruciais para sustentar esse crescimento e evitar dificuldades futuras. Assim, a implementação de práticas de gestão eficazes se torna essencial para garantir o sucesso e a estabilidade do empreendimento.
+Diante do cenário apresentado, é evidente a necessidade de Luiz Toussaint, um designer gráfico com vasta experiência e uma clientela diversificada, em organizar e estruturar seu negócio para acompanhar seu crescimento e transição para uma microempresa. Gerenciar múltiplos projetos e prazos, controlar financeiramente ganhos e gastos, além de garantir conformidade legal como MEI, são aspectos cruciais para sustentar esse crescimento e evitar dificuldades futuras. Assim, a implementação de práticas de gestão eficazes se torna essencial para garantir o sucesso e a estabilidade do empreendimento.
 
 ## Relação com a Extensão Universitária
 
