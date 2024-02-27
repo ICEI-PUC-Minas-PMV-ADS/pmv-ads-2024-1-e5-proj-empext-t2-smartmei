@@ -35,7 +35,11 @@ Diante do cenário apresentado, é evidente a necessidade de Luiz Toussaint, um 
 
 ## Relação com a Extensão Universitária
 
-Extensão Universitária e o Projeto de Suporte ao Microempreendedor Individual:
+Extensão Universitária é a comunicação que se estabelece entre universidade e sociedade visando à produção de conhecimentos e à interlocução das atividades acadêmicas de ensino e de pesquisa, através de processos ativos de formação. A Extensão engloba experiências de popularização da ciência, e realiza atividades que favorecem a construção de caminhos que podem contribuir no enfrentamento de problemas e questões sociais. Exercidas como direito social, as práticas extensionistas primam pelo respeito à diversidade cultural e têm como eixo o encontro entre os saberes acadêmicos e os saberes espontâneos. (CONAC/UFRB, 2022).
+
+
+
+**Extensão Universitária e o Projeto de Suporte ao Microempreendedor Individual**:
 
 A extensão universitária desempenha um papel crucial na formação acadêmica dos estudantes, promovendo a integração entre teoria e prática. Nesse contexto, é importante que os projetos desenvolvidos estejam alinhados com as demandas da sociedade.  A nossa iniciativa será voltada para o Microempreendedor Individual (MEI), que visa fortalecer e impulsionar os pequenos negócios por meio de soluções específicas.
 
