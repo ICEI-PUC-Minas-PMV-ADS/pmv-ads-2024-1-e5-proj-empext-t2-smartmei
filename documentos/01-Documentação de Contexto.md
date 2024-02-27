@@ -8,7 +8,7 @@
  
  Este projeto nasceu da necessidade de preencher uma lacuna existente no mercado de software empresarial, onde as soluções disponíveis muitas vezes são complexas, caras e inadequadas para as necessidades específicas dos microempreendedores individuais. Acreditamos que ao oferecer uma ferramenta intuitiva e acessível, podemos capacitar esses empreendedores a alcançarem todo o potencial de seus negócios.
  
- O software é direcionado a designers que atuam como microempreendedores individuais. Destina-se a empreendedores que buscam uma solução simples e eficaz para gerir todas as facetas de seus negócios, desde a contabilidade até o controle de multiplos clientes e projetos, independentemente do seu nível de experiência em tecnologia.
+ O software é direcionado a designers que atuam como microempreendedores individuais. Destina-se a empreendedores que buscam uma solução simples e eficaz para gerir todas as facetas de seus negócios, desde a contabilidade até o controle de múltiplos clientes e projetos, independentemente do seu nível de experiência em tecnologia.
 
 ## Problema
 
