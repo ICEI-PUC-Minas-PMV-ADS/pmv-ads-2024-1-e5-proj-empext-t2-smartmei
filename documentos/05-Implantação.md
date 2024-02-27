@@ -10,10 +10,10 @@ Os artefatos do projeto serão desenvolvidos a partir das plataformas listadas a
 
 | AMBIENTE | PLATAFORMA |LINK DE ACESSO                 |
 |--------------------|--------------------------------------------------------------------------------|----------------------------------------|
-|Repositório de código fonte | GitHub |  |
-|Documentos do projeto  | GitHub |  |
+|Repositório de código fonte | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/tree/main/codigo-fonte |
+|Documentos do projeto  | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei |
 |Projeto de interface e wireframes | Marvel |  |
-|Gerenciamento do projeto  | GitHub |  |
+|Gerenciamento do projeto  | GitHub | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/803 |
 
 ## Controle de Versão
 
@@ -69,9 +69,9 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
   <li>Done: nesta lista são colocadas as tarefas finalizadas e as que passaram pelos testes e controle de qualidade, prontas para serem entregues aos usuários.</li>
  </ul>
 
-O quadro kanban do grupo no GitHub está disponível no link https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/483 e é apresentado, no estado atual, na figura abaixo:
+O quadro kanban do grupo no GitHub está disponível no link https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/803/views/1 e é apresentado, no estado atual, na figura abaixo:
 
-
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/688fa4fa-edb5-4994-89db-7db41cc73734)
 
 ### Ferramentas
 
