@@ -27,7 +27,7 @@ Como objetivos específicos podemos destacar:
 
 <ul><li> Melhor controle da cartela de clientes;</li>
 <li>Possibilitar uma gestão mais eficaz de projetos e eventos;</li>
-<li>Aprimorar a administração de custos e faturamento;</li></ul>
+<li>Aprimorar a administração de custos e faturamento.</li></ul>
 
 ## Justificativa
 
