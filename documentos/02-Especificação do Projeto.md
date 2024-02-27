@@ -39,10 +39,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| A aplicação deve ser responsiva para rodar em um dispositivos móvel | MÉDIA | 
 |RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-|RNF-003| A aplicação deve ter bom nível de contraste entre os elementos da tela em conformidade. |  BAIXA | 
-|RNF-004| A aplicação deve ser compatível com os navegadores mais utilizados do mercado. |  MÉDIA |
-|RNF-005| A aplicação deve ser intuitiva para que o usuário consiga encontrar as informações que deseja facilmente.  |  ALTA |
-|RNF-006| A aplicação deve utilizar senhas criptografadas.  |  ALTA |
+|RNF-003| A aplicação deve ter bom nível de contraste entre os elementos da tela em conformidade |  BAIXA | 
+|RNF-004| A aplicação deve ser compatível com os navegadores mais utilizados do mercado |  MÉDIA |
+|RNF-005| A aplicação deve ser intuitiva para que o usuário consiga encontrar as informações que deseja facilmente  |  ALTA |
+|RNF-006| A aplicação deve utilizar senhas criptografadas  |  ALTA |
 
 ## Restrições
 
