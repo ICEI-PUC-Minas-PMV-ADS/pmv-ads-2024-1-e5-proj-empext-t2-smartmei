@@ -6,7 +6,23 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 
 ## Arquitetura e Tecnologias
 
-o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
+|Nome                | Função                             |
+|--------------------|------------------------------------|
+|Whatsapp, Google Meet | Comunicação entre a equipe; comunicação entre a equipe e o Product Owner do projeto.  |
+|Github | Repositório da documentação e código fonte do projeto; gerenciamento de funções e tarefas.  |
+|Git | Gestão do código fonte (versionamento).  |
+|Microsoft Visual Studio | Criação do código fonte. |
+|Microsoft SQL Server | Criação e administração do banco de dados.  |
+|Lucidchart  | Criação dos diagramas e modelos. |
+|Marvel App  | Projeto de interface e wireframes. |
+|Bootstrap, ASP.NET Core MVC | Bibliotecas e framework utilizados.  |
+|C#, CSS, JavaScript, JSON (JavaScript Object Notation)	| Linguagens de programação utilizadas na criação do código fonte da aplicação. |
+|Axios | Cliente HTTP baseado em Promises para fazer requisições. |
+|Insomnia, MSTest, xUnit | Testes. |
+
+A ilustração de como as tecnologias estão relacionadas e como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário, pode ser visualizada na figura abaixo:
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100742971/884b30e9-7d3a-49f9-8ab7-77fa6334a80d)
 
 ## Project Model Canvas
 
@@ -56,8 +72,12 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|01| O projeto deverá ser entregue no final do semestre letivo, não podendo extrapolar a data de 23/06/2024. |
+|02| A plataforma deve se restringir às tecnologias básicas utilizando ferramentas de desenvolvimento pré estabelecidas. |
+|02| A plataforma se compromete em não compartilhar históricos de pesquisa e dados sensíveis dos usuários. |
+|02| A equipe não pode subcontratar o desenvolvimento do trabalho. |
+
+
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
