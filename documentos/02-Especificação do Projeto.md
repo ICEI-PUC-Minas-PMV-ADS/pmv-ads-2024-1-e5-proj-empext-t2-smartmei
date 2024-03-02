@@ -16,7 +16,7 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 |Lucidchart  | Criação dos diagramas e modelos. |
 |Marvel App  | Projeto de interface e wireframes. |
 |Bootstrap, ASP.NET Core MVC | Bibliotecas e framework utilizados.  |
-|HTML, C#, CSS, JavaScript, JSON (JavaScript Object Notation)	| Linguagens de programação utilizadas na criação do código fonte da aplicação. |
+|HTML, C#, CSS, JavaScript | Linguagens de programação utilizadas na criação do código fonte da aplicação. |
 
 A ilustração de como as tecnologias estão relacionadas e como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário, pode ser visualizada na figura abaixo:
 
