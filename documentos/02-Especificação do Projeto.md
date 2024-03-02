@@ -33,6 +33,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-011| A aplicação deve notificar o usuário quando o faturamento ultrapassar o limite e teto MEI   | ALTA |
 |RF-012| A aplicação deve permitir ao usuário gerenciar seu faturamento   | ALTA |
 
+**Técnica de priorização de requisitos**
+
+A técnica de priorização de requisitos utilizada foi a Escala de Três Níveis, com os valores "Alta", "Média" e "Baixa", associada ao quadrante de priorização, que estabeleu a importância e urgência dos requisitos.
+
+![Cópia de Quadrante_4](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/98122346/83ac703d-1fc1-4a77-a2c3-bf4133bece86)
+
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
