@@ -12,7 +12,7 @@ Os artefatos do projeto serão desenvolvidos a partir das plataformas listadas a
 |--------------------|--------------------------------------------------------------------------------|----------------------------------------|
 |Repositório de código fonte | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/tree/main/codigo-fonte |
 |Documentos do projeto  | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei |
-|Projeto de interface e wireframes | Marvel |  |
+|Projeto de interface e wireframes | Marvel | https://marvelapp.com/prototype/10908134/screen/94023521  |
 |Gerenciamento do projeto  | GitHub | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/803 |
 
 ## Controle de Versão
