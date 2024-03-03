@@ -70,18 +70,11 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue no final do semestre letivo, não podendo extrapolar a data de 23/06/2024. |
-|02| A plataforma deve se restringir às tecnologias básicas utilizando ferramentas de desenvolvimento pré estabelecidas. |
-|02| A plataforma se compromete em não compartilhar históricos de pesquisa e dados sensíveis dos usuários. |
-|02| A equipe não pode subcontratar o desenvolvimento do trabalho. |
+|01| O projeto deverá ser entregue no final do semestre letivo, não podendo extrapolar a data de 09/06/2024. |
+|02| A plataforma deve se restringir às tecnologias básicas utilizando ferramentas de desenvolvimento pré-estabelecidas. |
+|03| A plataforma se compromete em não compartilhar históricos de pesquisa e dados sensíveis dos usuários. |
+|04| A equipe não pode subcontratar o desenvolvimento do trabalho. |
 
-
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
 
