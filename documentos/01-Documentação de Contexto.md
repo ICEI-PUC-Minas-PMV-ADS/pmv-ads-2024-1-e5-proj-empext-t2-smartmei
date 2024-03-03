@@ -37,7 +37,7 @@ Diante do cenário apresentado, é evidente a necessidade de Luiz Toussaint, um 
 
 "Extensão Universitária é a comunicação que se estabelece entre universidade e sociedade visando à produção de conhecimentos e à interlocução das atividades acadêmicas de ensino e de pesquisa, através de processos ativos de formação. A Extensão engloba experiências de popularização da ciência, e realiza atividades que favorecem a construção de caminhos que podem contribuir no enfrentamento de problemas e questões sociais. Exercidas como direito social, as práticas extensionistas primam pelo respeito à diversidade cultural e têm como eixo o encontro entre os saberes acadêmicos e os saberes espontâneos" (UFRB, 2022).
 
-Fonte: UNIVERSIDADE FEDERAL DO RECÔNCAVO DA BAHIA. Centro de Ciência e Tecnologia em Energia e Sustentabilidade. <b>O que é Extensão Universitária?</b>. 2022. Disponível em: https://www.ufrb.edu.br/cetens/extensao. Acesso em: 28 fev. 2024.
+Fonte: UNIVERSIDADE FEDERAL DO RECÔNCAVO DA BAHIA (UFRB). Centro de Ciência e Tecnologia em Energia e Sustentabilidade. <b>O que é Extensão Universitária?</b>. 2022. Disponível em: https://www.ufrb.edu.br/cetens/extensao. Acesso em: 28 fev. 2024.
 
 **Extensão Universitária e o Projeto de Suporte ao Microempreendedor Individual**:
 
