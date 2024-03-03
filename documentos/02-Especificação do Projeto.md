@@ -57,7 +57,7 @@ A técnica de priorização de requisitos utilizada foi a Escala de Três Nívei
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva para rodar em um dispositivos móvel | MÉDIA | 
+|RNF-001| A aplicação deve ser responsiva para rodar em um dispositivo móvel | MÉDIA | 
 |RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
 |RNF-003| A aplicação deve ter bom nível de contraste entre os elementos da tela em conformidade |  BAIXA | 
 |RNF-004| A aplicação deve ser compatível com os navegadores mais utilizados do mercado |  MÉDIA |
