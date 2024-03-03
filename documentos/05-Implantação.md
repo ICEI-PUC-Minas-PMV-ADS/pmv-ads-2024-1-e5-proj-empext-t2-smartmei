@@ -1,6 +1,6 @@
 # Implantação do Software
 
-Apresentação do planejamento da implantação: descrever tecnologias e processo de implantação.
+Apresentação do planejamento da implantação: descrição de tecnologias e processo de implantação.
 
 ## Relação de Ambientes de Trabalho
 
