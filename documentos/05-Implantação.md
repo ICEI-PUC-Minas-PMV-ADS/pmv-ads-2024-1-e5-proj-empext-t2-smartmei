@@ -2,6 +2,12 @@
 
 Apresentação do planejamento da implantação: descrição de tecnologias e processo de implantação.
 
+<br>
+<br>
+<br>
+
+# Metodologia
+
 ## Relação de Ambientes de Trabalho
 
 Os artefatos do projeto serão desenvolvidos a partir das plataformas listadas abaixo, apresentadas com o seu propósito.
