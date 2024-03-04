@@ -79,7 +79,7 @@ O quadro kanban do grupo no GitHub está disponível no link https://github.com/
 
 As ferramentas empregadas no projeto são:
 
-- IDE (Ambiente de Desenvolvimento Integrado): Microsfot Visual Studio
+- IDE (Ambiente de Desenvolvimento Integrado): Microsoft Visual Studio
 - Ferramenta de gerenciamento: Github
 - Ferramenta de comunicação: Google Meet
 - Ferramenta de desenho de tela (_wireframing_): Marvel
