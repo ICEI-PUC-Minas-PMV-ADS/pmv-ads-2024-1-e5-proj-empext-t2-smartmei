@@ -1,0 +1,143 @@
+﻿@model IEnumerable<Smartmei.Models.Projeto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicioProjeto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFimProjeto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeTelas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorTela)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorTotalProjeto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrazoPagamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEmissaoNF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataPagamentoNF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Acompanhamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diaria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicioEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFimEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LinkDrive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeiId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicioProjeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFimProjeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeTelas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTela)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotalProjeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrazoPagamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEmissaoNF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataPagamentoNF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Acompanhamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diaria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicioEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFimEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LinkDrive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeiId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
