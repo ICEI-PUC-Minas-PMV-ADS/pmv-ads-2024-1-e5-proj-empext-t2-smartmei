@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Smartmei.Models;
 
@@ -11,9 +12,10 @@ using Smartmei.Models;
 namespace Smartmei.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240310140656_D04TabelaEvento")]
+    partial class D04TabelaEvento
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,70 +99,6 @@ namespace Smartmei.Migrations
                     b.ToTable("Eventos");
                 });
 
-            modelBuilder.Entity("SmartMei.Models.Custo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<decimal>("Alimentacao")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("CustoTotal")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Deslocamento")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Hospedagem")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("PassagemAerea")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("ProjetoId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProjetoId");
-
-                    b.ToTable("Custos");
-                });
-
-            modelBuilder.Entity("SmartMei.Models.Faturamento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("Ano")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("CustoMensal")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("MeiId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Mes")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("ValorBruto")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("ValorLiquidoMensal")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Faturamento");
-                });
-
             modelBuilder.Entity("Smartmei.Models.Projeto", b =>
                 {
                     b.Property<int>("Id")
@@ -230,17 +168,6 @@ namespace Smartmei.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Projetos");
-                });
-
-            modelBuilder.Entity("SmartMei.Models.Custo", b =>
-                {
-                    b.HasOne("Smartmei.Models.Projeto", "Projeto")
-                        .WithMany()
-                        .HasForeignKey("ProjetoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Projeto");
                 });
 #pragma warning restore 612, 618
         }
