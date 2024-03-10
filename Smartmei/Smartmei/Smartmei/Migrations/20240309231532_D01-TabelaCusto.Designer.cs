@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Smartmei.Models;
 
@@ -11,9 +12,10 @@ using Smartmei.Models;
 namespace Smartmei.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240309231532_D01-TabelaCusto")]
+    partial class D01TabelaCusto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,37 +55,6 @@ namespace Smartmei.Migrations
                     b.HasIndex("ProjetoId");
 
                     b.ToTable("Custos");
-                });
-
-            modelBuilder.Entity("SmartMei.Models.Faturamento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("Ano")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("CustoMensal")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("MeiId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Mes")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("ValorBruto")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("ValorLiquidoMensal")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Faturamento");
                 });
 
             modelBuilder.Entity("Smartmei.Models.Projeto", b =>
