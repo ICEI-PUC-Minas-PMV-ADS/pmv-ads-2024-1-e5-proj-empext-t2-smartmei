@@ -77,6 +77,7 @@ namespace Smartmei.Models
         public Mei Mei { get; set; }
 
         public ICollection<Custo> Custos { get; set; }
+        public ICollection<Evento> Eventos { get; set; }
     }
 
     public enum Acompanhamento
