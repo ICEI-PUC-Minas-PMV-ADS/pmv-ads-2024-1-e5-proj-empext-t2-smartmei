@@ -15,5 +15,8 @@ namespace Smartmei.Models
         public DbSet<Custo> Custos { get; set; }
 
         public DbSet<Faturamento> Faturamentos { get; set; }
+
+        public DbSet<Mei> Meis { get; set; }
+
     }
 }
