@@ -23,7 +23,9 @@ namespace Smartmei.Models
         [Required(ErrorMessage = "Por favor, informe a senha.")]
         public string Senha { get; set; }
 
-        public ICollection<Mei> Meis { get; set; }
+        public ICollection<Projeto> Projetos { get; set; }
+
+        public ICollection<Faturamento> Faturamentos { get; set; }
 
     }
 }
