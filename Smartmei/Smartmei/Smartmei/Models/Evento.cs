@@ -15,8 +15,8 @@ namespace Smartmei.Models
         [Required(ErrorMessage = "Por favor, informe o nome do projeto.")]
         public int ProjetoId { get; set; }
 
-        //[ForeignKey("ProjetoId")]
-        //public Projeto Projeto { get; set; }
+        [ForeignKey("ProjetoId")]
+        public Projeto Projeto { get; set; }
 
         [DisplayName("Por favor, informe a data de início do evento")]
         [DataType(DataType.Date)]

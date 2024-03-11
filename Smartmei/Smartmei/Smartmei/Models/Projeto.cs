@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using SmartMei.Models;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,8 +20,8 @@ namespace Smartmei.Models
         [Required(ErrorMessage = "Por favor, informe o nome do cliente.")]
         public int ClienteId { get; set; }
 
-        //[ForeignKey("ClienteId")]
-        //public Cliente Cliente { get; set; }
+        [ForeignKey("ClienteId")]
+        public Cliente Cliente { get; set; }
 
         [DisplayName("Data de início do projeto")]
         public DateTime DataInicioProjeto { get; set; }
@@ -75,7 +76,7 @@ namespace Smartmei.Models
         //[ForeignKey("MeiId")]
         //public Mei Mei { get; set; }
 
-        //public ICollection<Custo> Custos { get; set; }
+        public ICollection<Custo> Custos { get; set; }
     }
 
     public enum Acompanhamento
