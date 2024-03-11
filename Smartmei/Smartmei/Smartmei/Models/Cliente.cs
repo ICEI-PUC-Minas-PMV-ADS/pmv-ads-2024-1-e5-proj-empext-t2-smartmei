@@ -42,6 +42,7 @@ namespace Smartmei.Models
         [StringLength(50, ErrorMessage = "Este campo precisa ter no máximo 50 caracteres.")]
         public string Observacao { get; set; }
 
+        public ICollection<Projeto> Projetos { get; set; }
 
     }
 
