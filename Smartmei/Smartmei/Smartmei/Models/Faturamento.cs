@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Smartmei.Models;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -32,8 +33,8 @@ namespace SmartMei.Models
         [DisplayName("Profissional")]
         public int MeiId { get; set; }
 
-        //[ForeignKey("MeiId")]
-        //public Mei Mei { get; set; }
+        [ForeignKey("MeiId")]
+        public Mei Mei { get; set; }
     }
 }
 

@@ -16,7 +16,7 @@ namespace Smartmei.Controllers
         // GET: Projetos
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Projetos.Include(p => p.Cliente);//.Include(p => p.Mei);
+            var appDbContext = _context.Projetos.Include(p => p.Cliente).Include(p => p.Mei);
             return View(await appDbContext.ToListAsync());
         }
     }

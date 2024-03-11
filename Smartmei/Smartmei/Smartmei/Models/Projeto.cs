@@ -73,8 +73,8 @@ namespace Smartmei.Models
         [DisplayName("Profissional")]
         public int MeiId { get; set; }
 
-        //[ForeignKey("MeiId")]
-        //public Mei Mei { get; set; }
+        [ForeignKey("MeiId")]
+        public Mei Mei { get; set; }
 
         public ICollection<Custo> Custos { get; set; }
     }
