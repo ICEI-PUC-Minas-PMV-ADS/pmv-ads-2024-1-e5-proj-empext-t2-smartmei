@@ -21,6 +21,7 @@ namespace Smartmei.Models
 
         [DisplayName("Senha")]
         [Required(ErrorMessage = "Por favor, informe a senha.")]
+        [DataType(DataType.Password)]   
         public string Senha { get; set; }
 
         public ICollection<Projeto> Projetos { get; set; }
