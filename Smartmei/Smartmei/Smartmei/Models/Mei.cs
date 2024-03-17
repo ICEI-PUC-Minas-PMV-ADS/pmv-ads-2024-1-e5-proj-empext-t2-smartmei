@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using SmartMei.Models;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -20,6 +21,12 @@ namespace Smartmei.Models
 
         [DisplayName("Senha")]
         [Required(ErrorMessage = "Por favor, informe a senha.")]
+        [DataType(DataType.Password)]   
         public string Senha { get; set; }
+
+        public ICollection<Projeto> Projetos { get; set; }
+
+        public ICollection<Faturamento> Faturamentos { get; set; }
+
     }
 }
