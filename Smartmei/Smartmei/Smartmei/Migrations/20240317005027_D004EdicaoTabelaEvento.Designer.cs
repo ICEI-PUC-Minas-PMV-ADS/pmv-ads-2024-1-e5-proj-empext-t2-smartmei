@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Smartmei.Models;
 
@@ -11,9 +12,10 @@ using Smartmei.Models;
 namespace Smartmei.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240317005027_D004EdicaoTabelaEvento")]
+    partial class D004EdicaoTabelaEvento
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -202,13 +204,22 @@ namespace Smartmei.Migrations
                     b.Property<int>("Acompanhamento")
                         .HasColumnType("int");
 
+                    b.Property<string>("Cidade")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DataEmissaoNF")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("DataFimEvento")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("DataFimProjeto")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataInicioEvento")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataInicioProjeto")
@@ -216,6 +227,12 @@ namespace Smartmei.Migrations
 
                     b.Property<DateTime>("DataPagamentoNF")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Diaria")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LinkDrive")
                         .HasColumnType("nvarchar(max)");

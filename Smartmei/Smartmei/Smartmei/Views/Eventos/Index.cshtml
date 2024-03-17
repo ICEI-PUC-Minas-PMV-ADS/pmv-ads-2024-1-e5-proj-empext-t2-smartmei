@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Smartmei.Models.Evento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Eventos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Adicionar novo Evento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Projeto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEventoInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEventoFim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorDiaria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Projeto.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEventoInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEventoFim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorDiaria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Visualizar</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -18,17 +18,20 @@ namespace Smartmei.Models
         [ForeignKey("ProjetoId")]
         public Projeto Projeto { get; set; }
 
-        [DisplayName("Por favor, informe a data de início do evento")]
+        [DisplayName("Data do início do evento")]
+        [Required(ErrorMessage = "Por favor, informe a data de início do evento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataEventoInicio { get; set; }
 
-        [DisplayName("Por favor, informe a data final do evento")]
+        [DisplayName("Data final do evento")]
+        [Required(ErrorMessage ="Por favor, informe a data final do evento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataEventoFim { get; set; }
 
         [DisplayName("Valor da diária (R$)")]
+        [Required(ErrorMessage = "Por favor, informe o valor da diária")]
         public decimal ValorDiaria { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a cidade")]

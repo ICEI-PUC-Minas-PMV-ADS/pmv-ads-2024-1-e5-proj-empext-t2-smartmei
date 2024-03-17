@@ -15,18 +15,18 @@ namespace Smartmei.Models
         [Required(ErrorMessage = "Obrigatório informar o nome do cliente")]
         public string Nome { get; set; }
 
-        [StringLength(18, MinimumLength = 18, ErrorMessage = "Este campo precisa ter 18 caracteres!")]
         [Required(ErrorMessage = "Por favor, informe o CNPJ do cliente/empresa.")]
-        public int CNPJ { get; set; }
+        [RegularExpression(@"^\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}$",
+          ErrorMessage = "O CNPJ deve estar no formato 00.000.000/0000-00.")]
+        public string CNPJ { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o telefone")]
         [RegularExpression(@"^\(?\d{2}\)?[-.\s]?\d{4,5}[-.\s]?\d{4}$", ErrorMessage = "Formato de telefone inválido")]
         public string Telefone { get; set; }
 
         [Display(Name = "E-mail")]
-        [EmailAddress(ErrorMessage = "Este não é um formato válido de e-mail!")]
         [Required(ErrorMessage = "Por favor, informe o e-mail do cliente/empresa.")]
-        public int Email { get; set; }
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a cidade")]
         public string Cidade { get; set; }
@@ -42,6 +42,7 @@ namespace Smartmei.Models
         [StringLength(50, ErrorMessage = "Este campo precisa ter no máximo 50 caracteres.")]
         public string Observacao { get; set; }
 
+        public ICollection<Projeto> Projetos { get; set; }
 
     }
 
