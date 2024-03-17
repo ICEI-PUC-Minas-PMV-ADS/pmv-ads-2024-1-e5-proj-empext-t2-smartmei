@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Smartmei.Models;
+using System.Security.Claims;
 
 namespace Smartmei.Controllers
 {
@@ -13,12 +15,70 @@ namespace Smartmei.Controllers
             _context = context;
         }
 
+        // GET : MEI
+
         public async Task<IActionResult> Index()
         {
             var dados = await _context.Meis.ToListAsync();
 
             return View(dados);
         }
+
+        public IActionResult Login ()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> LoginAsync(Mei mei)
+        {
+            var dados = await _context.Meis.FirstOrDefaultAsync(m => m.Email == mei.Email);
+
+            if (dados == null)
+            {
+                ViewBag.Message = "Usuário e/ou senha inválidos!";
+                return View();  
+            }
+
+            bool senhaOk = BCrypt.Net.BCrypt.Verify(mei.Senha, dados.Senha);
+
+            if (senhaOk) 
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, dados.Nome),
+                    new Claim(ClaimTypes.NameIdentifier, dados.Id.ToString())
+                };
+
+                var meiIdentity = new ClaimsIdentity(claims, "Login");
+                ClaimsPrincipal principal = new ClaimsPrincipal(meiIdentity);
+
+                var props = new AuthenticationProperties
+                {
+                    AllowRefresh = true,
+                    ExpiresUtc = DateTime.UtcNow.ToLocalTime().AddHours(8),
+                    IsPersistent = true,
+                };
+
+                await HttpContext.SignInAsync(principal, props);
+
+                return Redirect("/");
+            }
+            else
+            {
+                ViewBag.Message = "Usuário e/ou senha inválidos!";
+            }
+
+            return View();
+        }
+
+        public async Task<IActionResult> Logout() 
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Login", "Meis");
+        }
+
         // GET: Meis/Create
         public IActionResult Create()
         {
