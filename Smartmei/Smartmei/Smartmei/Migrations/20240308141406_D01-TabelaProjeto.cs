@@ -26,11 +26,6 @@ namespace Smartmei.Migrations
                     DataEmissaoNF = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DataPagamentoNF = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Acompanhamento = table.Column<int>(type: "int", nullable: false),
-                    Diaria = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    DataInicioEvento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataFimEvento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Cidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LinkDrive = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Observacao = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MeiId = table.Column<int>(type: "int", nullable: false)
