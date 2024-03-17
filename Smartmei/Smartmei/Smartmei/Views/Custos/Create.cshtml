@@ -1,0 +1,57 @@
+﻿@model SmartMei.Models.Custo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Custo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PassagemAerea" class="control-label"></label>
+                <input asp-for="PassagemAerea" class="form-control" />
+                <span asp-validation-for="PassagemAerea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hospedagem" class="control-label"></label>
+                <input asp-for="Hospedagem" class="form-control" />
+                <span asp-validation-for="Hospedagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deslocamento" class="control-label"></label>
+                <input asp-for="Deslocamento" class="form-control" />
+                <span asp-validation-for="Deslocamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alimentacao" class="control-label"></label>
+                <input asp-for="Alimentacao" class="form-control" />
+                <span asp-validation-for="Alimentacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustoTotal" class="control-label"></label>
+                <input asp-for="CustoTotal" class="form-control" />
+                <span asp-validation-for="CustoTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjetoId" class="control-label"></label>
+                <select asp-for="ProjetoId" class ="form-control" asp-items="ViewBag.ProjetoId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
