@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Smartmei.Controllers;
 using Smartmei.Models;
@@ -16,123 +17,159 @@ namespace Smartmei.Controllers
 
         }
 
+
         public async Task<IActionResult> Index()
         {
-
-            var appDbContext = await _context.Eventos.ToListAsync();
-
-            return View(appDbContext);
+            var appDbContext = _context.Eventos.Include(p => p.Projeto);
+            return View(await appDbContext.ToListAsync());
         }
 
 
-        public IActionResult Create()
+        public async Task<IActionResult> Details(int? id)
         {
-
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create(Evento evento)
-        {
-            if (ModelState.IsValid)
+            if (id == null || _context.Eventos == null)
             {
-                _context.Eventos.Add(evento);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return NotFound();
+            }
+
+            var evento = await _context.Eventos
+                .Include(p => p.Projeto)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (evento == null)
+            {
+                return NotFound();
             }
 
             return View(evento);
         }
 
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Create()
         {
-
-            if (id == null)
-                return NotFound();
-
-            var dados = await _context.Eventos.FindAsync(id);
-
-            if (dados == null)
-                return NotFound();
-
-
-
-            return View(dados);
-        }
-
-        [HttpPost]
-
-        public async Task<IActionResult> Edit(int id, Evento evento)
-        {
-            if (id != evento.Id)
-                return NotFound();
-
-            if (ModelState.IsValid)
-            {
-                _context.Eventos.Update(evento);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-
+            ViewData["ProjetoId"] = new SelectList(_context.Projetos, "Id", "Nome");
             return View();
         }
 
-         public async Task<IActionResult> Details(int? id)
+        // POST: Projetos/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,ProjetoId,DataEventoInicio,DataEventoFim,ValorDiaria,Cidade,Estado")] Evento evento)
         {
-            if (id == null)
+            if (ModelState.IsValid)
+            {
+                _context.Add(evento);
+                await _context.SaveChangesAsync();
+
+                TempData["Mensagem"] = "Evento criado com sucesso!";
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["ProjetoId"] = new SelectList(_context.Clientes, "Id", "Nome", evento.ProjetoId);
+            return View(evento);
+        }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null || _context.Eventos == null)
+            {
                 return NotFound();
+            }
 
-            var dados = await _context.Eventos.FindAsync(id);
-
-            if (dados == null)
+            var evento = await _context.Eventos.FindAsync(id);
+            if (evento == null)
+            {
                 return NotFound();
+            }
+            ViewData["ProjetoId"] = new SelectList(_context.Clientes, "Id", "Nome", evento.ProjetoId);
 
+            return View(evento);
+        }
 
-            return View(dados);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProjetoId,DataEventoInicio,DataEventoFim,ValorDiaria,Cidade,Estado")] Evento evento)
+
+        {
+            if (id != evento.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(evento);
+                    await _context.SaveChangesAsync();
+
+                    TempData["Mensagem"] = "Evento atualizado com sucesso!";
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!EventoExists(evento.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewData["ProjetoId"] = new SelectList(_context.Clientes, "Id", "Nome", evento.ProjetoId);
+
+            return View(evento);
         }
 
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Eventos == null)
+            {
                 return NotFound();
+            }
 
-            var dados = await _context.Eventos.FindAsync(id);
+            var evento = await _context.Eventos
+                .Include(p => p.Projeto)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
-            if (dados == null)
+            if (evento == null)
+            {
                 return NotFound();
+            }
 
-
-            return View(dados);
+            return View(evento);
         }
-
-
 
         [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(int? id)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (id == null)
-                return NotFound();
+            if (_context.Eventos == null)
+            {
+                return Problem("Entity set 'AppDbContext.Eventos' is null.");
+            }
 
-            var dados = await _context.Eventos.FindAsync(id);
+            var evento = await _context.Eventos.FindAsync(id);
+            if (evento != null)
+            {
+                _context.Eventos.Remove(evento);
+                await _context.SaveChangesAsync();
+                TempData["Mensagem"] = "Evento deletado com sucesso!";
+            }
 
-            if (dados == null)
-                return NotFound();
-
-            _context.Eventos.Remove(dados);
-            await _context.SaveChangesAsync();
-
-
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
 
+
+
+        private bool EventoExists(int id)
+        {
+            return _context.Eventos.Any(e => e.Id == id);
+        }
     }
 }
 
 
 
 
-
-
-   
-       
