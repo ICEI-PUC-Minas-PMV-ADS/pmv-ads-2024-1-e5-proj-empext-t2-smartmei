@@ -3,68 +3,51 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<style>
 
-<h1>Remover Cliente</h1>
+    body {
+        background-color: #E7F9F9;
+        margin: 0;
+        padding: 0;
+    }
 
-<h3></h3>
-<div>
-    <h4>Tem certeza que deseja remover este registro?</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CNPJ)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CNPJ)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Telefone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Telefone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cidade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductOwner)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ProductOwner)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Observacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Observacao)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
+   
+    .titulo {
+        text-align: center;
+        padding: 10px;
+    }
 
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index"  class="btn btn-info" >Voltar</a>
-    </form>
+    .espacamento {
+        padding-bottom: 20px;
+    }
+
+
+    .bg {
+        background-color: white;
+        padding: 15px;
+        border-color: white;
+        border-radius: 10px;
+    }
+
+</style>
+
+<div class="titulo">
+    <div class="espacamento">
+        <h1>Excluir cliente</h1>
+    </div>
 </div>
+<hr />
+
+<div class="bg">
+    <h3>Você confirma a exclusão do cadastro do cliente <strong>@Html.DisplayFor(model => model.Nome)</strong>?</h3>
+    <br />
+
+    <div>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Sim" class="btn btn-danger" />
+            <a class="btn btn-dark" asp-action="Index">Não</a>
+        </form>
+    </div>
+</div>
+

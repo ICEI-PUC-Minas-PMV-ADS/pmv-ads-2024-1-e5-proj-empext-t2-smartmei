@@ -4,32 +4,60 @@
     ViewData["Title"] = "Create";
 }
 
-<h1></h1>
+<style>
 
-<h4>Adicionar Novo Evento</h4>
-<hr />
+    body {
+        background-color: #E7F9F9;
+    }
+
+    .botoes {
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        padding: 5px 0;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .espacamento {
+        padding: 10px 0;
+    }
+
+</style>
+<div class="espacamento">
+    <h2>Adicionar novo evento</h2>
+</div>
+<hr/>
+ 
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="ProjetoId" class="control-label"></label>
                 <select asp-for="ProjetoId" class ="form-control" asp-items="ViewBag.ProjetoId"></select>
+                <span asp-validation-for="ProjetoId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataEventoInicio" class="control-label"></label>
-                <input asp-for="DataEventoInicio" class="form-control" />
+                <input asp-for="DataEventoInicio" type="date" class="form-control" />
                 <span asp-validation-for="DataEventoInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataEventoFim" class="control-label"></label>
-                <input asp-for="DataEventoFim" class="form-control" />
+                <input asp-for="DataEventoFim" type="date" class="form-control" />
                 <span asp-validation-for="DataEventoFim" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ValorDiaria" class="control-label"></label>
                 <input asp-for="ValorDiaria" class="form-control" />
                 <span asp-validation-for="ValorDiaria" class="text-danger"></span>
+               
             </div>
             <div class="form-group">
                 <label asp-for="Cidade" class="control-label"></label>
@@ -42,8 +70,10 @@
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Adicionar" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-info">Voltar</a>
+                <div class="botoes">
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
+                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+                </div>
             </div>
         </form>
     </div>

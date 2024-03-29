@@ -4,51 +4,76 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Dados do Evento</h1>
+<style>
 
-<div>
-    <h4></h4>
-    <hr />
+    body {
+        background-color: #E7F9F9;
+    }
+
+    .botoes {
+        margin-bottom: 35px;
+    }
+
+    .espacamento {
+        padding: 10px 0;
+    }
+
+    .bg {
+        background-color: white;
+        padding: 15px;
+        border-color: white;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+</style>
+
+<div class="espacamento">
+    <h2>Detalhes do evento <strong>@Html.DisplayFor(model => model.Projeto.Nome)</strong>:</h2>
+</div>
+<hr />
+
+<div class="bg">
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-4">
             @Html.DisplayNameFor(model => model.Projeto)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-8">
             @Html.DisplayFor(model => model.Projeto.Nome)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-4">
             @Html.DisplayNameFor(model => model.DataEventoInicio)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-8">
             @Html.DisplayFor(model => model.DataEventoInicio)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-4">
             @Html.DisplayNameFor(model => model.DataEventoFim)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-8">
             @Html.DisplayFor(model => model.DataEventoFim)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-4">
             @Html.DisplayNameFor(model => model.ValorDiaria)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-8">
             @Html.DisplayFor(model => model.ValorDiaria)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-4">
             @Html.DisplayNameFor(model => model.Cidade)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-8">
             @Html.DisplayFor(model => model.Cidade)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-4">
             @Html.DisplayNameFor(model => model.Estado)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-8">
             @Html.DisplayFor(model => model.Estado)
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" class=" btn btn-warning" asp-route-id="@Model?.Id">Editar</a> |
-    <a asp-action="Index" class=" btn btn-info">Voltar</a>
+<div class="botoes">
+    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+    <a class="btn btn-dark" asp-action="Index">Voltar</a>
 </div>
