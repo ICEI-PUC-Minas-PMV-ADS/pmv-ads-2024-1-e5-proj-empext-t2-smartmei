@@ -71,6 +71,22 @@
             text-decoration: none;
         }
 
+    .btn-color-delete {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #09547F;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
     .action-btns {
         white-space: nowrap;
     }
@@ -148,7 +164,7 @@
                             <td class="action-btns">
                                 <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
                                 <a class="btn-color" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
-                                <a class="btn-color" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                                <a class="btn-color-delete" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
                             </td>
                         </tr>
                     }

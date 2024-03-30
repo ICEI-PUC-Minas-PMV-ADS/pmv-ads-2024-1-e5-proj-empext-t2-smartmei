@@ -1,8 +1,123 @@
-﻿@{
+﻿﻿@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">SmartMEI</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url('../home.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        margin-left: 30px;
+        margin-right: auto;
+        max-width: 1200px;
+    }
+
+    .titulo {
+        padding: 50px 0;
+    }
+
+    .titulo1 {
+        font-size: 4rem;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+    }
+
+    /* SERVIÇOS */
+
+    .servicos-home-lista {
+        display: grid;
+        grid-template-columns: 1fr;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .servicos-home-lista li {
+        text-align: left;
+        overflow: hidden;
+        padding-bottom: 20px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        margin-bottom: 20px;
+        width: 600px;
+    }
+
+     .servicos-home-lista li img {
+         display: block;
+         width: 300px;
+         height: 220px;
+         object-fit: cover;
+         border-radius: 40px;
+         border: 10px solid #FA983C;
+         margin-right: 0;
+     }
+
+    .servicos-home-lista li .texto-servico {
+         background: #09547F;
+         border: 1px solid #09547F;
+         border-radius: 0 15px 15px 0;
+         padding: 1rem;
+         text-align: left;
+         width: 100%;
+     }
+
+    .servicos-home-lista li h2 {
+         font-size: 1.5rem;
+         color: #FA983C;
+         text-transform: uppercase;
+         font-weight: bold;
+     }
+
+    .servicos-home-lista li p {
+         color: white;
+         font-size: 1rem;
+     }
+
+</style>
+
+<div class="container">
+    <div class="titulo">
+        <div>
+            <h1 class="titulo1" style="word-spacing: -20px;">
+                <span style="color: black; font-weight: bold;">Smart</span>
+                <span style="color: #09547F; font-weight: bold; text-transform: uppercase;">Mei</span>
+            </h1>
+            <h3 style="line-height: 0.8;">Transformando suas ideias</h3>
+            <h3 style="line-height: 0.8;">em <strong>resultados inteligentes</strong></h3>
+        </div>
+    </div>
+
+    <section class="servicos-home corpo">
+        <ul class="servicos-home-lista">
+            <li>
+                <img src="../imagem-home12.jpg" alt="Homem conversando com uma mulher">
+                <div class="texto-servico">
+                    <h2>Clientes</h2>
+                    <p>Administre a sua cartela de clientes</p>
+                </div>
+            </li>
+            <li>
+                <img src="../imagem-home.jpg" alt="Homem sorrindo usando o computador">
+                <div class="texto-servico">
+                    <h2>Projetos</h2>
+                    <p>Gerencie os seus projetos e prazos</p>
+                </div>
+            </li>
+            <li>
+                <img src="../imagem-home4.jpg" alt="Objetos relacionados a finanças">
+                <div class="texto-servico">
+                    <h2>Finanças</h2>
+                    <p>Organize a sua vida financeira</p>
+                </div>
+            </li>
+        </ul>
+    </section>
 </div>

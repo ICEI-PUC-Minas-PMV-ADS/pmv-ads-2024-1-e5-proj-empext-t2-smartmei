@@ -9,58 +9,66 @@
     <link rel="stylesheet" href="~/Smartmei.styles.css" asp-append-version="true" />
 </head>
 <body>
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-custom-color border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Smartmei</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Meis" asp-action="Index">Perfil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Projetos" asp-action="Index">Projetos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Index">Clientes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Eventos" asp-action="Index">Eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Faturamentos" asp-action="Index">Faturamentos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Custos" asp-action="Index">Custos</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
+                <a class="navbar-brand d-none d-sm-block" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="\SM4.png" alt="Logo" class="img-fluid" style="width: 160px; height: 40px;">
+                </a>
 
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between align-items-center">
+                    <ul class="navbar-nav">
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                Olá, @User.Identity.Name <a class="nav-link text-dark" asp-area="" asp-controller="Meis" asp-action="Logout">Sair</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Meis" asp-action="Index">Perfil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Projetos" asp-action="Index">Projetos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Clientes" asp-action="Index">Clientes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Eventos" asp-action="Index">Eventos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Faturamentos" asp-action="Index">Faturamentos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Custos" asp-action="Index">Custos</a>
+                            </li>
+                        }
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item d-flex align-items-center">
+                                <span class="text-white me-2">Olá, @User.Identity.Name</span>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Meis" asp-action="Logout">Sair</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Meis" asp-action="Login">Login</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Meis" asp-action="Login">Login</a>
                             </li>
                         }
-
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
