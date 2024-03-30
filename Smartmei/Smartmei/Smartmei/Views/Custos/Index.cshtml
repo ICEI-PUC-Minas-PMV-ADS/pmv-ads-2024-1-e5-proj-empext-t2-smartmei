@@ -3,63 +3,161 @@
 @{
     ViewData["Title"] = "Index";
 }
-<h1>Custos</h1>
-<p>
-    <a asp-action="Create" class="btn btn-success">Adicionar</a>
-</p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PassagemAerea)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hospedagem)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Deslocamento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Alimentacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CustoTotal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Projeto)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PassagemAerea)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Hospedagem)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Deslocamento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Alimentacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CustoTotal)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Projeto.Nome)
-                </td>
-                <td>
-                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Visualizar</a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
-                </td>
-            </tr>
+<style>
+
+    body {
+        background-color: #E7F9F9;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* TABELA */
+
+    div.table-container {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #09547F;
+    }
+
+    dl {
+        padding: 15px 0 0 10px;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #F6F6F6;
+    }
+
+    /* BOTÃO */
+
+    .btn-container {
+        margin-top: 20px;
+        text-align: right;
+        margin-bottom: 30px;
+    }
+
+        .btn-container a {
+            margin-left: 10px;
         }
-    </tbody>
-</table>
+
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .btn-color:hover {
+            background-color: #FA983C;
+            color: #09547F;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .action-btns {
+        white-space: nowrap;
+    }
+
+    /* TÍTULO */
+
+
+    .titulo {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .espacamento {
+        padding-bottom: 20px;
+    }
+
+        .espacamento h1 {
+            font-weight: 600;
+        }
+
+</style>
+
+<div class="titulo">
+    <div class="espacamento">
+        <h1>Custos</h1>
+    </div>
+    <p><a class="btn btn-color" asp-action="Create">Adicionar</a></p>
+</div>
+<hr />
+<div class="btn-container">
+
+    <div class="table-container">
+        <div class="table-container">
+            <table class="table mx-auto align-middle table-hover">
+                <tbody class="table-group-divider">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <dl class="row list-unstyled">
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.PassagemAerea)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.PassagemAerea)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.Hospedagem)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.Hospedagem)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.Deslocamento)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.Deslocamento)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.Alimentacao)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.Alimentacao)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.CustoTotal)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.CustoTotal)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.Projeto)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.Projeto.Nome)
+                                    </dd>
+                                </dl>
+                            </td>
+                            <td class="action-btns">
+                                <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                                <a class="btn-color" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

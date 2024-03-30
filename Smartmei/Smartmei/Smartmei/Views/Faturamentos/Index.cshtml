@@ -3,65 +3,160 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
 
-<h1>Faturamentos</h1>
+    body {
+        background-color: #E7F9F9;
+        margin: 0;
+        padding: 0;
+    }
 
-<p>
-    <a asp-action="Create" class="btn btn-success">Adicionar</a>
-</p>
+    /* TABELA */
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Mes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ano)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorBruto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CustoMensal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorLiquidoMensal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mei)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mes)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ano)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ValorBruto)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CustoMensal)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ValorLiquidoMensal)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mei.Email)
-                </td>
-                <td>
-                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Visualizar</a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
-                </td>
-            </tr>
+    div.table-container {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #09547F;
+    }
+
+    dl {
+        padding: 15px 0 0 10px;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #F6F6F6;
+    }
+
+    /* BOTÃO */
+
+    .btn-container {
+        margin-top: 20px;
+        text-align: right;
+        margin-bottom: 30px;
+    }
+
+        .btn-container a {
+            margin-left: 10px;
         }
-    </tbody>
-</table>
+
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .btn-color:hover {
+            background-color: #FA983C;
+            color: #09547F;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .action-btns {
+        white-space: nowrap;
+    }
+
+    /* TÍTULO */
+
+
+    .titulo {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .espacamento {
+        padding-bottom: 20px;
+    }
+
+        .espacamento h1 {
+            font-weight: 600;
+        }
+
+</style>
+
+<div class="titulo">
+    <div class="espacamento">
+        <h1>Faturamentos</h1>
+    </div>
+    <p><a class="btn btn-color" asp-action="Create">Adicionar</a></p>
+</div>
+<hr />
+<div class="btn-container">
+
+    <div class="table-container">
+        <div class="table-container">
+            <table class="table mx-auto align-middle table-hover">
+                <tbody class="table-group-divider">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <dl class="row list-unstyled">
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.Mes)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.Mes)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.Ano)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.Ano)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.ValorBruto)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.ValorBruto)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.CustoMensal)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.CustoMensal)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.ValorLiquidoMensal)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.ValorLiquidoMensal)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.Mei)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.Mei.Nome)
+                                    </dd>
+                                </dl>
+                            </td>
+                            <td class="action-btns">
+                                <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                                <a class="btn-color" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
