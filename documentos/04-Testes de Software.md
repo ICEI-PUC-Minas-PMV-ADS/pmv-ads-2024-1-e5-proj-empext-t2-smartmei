@@ -29,8 +29,17 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 **Caso de Teste 06**
 <br>
 
-
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/1c87ab94-c944-4089-8435-0642cd10ce3e
+
+
+**Caso de Teste 06.1**
+<br>
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/6b8ef67b-d68f-43b9-a4ba-ff791ee1e098
+
+
+**Caso de Teste 06.2**
+<br>
 
 
 
