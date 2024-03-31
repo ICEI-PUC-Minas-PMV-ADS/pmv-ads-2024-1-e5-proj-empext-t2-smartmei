@@ -26,4 +26,9 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 
 # Evidências de Testes de Software
 
-Apresente imagens e/ou vídeos que comprovam que um determinado teste foi executado, e o resultado esperado foi obtido. Normalmente são screenshots de telas, ou vídeos do software em funcionamento.
+| ** ID do Caso de Teste** 	| **Vídeo**	|
+|:---:	|:---:	|
+|	06 	|  |
+|	06.01 	|  |
+|	06.02 	|  |
+|  	|  	|
