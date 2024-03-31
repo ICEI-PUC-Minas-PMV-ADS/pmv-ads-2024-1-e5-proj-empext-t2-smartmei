@@ -26,9 +26,9 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 
 # Evidências de Testes de Software
 
-| ** ID do Caso de Teste** 	| **Vídeo**	|
+| **ID do Caso de Teste** 	| **Vídeo**	|
 |:---:	|:---:	|
 |	06 	|  |
-|	06.01 	|  |
-|	06.02 	|  |
+|	06.1 	|  |
+|	06.2 	|  |
 |  	|  	|
