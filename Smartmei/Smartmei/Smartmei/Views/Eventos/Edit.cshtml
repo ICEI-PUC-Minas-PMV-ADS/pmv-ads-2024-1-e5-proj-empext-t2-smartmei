@@ -4,10 +4,37 @@
     ViewData["Title"] = "Editar";
 }
 
-<h1>Editar dados do Evento</h1>
+<style>
 
-<h4></h4>
-<hr />
+    body {
+        background-color: #E7F9F9;
+    }
+
+    .botoes {
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        padding: 5px 0;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .espacamento {
+        padding: 10px 0;
+    }
+
+</style>
+
+<div class="espacamento">
+    <h2>Editar evento</h2>
+</div>
+<hr/>
+
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -44,9 +71,11 @@
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-                <a class="btn btn-info" asp-action="Index">Voltar</a>
-            </div>
+                <div class="botoes">
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
+                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+                </div>
+                </div>
         </form>
     </div>
 </div>
