@@ -4,54 +4,50 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Remover Evento</h1>
+<style>
 
-<h3></h3>
-<div>
-    <h4>Tem certeza que deseja remover este evento?</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Projeto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Projeto.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataEventoInicio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataEventoInicio)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataEventoFim)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataEventoFim)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorDiaria)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorDiaria)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cidade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-    </dl>
+    body {
+        background-color: #E7F9F9;
+        margin: 0;
+        padding: 0;
+    }
+
+   
+    .titulo {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .espacamento {
+        padding-bottom: 20px;
+    }
+
     
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index" class="btn btn-info">Voltar</a>
-    </form>
+    .bg {
+        background-color: white;
+        padding: 15px;
+        border-color: white;
+        border-radius: 10px;
+    }
+
+</style>
+
+<div class="titulo">
+    <div class="espacamento">
+        <h1>Excluir evento</h1>
+    </div>
+</div>
+<hr/>
+
+<div class="bg">
+    <h3>Você confirma a exclusão do evento <strong>@Html.DisplayFor(model => model.Projeto.Nome)</strong>?</h3>
+    <br/>
+
+     <div>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Sim" class="btn btn-danger" />
+            <a class="btn btn-dark" asp-action="Index">Não</a>
+        </form>
+    </div>
 </div>

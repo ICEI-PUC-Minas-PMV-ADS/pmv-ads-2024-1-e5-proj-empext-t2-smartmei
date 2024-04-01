@@ -4,10 +4,37 @@
     ViewData["Title"] = "Create";
 }
 
-<h1></h1>
+<style>
 
-<h4>Adicionar Novo Cliente</h4>
-<hr />
+    body {
+        background-color: #E7F9F9;
+    }
+
+    .botoes {
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        padding: 5px 0;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .espacamento {
+        padding: 10px 0;
+    }
+
+</style>
+
+<div class="espacamento">
+    <h2>Adicionar novo cliente</h2>
+</div>
+<hr/>
+
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -53,12 +80,14 @@
                 <span asp-validation-for="Observacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Adicionar" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-info">Voltar</a>
+                <div class="botoes">
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
+                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+                </div>
             </div>
         </form>
     </div>
-
+</div>
 
 
    
