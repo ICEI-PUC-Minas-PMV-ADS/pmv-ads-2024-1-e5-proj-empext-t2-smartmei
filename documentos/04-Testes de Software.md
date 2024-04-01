@@ -24,6 +24,32 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 |Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
 |  	|  	|
 
+
+
+
+| **Caso de Teste** 	| **CT-09 - Gerenciamento de Eventos - Cadastrar e visualizar**	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-009 - A aplicação deve permitir ao usuário gerenciar seus eventos. |
+| Objetivo do Teste 	| Verificar se o usuário consegue cadastrar e visualizar os eventos registrados na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Eventos” no menu superior <br> - Clicar no botão “Adicionar” <br> - Preencher os campos obrigatórios <br> - Clicar em "Salvar" |
+|Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados contendo o novo registro. |
+|  	|  	|
+| **Caso de Teste** 	| **CT-09.1 - Gerenciamento de Eventos - Editar**	|
+|	Requisito Associado 	| RF-009 - A aplicação deve permitir ao usuário gerenciar seus eventos. |
+| Objetivo do Teste 	| Verificar se o usuário consegue editar seus eventos registrados na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Eventos” no menu superior <br> - Clicar no botão “Editar” <br> - Editar os campos desejados <br> - Clicar em "Salvar" |
+|Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados contendo o registro editado. |
+|  	|  	|
+| **Caso de Teste** 	| **CT-09.2 - Gerenciamento de Eventos - Excluir**	|
+|	Requisito Associado 	| RF-009 - A aplicação deve permitir ao usuário gerenciar seus eventos. |
+| Objetivo do Teste 	| Verificar se o usuário consegue excluir os eventos registrados na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Eventos” no menu superior <br> - Clicar no botão “Excluir” <br> - Confirmar a exclusão do registro do evento, clicando no botão "Sim" <br> |
+|Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
+|  	|  	|
+
+
+
+
 # Evidências de Testes de Software
 
 **Caso de Teste 06**
