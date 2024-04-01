@@ -42,27 +42,27 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="PassagemAerea" class="control-label"></label>
-                <input asp-for="PassagemAerea" class="form-control" />
+                <input value="@Model.PassagemAerea" id="PassagemAerea" name="PassagemAerea" required class="form-control" />
                 <span asp-validation-for="PassagemAerea" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Hospedagem" class="control-label"></label>
-                <input asp-for="Hospedagem" class="form-control" />
+                 <input value="@Model.Hospedagem" id="Hospedagem" name="Hospedagem" required class="form-control" />
                 <span asp-validation-for="Hospedagem" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Deslocamento" class="control-label"></label>
-                <input asp-for="Deslocamento" class="form-control" />
+                 <input value="@Model.Deslocamento" id="Deslocamento" name="Deslocamento" required class="form-control" />
                 <span asp-validation-for="Deslocamento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Alimentacao" class="control-label"></label>
-                <input asp-for="Alimentacao" class="form-control" />
+                 <input value="@Model.Alimentacao" id="Alimentacao" name="Alimentacao" required class="form-control" />
                 <span asp-validation-for="Alimentacao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CustoTotal" class="control-label"></label>
-                <input asp-for="CustoTotal" class="form-control" />
+                <input value="@Model.CustoTotal" id="CustoTotal" name="CustoTotal" required class="form-control" />
                 <span asp-validation-for="CustoTotal" class="text-danger"></span>
             </div>
             <div class="form-group">
