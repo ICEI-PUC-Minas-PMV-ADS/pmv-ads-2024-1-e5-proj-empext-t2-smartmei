@@ -105,5 +105,18 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 **Caso de Teste 08**
 <br>
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/d1f3117e-a57d-4f3c-b950-d5559e98317f
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/541c802a-d498-4532-b21c-9d4abfc44543
+
+
+**Caso de Teste 08.1**
+<br>
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/58f1007a-444a-45f3-b9a7-298db7179e21
+
+
+**Caso de Teste 08.2**
+<br>
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/7658c913-884b-4e0f-bd13-ff45fce70e96
+
 
