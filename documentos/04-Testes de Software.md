@@ -102,3 +102,8 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/2235c490-3560-4d48-96b9-8b5089a2a9c1
 
 
+**Caso de Teste 08**
+<br>
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/d1f3117e-a57d-4f3c-b950-d5559e98317f
+
