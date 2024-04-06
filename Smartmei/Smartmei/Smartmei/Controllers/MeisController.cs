@@ -86,8 +86,8 @@ namespace Smartmei.Controllers
             var existingUser = await _context.Meis.AnyAsync();
             if (existingUser)
             {
-                
-                ViewBag.AlertMessage = "Cadastro bloqueado: Apenas um cadastro permitido.";
+                // Definir uma mensagem de alerta
+                ViewBag.AlertMessage = "Cadastro bloqueado: Apenas um cadastro  permitido.";
 
                 return RedirectToAction("Login");
             }
@@ -115,10 +115,19 @@ namespace Smartmei.Controllers
             return View(mei);
         }
 
-        public IActionResult CadastroBloqueado()
-        {
-            return View();
-        }
+
+    public async Task<IActionResult> Edit(int? id)
+    {
+        if (id == null)
+            return NotFound();
+
+        var dados = await _context.Meis.FindAsync(id);
+
+        if (id == null)
+            return NotFound();
+
+        return View(dados);
+    }
 
         [HttpPost]
         public async Task<IActionResult> Edit(int id, Mei mei)
@@ -134,8 +143,9 @@ namespace Smartmei.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View();
+            return View(mei);
         }
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
