@@ -80,13 +80,31 @@ namespace Smartmei.Controllers
         }
 
         // GET: Meis/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            // Verificar se já existe algum usuário cadastrado
+            var existingUser = await _context.Meis.AnyAsync();
+            if (existingUser)
+            {
+                
+                ViewBag.AlertMessage = "Cadastro bloqueado: Apenas um cadastro permitido.";
+
+                return RedirectToAction("Login");
+            }
+
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(Mei mei)
         {
+            // Verificar se já existe algum usuário cadastrado
+            var existingUser = await _context.Meis.AnyAsync();
+            if (existingUser)
+            {
+                ViewBag.AlertMessage = "Cadastro bloqueado: Apenas um cadastro permitido.";
+            }
+
             if (ModelState.IsValid)
             {
                 mei.Senha = BCrypt.Net.BCrypt.HashPassword(mei.Senha); //aqui estou criptografando a senha
@@ -96,18 +114,12 @@ namespace Smartmei.Controllers
             }
             return View(mei);
         }
-        public async Task<IActionResult> Edit(int? id)
+
+        public IActionResult CadastroBloqueado()
         {
-            if (id == null)
-                return NotFound();
-
-            var dados = await _context.Meis.FindAsync(id);
-
-            if (id == null)
-                return NotFound();
-
-            return View(dados);
+            return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Edit(int id, Mei mei)
         {

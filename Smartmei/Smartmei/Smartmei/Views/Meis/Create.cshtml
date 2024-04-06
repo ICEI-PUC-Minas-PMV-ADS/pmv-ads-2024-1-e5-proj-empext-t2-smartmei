@@ -96,6 +96,14 @@
         </div>
 
     </div>
+
+    @if (!string.IsNullOrEmpty(ViewBag.AlertMessage))
+    {
+    <script>
+            alert("@ViewBag.AlertMessage");
+    </script>
+    }
+
 </body>
 </html>
 
