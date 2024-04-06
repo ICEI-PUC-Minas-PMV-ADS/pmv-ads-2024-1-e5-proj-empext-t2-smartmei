@@ -11,10 +11,10 @@ namespace Smartmei.Models
         [Key]
         public int Id { get; set; }
 
-        [DisplayName("Nome completo")]
-        [Required(ErrorMessage = "Obrigatório informar o nome do cliente")]
+        [DisplayName("Nome completo/razão social")]
+        [Required(ErrorMessage = "Obrigatório preencher o campo")]
         public string Nome { get; set; }
-
+                     
         [Required(ErrorMessage = "Por favor, informe o CNPJ do cliente/empresa.")]
         public string CNPJ { get; set; }
 
