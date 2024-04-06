@@ -4,8 +4,37 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 
 **Ferramenta utilizada no teste**: Microsoft Clipchamp para gravação da tela de teste.
 
-| **Caso de Teste** 	| **CT-06 - Gerenciamento de projetos - Cadastrar e visualizar**	|
+| **Caso de Teste** 	| **CT-01 - Cadastro de usuários** 	|
 |:---:	|:---:	|
+|	Requisito Associado 	| RF-001 - A aplicação deve permitir ao usuário cadastrar uma conta. |
+| Objetivo do Teste 	| Verificar se o usuário consegue se cadastrar na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Clicar em “Cadastro” no menu <br> - Preencher os campos obrigatórios <br> - Clicar em "Cadastrar" |
+|Critério de Êxito | - O cadastro foi realizado com sucesso. |
+| **Caso de Teste** 	| **CT-02 - Efetuar login** 	|
+|	Requisito Associado 	| RF-002 - A aplicação deve permitir ao usuário cadastrado efetuar login em sua conta. |
+| Objetivo do Teste 	| Verificar se o usuário consegue realizar o login. |
+| Passos 	| - Acessar a aplicação web <br> - Clicar em “Login” no menu <br> - Preencher os campos obrigatórios <br> - Clicar em "Entrar" |
+|Critério de Êxito | - O login foi realizado com sucesso. |
+|  	|  	|
+| **Caso de Teste** 	| **CT-03 - Efetuar logout** 	|
+|	Requisito Associado 	| RF-003 - A aplicação deve permitir ao usuário cadastrado fazer logout de sua conta. |
+| Objetivo do Teste 	| Verificar se o usuário consegue realizar o logout. |
+| Passos 	| - Acessar a aplicação web <br> - Clicar em “Login” no menu <br> - Realizar o login <br> - Clicar em "Sair" |
+|Critério de Êxito | - O logout foi realizado com sucesso. |
+|  	|  	|
+| **Caso de Teste** 	| **CT-04 - Gerenciamento de conta** 	|
+|	Requisito Associado 	| RF-004 - A aplicação deve permitir ao usuário gerenciar a sua conta. |
+| Objetivo do Teste 	| Verificar se o usuário consegue gerenciar seus dados. |
+| Passos 	| - Acessar a aplicação web <br> - Clicar em “Login” no menu <br> - Realizar o login <br> - Acessar o "Perfil" no menu <br> - Clicar em "Editar" <br> - Editar os campos desejados <br> - Clicar em Salvar. |
+|Critério de Êxito | - O usuário conseguiu alterar seus dados com sucesso. |
+|  	|  	|
+| **Caso de Teste** 	| **CT-05 -  Redefinir senha** 	|
+|	Requisito Associado 	| RF-005 - A aplicação deve permitir ao usuário cadastrado redefinir sua senha. |
+| Objetivo do Teste 	| Verificar se o usuário consegue redefinir sua senha. |
+| Passos 	| - Acessar a aplicação web <br> - Clicar em “Login” no menu <br> - Realizar o login <br> - Acessar o "Perfil" no menu <br> - Clicar em "Editar" <br> - Redefinir sua senha <br> - Clicar em Salvar. |
+|Critério de Êxito | - O usuário conseguiu alterar sua senha. |
+|  	|  	|
+| **Caso de Teste** 	| **CT-06 - Gerenciamento de projetos - Cadastrar e visualizar**	|
 |	Requisito Associado 	| RF-006 - A aplicação deve permitir ao usuário gerenciar seus projetos. |
 | Objetivo do Teste 	| Verificar se o usuário consegue cadastrar e visualizar projetos registrados na aplicação. |
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Projetos” no menu superior <br> - Clicar no botão “Adicionar” <br> - Preencher os campos obrigatórios <br> - Clicar em "Salvar" |
@@ -21,6 +50,24 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 |	Requisito Associado 	| RF-006 - A aplicação deve permitir ao usuário gerenciar seus projetos. |
 | Objetivo do Teste 	| Verificar se o usuário consegue excluir projetos registrados na aplicação. |
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Projetos” no menu superior <br> - Clicar no botão “Excluir” <br> - Confirmar a exclusão do registro do projeto, clicando no botão "Sim" <br> |
+|Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
+|  	|  	|
+| **Caso de Teste** 	| **CT-07 - Administrar clientes - Cadastrar e visualizar**	|
+|	Requisito Associado 	| RF-007 - A aplicação deve permitir ao usuário administrar seus clientes. |
+| Objetivo do Teste 	| Verificar se o usuário consegue cadastrar e visualizar clientes registrados na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Clientes” no menu superior <br> - Clicar no botão “Adicionar” <br> - Preencher os campos obrigatórios <br> - Clicar em "Salvar" |
+|Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados contendo o novo registro. |
+|  	|  	|
+| **Caso de Teste** 	| **CT-07.1 - Administrar clientes - Editar**	|
+|	Requisito Associado 	| RF-006 - A aplicação deve permitir ao usuário administrar seus clientes. |
+| Objetivo do Teste 	| Verificar se o usuário consegue editar seus clientes registrados na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Clientes” no menu superior <br> - Clicar no botão “Editar” <br> - Editar os campos desejados <br> - Clicar em "Salvar" |
+|Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados contendo o registro editado. |
+|  	|  	|
+| **Caso de Teste** 	| **CT-07.2 - Administrar clientes - Excluir**	|
+|	Requisito Associado 	| RF-006 - A aplicação deve permitir ao usuário administrar seus clientes. |
+| Objetivo do Teste 	| Verificar se o usuário consegue excluir seus clientes registrados na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Clientes” no menu superior <br> - Clicar no botão “Excluir” <br> - Confirmar a exclusão do registro dos dados do cliente, clicando no botão "Sim" <br> |
 |Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
 |  	|  	|
 | **Caso de Teste** 	| **CT-08 - Gerenciamento de custos - Cadastrar e visualizar**	|
@@ -41,9 +88,7 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Custos” no menu superior <br> - Clicar no botão “Excluir” <br> - Confirmar a exclusão do registro do custo, clicando no botão "Sim" <br> |
 |Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
 |  	|  	|
-
 | **Caso de Teste** 	| **CT-09 - Gerenciamento de Eventos - Cadastrar e visualizar**	|
-|:---:	|:---:	|
 |	Requisito Associado 	| RF-009 - A aplicação deve permitir ao usuário gerenciar seus eventos. |
 | Objetivo do Teste 	| Verificar se o usuário consegue cadastrar e visualizar os eventos registrados na aplicação. |
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Eventos” no menu superior <br> - Clicar no botão “Adicionar” <br> - Preencher os campos obrigatórios <br> - Clicar em "Salvar" |
