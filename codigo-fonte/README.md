@@ -2,7 +2,7 @@
 
 ## Instalação do Site
 
-O código-fonte da solução está disponível na branch Main deste repositório
+O código-fonte da solução está disponível na branch Main deste repositório.
 
 ## Histórico de versões
 
