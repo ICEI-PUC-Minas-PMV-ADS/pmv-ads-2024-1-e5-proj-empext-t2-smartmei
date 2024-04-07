@@ -10,6 +10,7 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 | Objetivo do Teste 	| Verificar se o usuário consegue se cadastrar na aplicação. |
 | Passos 	| - Acessar a aplicação web <br> - Clicar em “Cadastro” no menu <br> - Preencher os campos obrigatórios <br> - Clicar em "Cadastrar" |
 |Critério de Êxito | - O cadastro foi realizado com sucesso. |
+|  	|  	|
 | **Caso de Teste** 	| **CT-02 - Efetuar login** 	|
 |	Requisito Associado 	| RF-002 - A aplicação deve permitir ao usuário cadastrado efetuar login em sua conta. |
 | Objetivo do Teste 	| Verificar se o usuário consegue realizar o login. |
@@ -132,7 +133,7 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 **Caso de Teste 01**
 <br>
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/40fcac41-5e3c-4c8a-9445-894b36366c07
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/b9f7033d-ad5b-483a-a97d-2dda6597bb5a
 
 **Caso de Teste 02**
 <br>
@@ -147,12 +148,12 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 **Caso de Teste 04**
 <br>
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/69c22664-d424-4f85-b551-1a0784272c5e
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/90547433-eeed-4fd3-9e6d-436d2c2e29eb
 
 **Caso de Teste 05**
 <br>
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/9fa5da79-3e25-455b-ab9a-4703bca07710
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/55ecbebf-cb82-447a-8870-121c357d2476
 
 **Caso de Teste 06**
 <br>
