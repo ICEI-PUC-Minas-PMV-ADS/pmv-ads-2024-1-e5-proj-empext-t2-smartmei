@@ -23,7 +23,7 @@ Este projeto nasceu da necessidade de preencher uma lacuna existente no mercado 
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+O código-fonte da solução pode ser acessado <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/tree/main/Smartmei/Smartmei/Smartmei">aqui</a>.
 
 # Documentação
 
