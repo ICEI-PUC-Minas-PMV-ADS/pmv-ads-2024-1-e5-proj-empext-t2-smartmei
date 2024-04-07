@@ -1,0 +1,116 @@
+﻿@model Smartmei.Models.Projeto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+
+    body {
+        background-color: #E7F9F9;
+    }
+
+    .botoes {
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        padding: 5px 0;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .espacamento {
+        padding: 10px 0;
+    }
+
+</style>
+
+<div class="espacamento">
+    <h2>Adicionar novo projeto</h2>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label"></label>
+                <select asp-for="ClienteId" class="form-select" asp-items="ViewBag.ClienteId"></select>
+                <span asp-validation-for="ClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataInicioProjeto" class="control-label"></label>
+                <input asp-for="DataInicioProjeto" type="date" class="form-control" />
+                <span asp-validation-for="DataInicioProjeto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataFimProjeto" class="control-label"></label>
+                <input asp-for="DataFimProjeto" type="date" class="form-control" />
+                <span asp-validation-for="DataFimProjeto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantidadeTelas" class="control-label"></label>
+                <input asp-for="QuantidadeTelas" class="form-control" />
+                <span asp-validation-for="QuantidadeTelas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorTela" class="control-label"></label>
+                <input id="ValorTela" name="ValorTela" type="text" required data-val-required="É necessário informar o valor (R$) da tela." class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorTotalProjeto" class="control-label"></label>
+                <input id="ValorTotalProjeto" name="ValorTotalProjeto" type="text" required data-val-required="É necessário informar o valor (R$) total do projeto." class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PrazoPagamento" class="control-label"></label>
+                <input asp-for="PrazoPagamento" class="form-control" />
+                <span asp-validation-for="PrazoPagamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataEmissaoNF" class="control-label"></label>
+                <input asp-for="DataEmissaoNF" type="date" class="form-control" />
+                <span asp-validation-for="DataEmissaoNF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPagamentoNF" class="control-label"></label>
+                <input asp-for="DataPagamentoNF" type="date" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Acompanhamento" class="control-label"></label>
+                <select asp-for="Acompanhamento" class="form-select" asp-items="Html.GetEnumSelectList<Acompanhamento>()"></select>
+                <span asp-validation-for="Acompanhamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkDrive" class="control-label"></label>
+                <input asp-for="LinkDrive" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Observacao" class="control-label"></label>
+                <input asp-for="Observacao" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="MeiId" class="control-label"></label>
+                <select asp-for="MeiId" class="form-select" asp-items="ViewBag.MeiId"></select>
+            </div>
+            <div class="form-group">
+                <div class="botoes">
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
+                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

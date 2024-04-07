@@ -1,0 +1,85 @@
+﻿@model SmartMei.Models.Custo
+
+@{
+    ViewData["Title"] = "Create";
+}
+<style>
+    main {
+        text-align: center;
+    }
+
+    body {
+        background-color: #E7F9F9;
+    }
+
+    .botoes {
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        padding: 5px 0;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .espacamento {
+        padding: 10px 0;
+    }
+
+</style>
+
+
+<h4>Adicionar novos custos</h4>
+<hr />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PassagemAerea" class="control-label"></label>
+                <input id="PassagemAerea" name="PassagemAerea" required class="form-control" />
+                <span asp-validation-for="PassagemAerea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hospedagem" class="control-label"></label>
+                    <input id="Hospedagem" name="Hospedagem" required class="form-control" />
+                <span asp-validation-for="Hospedagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deslocamento" class="control-label"></label>
+                <input id="Deslocamento" name="Deslocamento" required class="form-control" />
+                <span asp-validation-for="Deslocamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alimentacao" class="control-label"></label>
+                <input id="Alimentacao" name="Alimentacao" required class="form-control" />
+                <span asp-validation-for="Alimentacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustoTotal" class="control-label"></label>
+                <input id="CustoTotal" name="CustoTotal" required class="form-control" />
+                <span asp-validation-for="CustoTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjetoId" class="control-label"></label>
+                <select asp-for="ProjetoId" class ="form-control" asp-items="ViewBag.ProjetoId"></select>
+            </div>
+            <div class="form-group">
+                <div class="botoes">
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
+                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

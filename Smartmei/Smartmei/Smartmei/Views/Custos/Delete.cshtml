@@ -1,0 +1,48 @@
+﻿@model SmartMei.Models.Custo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<style>
+
+    body {
+        background-color: #E7F9F9;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* TÍTULO */
+
+    .titulo {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .espacamento {
+        padding-bottom: 20px;
+    }
+
+    /* FUNDO */
+
+    .bg {
+        background-color: white;
+        padding: 15px;
+        border-color: white;
+        border-radius: 10px;
+    }
+
+</style>
+
+
+<div class="bg">
+    <h3>Você confirma a exclusão dos custos referentes ao projeto <strong>@Html.DisplayFor(model => model.Projeto.Nome)</strong>?</h3>
+    <br />
+
+    <div>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Sim" class="btn btn-danger" />
+            <a class="btn btn-dark" asp-action="Index">Não</a>
+        </form>
+    </div>
+</div>

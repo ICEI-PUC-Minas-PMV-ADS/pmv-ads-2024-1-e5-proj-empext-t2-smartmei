@@ -1,0 +1,175 @@
+﻿@model IEnumerable<Smartmei.Models.Projeto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+
+    body {
+        background-color: #E7F9F9;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* TABELA */
+
+    div.table-container {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #09547F;
+    }
+
+    dl {
+        padding: 15px 0 0 10px;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #F6F6F6;
+    }
+
+    /* BOTÃO */
+
+    .btn-container {
+        margin-top: 20px;
+        text-align: right;
+        margin-bottom: 30px;
+    }
+
+        .btn-container a {
+            margin-left: 10px;
+        }
+
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .btn-color:hover {
+            background-color: #FA983C;
+            color: #09547F;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-delete {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #09547F;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .action-btns {
+        white-space: nowrap;
+    }
+
+    /* TÍTULO */
+
+
+    .titulo {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .espacamento {
+        padding-bottom: 20px;
+    }
+
+        .espacamento h1 {
+            font-weight: 600;
+        }
+
+</style>
+
+<div class="titulo">
+    <div class="espacamento">
+        <h1>Projetos</h1>
+    </div>
+    <p><a class="btn btn-color" asp-action="Create">Adicionar</a></p>
+</div>
+<hr />
+
+<div class="btn-container">
+
+    <div class="table-container">
+        <div class="table-container">
+            <table class="table mx-auto align-middle table-hover">
+                <tbody class="table-group-divider">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <dl class="row list-unstyled">
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.Nome)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.Nome)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.Cliente)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.Cliente.Nome)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.DataInicioProjeto)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.DataInicioProjeto)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.DataFimProjeto)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.DataFimProjeto)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        @Html.DisplayNameFor(model => model.ValorTotalProjeto)
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(modelItem => item.ValorTotalProjeto)
+                                    </dd>
+                                </dl>
+                            </td>
+
+                            <td class="action-btns">
+                                <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                                <a class="btn-color" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                                <a class="btn-color-delete" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

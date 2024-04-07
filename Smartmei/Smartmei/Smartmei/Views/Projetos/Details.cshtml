@@ -1,0 +1,121 @@
+﻿@model Smartmei.Models.Projeto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+
+    body {
+        background-color: #E7F9F9;
+    }
+
+    .botoes {
+        margin-bottom: 35px;
+    }
+
+    .espacamento {
+        padding: 10px 0;
+    }
+
+    .bg {
+        background-color: white;
+        padding: 15px;
+        border-color: white;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+</style>
+
+<div class="espacamento">
+    <h2>Detalhes do projeto <strong>@Html.DisplayFor(model => model.Nome)</strong>:</h2>
+</div>
+<hr />
+
+<div class="bg">
+    <dl class="row">
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.DataInicioProjeto)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DataInicioProjeto)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.DataFimProjeto)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DataFimProjeto)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.QuantidadeTelas)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.QuantidadeTelas)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.ValorTela)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ValorTela)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.ValorTotalProjeto)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ValorTotalProjeto)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.PrazoPagamento)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.PrazoPagamento)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.DataEmissaoNF)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DataEmissaoNF)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.DataPagamentoNF)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DataPagamentoNF)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Acompanhamento)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Acompanhamento)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.LinkDrive)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.LinkDrive)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Observacao)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Observacao)
+        </dd>
+    </dl>
+</div>
+<div class="botoes">
+    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+</div>
