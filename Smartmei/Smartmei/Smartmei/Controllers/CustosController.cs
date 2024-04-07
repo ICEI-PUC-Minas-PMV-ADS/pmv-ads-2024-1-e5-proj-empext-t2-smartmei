@@ -50,8 +50,6 @@ namespace SmartMei.Controllers
         }
 
         // POST: Custos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,PassagemAerea,Hospedagem,Deslocamento,Alimentacao,CustoTotal,ProjetoId")] Custo custo)
@@ -84,8 +82,6 @@ namespace SmartMei.Controllers
         }
 
         // POST: Custos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,PassagemAerea,Hospedagem,Deslocamento,Alimentacao,CustoTotal,ProjetoId")] Custo custo)
