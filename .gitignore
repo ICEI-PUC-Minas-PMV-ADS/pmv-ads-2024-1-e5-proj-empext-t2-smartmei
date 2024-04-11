@@ -362,3 +362,8 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Smartmei/Smartmei/Smartmei/Views/Scripts
+/Smartmei/Smartmei/Smartmei/Views/Stylesheet.css
+/Smartmei/Smartmei/Smartmei/Views/Style.css
+/Smartmei/Smartmei/Smartmei/Views/Style
+/Smartmei/Smartmei/Smartmei/Views/Styles.cs
+/Smartmei/Smartmei/Smartmei/Views/Faturamentos/Faturamento.css
