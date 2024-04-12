@@ -176,6 +176,8 @@
                                 <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
                                 <a class="btn-color" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
                                 <a class="btn-color" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                                <a asp-action="GerarPDF" class="btn btn-primary">Gerar Relatório em PDF</a>
+
                             </td>
                         </tr>
                     }

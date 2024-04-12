@@ -1,6 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Smartmei.Models;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using System.IO;
+using System.Threading.Tasks;
+
+
 
 namespace Smartmei.Controllers
 {
@@ -126,7 +133,45 @@ namespace Smartmei.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> GerarPDF()
+        {
+            // Busca todos os clientes no banco de dados
+            var clientes = await _context.Clientes.ToListAsync();
 
+            // Cria um stream de memória para armazenar o PDF
+            MemoryStream memoryStream = new MemoryStream();
+            PdfWriter writer = new PdfWriter(memoryStream);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+
+            // Adiciona um título ao documento
+            Paragraph title = new Paragraph("Relatório de Clientes").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+            document.Add(title);
+
+            // Adiciona os dados dos clientes ao PDF
+            foreach (var cliente in clientes)
+            {
+                // Adiciona os detalhes de cada cliente
+                document.Add(new Paragraph($"Nome: {cliente.Nome}"));
+                document.Add(new Paragraph($"CNPJ: {cliente.CNPJ}"));
+                document.Add(new Paragraph($"Telefone: {cliente.Telefone}"));
+                document.Add(new Paragraph($"Email: {cliente.Email}"));
+                document.Add(new Paragraph($"Cidade: {cliente.Cidade}"));
+                document.Add(new Paragraph($"Estado: {cliente.Estado}"));
+                document.Add(new Paragraph($"Product Owner: {cliente.ProductOwner}"));
+                document.Add(new Paragraph($"Observação: {cliente.Observacao}"));
+
+                // Adiciona uma linha em branco entre os clientes
+                document.Add(new Paragraph("\n"));
+            }
+
+            // Fecha o documento
+            document.Close();
+            writer.Close();
+
+            // Retorna o PDF gerado como um arquivo para download
+            return File(memoryStream.ToArray(), "application/pdf", "RelatorioClientes.pdf");
+        }
     }
                 
      }
