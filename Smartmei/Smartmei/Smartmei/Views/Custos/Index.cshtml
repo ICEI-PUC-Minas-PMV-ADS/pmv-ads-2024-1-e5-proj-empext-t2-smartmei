@@ -6,75 +6,86 @@
 
 <style>
 
+
     body {
-        background-color: #E7F9F9;
-        margin: 0;
-        padding: 0;
+        background-image: url('/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+        background-position: center; /* Centraliza a imagem */
     }
 
-    /* TABELA */
-
-    div.table-container {
-        max-width: 100%;
-        overflow-x: auto;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
-    table {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        border-collapse: collapse;
-        border-radius: 15px;
-        overflow: hidden;
-        background-color: white;
+    .custo-card {
+        width: calc(50% - 20px); /* Metade da largura da tela, com espaçamento entre os cards */
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 2px solid #09547F;
+    .custo-card-header {
+        padding: 10px;
+        /*border-bottom: 1px solid #ccc;*/
+        background-color: #d9dadb;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 
-    dl {
-        padding: 15px 0 0 10px;
+    .custo-card-body {
+        padding: 10px;
     }
 
-    tbody tr:nth-child(even) {
-        background-color: #F6F6F6;
+        .custo-card-body dl {
+            margin: 0;
+        }
+
+    .action-btns {
+        padding: 15px;
+        text-align: right;
     }
 
     /* BOTÃO */
-
-    .btn-container {
-        margin-top: 20px;
-        text-align: right;
-        margin-bottom: 30px;
-    }
-
-        .btn-container a {
-            margin-left: 10px;
-        }
 
     .btn-color {
         background-color: #09547F;
         color: #fff;
         border-color: #09547F;
-        padding: 10px;
+        padding: 5px 10px;
         text-decoration: none;
         border-radius: 5px;
+        margin-left: 5px;
     }
 
         .btn-color:hover {
-            background-color: #FA983C;
-            color: #09547F;
+            background-color: #0C71AB;
+            color: #fff;
             border-color: #E7F9F9;
             text-decoration: none;
         }
 
-    .action-btns {
-        white-space: nowrap;
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+        cursor: pointer;
     }
 
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+            cursor: pointer;
+        }
     /* TÍTULO */
 
 
@@ -91,7 +102,62 @@
             font-weight: 600;
         }
 
+    /* Modal */
+    .modal {
+        display: none; /* Oculta o modal por padrão */
+        position: fixed; /* Posição fixa na tela */
+        z-index: 1; /* Faz com que o modal fique sobre o conteúdo */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Adiciona scroll quando necessário */
+        background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* Centraliza verticalmente */
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 40%; /* Largura do modal */
+    }
+
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #9d0000;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
 </style>
+
 
 <div class="titulo">
     <div class="espacamento">
@@ -99,65 +165,59 @@
     </div>
     <p><a class="btn btn-color" asp-action="Create">Adicionar</a></p>
 </div>
-<hr />
-<div class="btn-container">
 
-    <div class="table-container">
-        <div class="table-container">
-            <table class="table mx-auto align-middle table-hover">
-                <tbody class="table-group-divider">
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                <dl class="row list-unstyled">
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.PassagemAerea)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.PassagemAerea)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.Hospedagem)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.Hospedagem)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.Deslocamento)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.Deslocamento)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.Alimentacao)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.Alimentacao)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.CustoTotal)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.CustoTotal)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.Projeto)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.Projeto.Nome)
-                                    </dd>
-                                </dl>
-                            </td>
-                            <td class="action-btns">
-                                <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                                <a class="btn-color" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+<div class="container">
+     @foreach (var item in Model)
+       {
+         <div class="custo-card">
+                <div class="custo-card-header">
+                    <h3>Projeto: @item.Projeto.Nome</h3>
+                </div>
+                <div class="custo-card-body">
+                    <dl class="row list-unstyled">
+                        <dt class="col-sm-4">Passagem Aérea</dt>
+                        <dd class="col-sm-8">@item.PassagemAerea</dd>
+                        <dt class="col-sm-4">Hospedagem</dt>
+                        <dd class="col-sm-8">@item.Hospedagem</dd>
+                        <dt class="col-sm-4">Deslocamento</dt>
+                        <dd class="col-sm-8">@item.Deslocamento</dd>
+                        <dt class="col-sm-4">Alimentação</dt>
+                        <dd class="col-sm-8">@item.Alimentacao</dd>
+                        <dt class="col-sm-4">Custo Total</dt>
+                        <dd class="col-sm-8">@item.CustoTotal</dd>
+                        <dt class="col-sm-4">Projeto</dt>
+                        <dd class="col-sm-8">@item.Projeto.Nome</dd>
+                    </dl>
+                    <div class="action-btns">
+                        <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn-color-delete" onclick="openModal('@item.Id', '@item.Projeto.Nome')">Excluir</a>
+                    </div>
+                </div>
+            </div>
+            }
+        <div id="confirmDeleteModal" class="modal">
+            <div class="modal-content">
+                <h4 id="projetoNome"></h4>
+                <form id="deleteForm" asp-action="Delete" method="post">
+                    <input type="hidden" id="projetoId" name="Id" />
+                    <button type="submit" class="btn-color-delete">Sim</button>
+                    <button type="button" class="btn-color" onclick="closeModal()">Não</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+
+    <script>
+        function openModal(id, nome) {
+            document.getElementById('confirmDeleteModal').style.display = 'block';
+            document.getElementById('projetoId').value = id;
+            document.getElementById('projetoNome').innerText = 'Você confirma a exclusão do custos referentes ao projeto ' + nome + '?';
+        }
+
+        function closeModal() {
+            document.getElementById('confirmDeleteModal').style.display = 'none';
+        }
+    </script>
+
+   
 
