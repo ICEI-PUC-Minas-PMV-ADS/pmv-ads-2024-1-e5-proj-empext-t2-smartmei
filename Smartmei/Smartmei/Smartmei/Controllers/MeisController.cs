@@ -63,7 +63,7 @@ namespace Smartmei.Controllers
 
                 await HttpContext.SignInAsync(principal, props);
 
-                return Redirect("/");
+                return Redirect("/Home/Index");
             }
             else
             {
@@ -110,7 +110,7 @@ namespace Smartmei.Controllers
                 mei.Senha = BCrypt.Net.BCrypt.HashPassword(mei.Senha); //aqui estou criptografando a senha
                 _context.Meis.Add(mei);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(mei);
         }
@@ -140,7 +140,7 @@ namespace Smartmei.Controllers
                 mei.Senha = BCrypt.Net.BCrypt.HashPassword(mei.Senha);
                 _context.Meis.Update(mei);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit");
             }
 
             return View(mei);
@@ -165,7 +165,7 @@ namespace Smartmei.Controllers
 
             var dados = await _context.Meis.FindAsync(id);
 
-            if (id == null)
+            if (dados == null)
                 return NotFound();
 
             return View(dados);
@@ -178,13 +178,16 @@ namespace Smartmei.Controllers
 
             var dados = await _context.Meis.FindAsync(id);
 
-            if (id == null)
+            if (dados == null)
                 return NotFound();
 
             _context.Meis.Remove(dados);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+            // Realiza o logout do usuário
+            await HttpContext.SignOutAsync();
+
+            return RedirectToAction("Login");
         }
     }
 }
