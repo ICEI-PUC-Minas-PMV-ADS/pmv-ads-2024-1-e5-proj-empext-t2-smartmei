@@ -4,43 +4,187 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<style>
+    body {
+        background-image: url('/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 
-<h4>Mei</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+   
+
+    /* Estilo para o formulário */
+    .form-container {
+        max-width: 600px;
+        align-items: center;
+
+
+    }
+
+    /* Estilo para os campos de entrada */
+    .form-group {
+        width: 100%;
+        max-width: 300px; /* Defina a largura máxima conforme necessário */
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    /* Estilo para os botões */
+    .btn-container {
+        width: 100%;
+        max-width: 300px; /* Defina a largura máxima conforme necessário */
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .btn-salvar {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    /* Modal */
+    .modal {
+        display: none; /* Oculta o modal por padrão */
+        position: fixed; /* Posição fixa na tela */
+        z-index: 1; /* Faz com que o modal fique sobre o conteúdo */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Adiciona scroll quando necessário */
+        background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* Centraliza verticalmente */
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 40%; /* Largura do modal */
+    }
+
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #9d0000;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+</style>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-8 form-container">
+            <h1>Editar Cadastro</h1>
+           
+
+            <form asp-action="Edit" id="editForm">
+                <!-- Campo Nome -->
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label"></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <!-- Campo Email -->
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <!-- Campo Senha -->
+                <div class="form-group">
+                    <label asp-for="Senha" class="control-label"></label>
+                    <input asp-for="Senha" class="form-control" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>
+
+                <!-- Botões -->
+                <div class="btn-container">
+                    <input type="submit" value="Salvar" class="btn btn-primary btn-salvar" />
+                    <button class="btn btn-danger" onclick="openModal('@Model.Id', '@Model.Nome')">Excluir conta</button>
+
+                </div>
+            </form>
+            <!-- Div para exibir o alerta -->
+            <div id="alert" class="alert alert-success" style="display: none;">
+                Alteração salva!
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<!-- Modal de confirmação de exclusão -->
+<div id="confirmDeleteModal" class="modal">
+    <div class="modal-content">
+        <h4 id="contaNome"></h4>
+        <form id="deleteForm" asp-action="Delete" method="post">
+            <input type="hidden" id="contaId" name="id" value="@Model.Id" />
+            <button type="submit" class="btn-color-delete">Sim</button>
+            <button type="button" class="btn-color" onclick="closeModal()">Não</button>
+        </form>
+    </div>
 </div>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+        function openModal(id, nome) {
+            document.getElementById('confirmDeleteModal').style.display = 'block';
+            document.getElementById('contaId').value = id;
+            document.getElementById('contaNome').innerText = 'Você confirma a exclusão da conta ' + nome + '?';
+        }
+
+        function closeModal() {
+            document.getElementById('confirmDeleteModal').style.display = 'none';
+        }
+    </script>
+
+    <script>
+        // Função para exibir o alerta após o envio do formulário
+        function showSuccessAlert() {
+            document.getElementById('alert').style.display = 'block';
+            // Esconde o alerta após 3 segundos (3000 milissegundos)
+            setTimeout(function () {
+                alertDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // Adicionar um listener para o evento submit do formulário
+        document.getElementById('editForm').addEventListener('submit', function (event) {
+            // Chama a função para exibir o alerta
+            showSuccessAlert();
+        });
+    </script>
 }
+
