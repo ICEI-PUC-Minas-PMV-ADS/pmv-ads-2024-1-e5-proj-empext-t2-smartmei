@@ -46,6 +46,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-010| A aplicação deve permitir ao usuário filtrar os registros específicos de clientes, eventos, projetos, custos e faturamento   | MÉDIA |
 |RF-011| A aplicação deve notificar o usuário quando o faturamento ultrapassar o limite e teto MEI   | ALTA |
 |RF-012| A aplicação deve permitir ao usuário gerenciar seu faturamento   | ALTA |
+|RF-013| A aplicação deve permitir ao usuário gerar um relatório dos registros cadastrados| MÉDIA|
 
 **Técnica de priorização de requisitos**
 
