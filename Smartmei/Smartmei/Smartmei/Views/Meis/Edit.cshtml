@@ -159,6 +159,27 @@
     }
 
     <script>
+        // Função para exibir o alerta após o envio do formulário
+        function showSuccessAlert() {
+            document.getElementById('alert').style.display = 'block';
+            // Esconde o alerta após 3 segundos (3000 milissegundos)
+            setTimeout(function () {
+                document.getElementById('alert').style.display = 'none';
+            }, 3000);
+        }
+
+        // Adicionar um listener para o evento submit do formulário
+        document.getElementById('editForm').addEventListener('submit', function (event) {
+            // Verifica se o botão clicado é o botão de salvar
+            if (event.submitter && event.submitter.classList.contains('btn-salvar')) {
+                // Chama a função para exibir o alerta
+                showSuccessAlert();
+            }
+        });
+
+    </script>
+
+    <script>
         function openModal(id, nome) {
             document.getElementById('confirmDeleteModal').style.display = 'block';
             document.getElementById('contaId').value = id;
@@ -170,21 +191,6 @@
         }
     </script>
 
-    <script>
-        // Função para exibir o alerta após o envio do formulário
-        function showSuccessAlert() {
-            document.getElementById('alert').style.display = 'block';
-            // Esconde o alerta após 3 segundos (3000 milissegundos)
-            setTimeout(function () {
-                alertDiv.style.display = 'none';
-            }, 5000);
-        }
-
-        // Adicionar um listener para o evento submit do formulário
-        document.getElementById('editForm').addEventListener('submit', function (event) {
-            // Chama a função para exibir o alerta
-            showSuccessAlert();
-        });
-    </script>
+  
 }
 
