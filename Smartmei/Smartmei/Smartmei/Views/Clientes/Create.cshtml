@@ -6,6 +6,17 @@
 
 <style>
 
+    main {
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .titulo{
+
+        margin-top: -50px;
+
+    }
+
     body {
         background-color: #E7F9F9;
     }
@@ -29,14 +40,13 @@
 
 </style>
 
-<div class="espacamento">
-    <h2>Adicionar novo cliente</h2>
-</div>
-<hr/>
+    <div class ="titulo">
+        <h4>Adicionar novo cliente</h4> 
+        </div>
 
-
-<div class="row">
-    <div class="col-md-4">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -88,7 +98,7 @@
         </form>
     </div>
 </div>
-
+</div>
 
    
 

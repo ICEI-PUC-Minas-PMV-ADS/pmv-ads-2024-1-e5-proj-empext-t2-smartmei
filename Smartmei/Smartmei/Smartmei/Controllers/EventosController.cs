@@ -24,24 +24,7 @@ namespace Smartmei.Controllers
             return View(await appDbContext.ToListAsync());
         }
 
-
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Eventos == null)
-            {
-                return NotFound();
-            }
-
-            var evento = await _context.Eventos
-                .Include(p => p.Projeto)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (evento == null)
-            {
-                return NotFound();
-            }
-
-            return View(evento);
-        }
+              
 
         public IActionResult Create()
         {
