@@ -18,11 +18,30 @@ namespace Smartmei.Controllers
             _context = context;
         }
 
-        // GET: Projetos
-        public async Task<IActionResult> Index()
+        // GET: Projetos + filtro
+        public async Task<IActionResult> Index(string clienteFilter, string tituloFilter, string mesFilter, string anoFilter, string termoFilter, string limparFiltros)
         {
-            var appDbContext = _context.Projetos.Include(p => p.Cliente).Include(p => p.Mei);
-            return View(await appDbContext.ToListAsync());
+            if (!string.IsNullOrEmpty(limparFiltros))
+            {
+                return RedirectToAction("Index");
+            }
+
+            var projetosQuery = _context.Projetos.Include(p => p.Cliente).Include(p => p.Mei).AsQueryable();
+
+            // Aplicar os filtros
+            if (!string.IsNullOrEmpty(clienteFilter))
+                projetosQuery = projetosQuery.Where(p => p.Cliente.Nome.Contains(clienteFilter));
+
+            if (!string.IsNullOrEmpty(tituloFilter))
+                projetosQuery = projetosQuery.Where(p => p.Nome.Contains(tituloFilter));
+
+            var projetos = await projetosQuery.ToListAsync();
+
+            ViewData["SomaValoresTotaisProjeto"] = projetos.Sum(p => p.ValorTotalProjeto);
+
+            ViewBag.MensagemNotificacao = TempData["Mensagem"];
+
+            return View(projetos);
         }
 
         // GET: Projetos/Details/5
