@@ -18,32 +18,46 @@ namespace Smartmei.Controllers
             _context = context;
         }
 
-        // GET: Projetos
-        public async Task<IActionResult> Index()
-        { 
-             var appDbContext = _context.Projetos.Include(p => p.Cliente).Include(p => p.Mei);
-            return View(await appDbContext.ToListAsync());
-        }
+    // GET: Projetos
 
-    // GET: Projetos/Details/5
-    public async Task<IActionResult> Details(int? id)
+    public async Task<IActionResult> Index(string titulo, string cliente)
         {
-            if (id == null || _context.Projetos == null)
+            // Definindo a variável projetos como IQueryable<Projeto>
+            var projetos = _context.Projetos.AsQueryable();
+
+            if (!String.IsNullOrEmpty(titulo))
             {
-                return NotFound();
+                projetos = projetos.Where(p => p.Nome.Contains(titulo));
             }
 
-            var projeto = await _context.Projetos
-                .Include(p => p.Cliente)
-                .Include(p => p.Mei)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (projeto == null)
+            if (!String.IsNullOrEmpty(cliente))
             {
-                return NotFound();
+                projetos = projetos.Include(p => p.Cliente).Where(p => p.Cliente.Nome.Contains(cliente));
             }
 
-            return View(projeto);
+            // Convertendo a consulta em uma lista e incluindo a entidade Cliente se necessário
+            return View(await projetos.Include(p => p.Cliente).Include(p => p.Mei).ToListAsync());
         }
+
+        // GET: Projetos/Details/5
+        public async Task<IActionResult> Details(int? id)
+            {
+                if (id == null || _context.Projetos == null)
+                {
+                    return NotFound();
+                }
+
+                var projeto = await _context.Projetos
+                    .Include(p => p.Cliente)
+                    .Include(p => p.Mei)
+                    .FirstOrDefaultAsync(m => m.Id == id);
+                if (projeto == null)
+                {
+                    return NotFound();
+                }
+
+                return View(projeto);
+            }
 
         // GET: Projetos/Create
         public IActionResult Create()
