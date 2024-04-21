@@ -74,16 +74,16 @@
     .btn-color-add {
         background-color: #FA983C;
         color: black;
-        border-color: #FA983C;
-        padding: 5px 10px;
+        border-color: #ff8c00;
+        padding: 5px 30px;
         text-decoration: none;
         border-radius: 5px;
         margin-left: 5px;
+        font-weight: bold;
     }
 
-        .btn-color:hover {
-            background-color: #0C71AB;
-            color: #fff;
+        .btn-color-add:hover {
+            background-color: #ffb11b;
             border-color: #E7F9F9;
             text-decoration: none;
         }
@@ -161,11 +161,21 @@
             text-decoration: none;
         }
 
-        .filtro {
+    /* FILTRO */
+
+    .filtro {
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
-        }
+        margin-bottom: 40px;
+    }
+
+    input[type="text"], input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
+        width: 300px; /* Define a largura desejada */
+        height: 40px;
+    }
 
 </style>
 
@@ -180,14 +190,14 @@
 
 <!-- FILTRO -->
 
-<div>
+<div style ="width: 100%; text-align: center;">
     <form method="get" class="filtro">
     <div style="margin-right: 10px;">
-        <label for="titulo">Título do projeto:</label>
+            <label for="titulo"><strong>Título do projeto:</strong></label>
         <input type="text" id="titulo" name="titulo" value="@ViewBag.Titulo" />
     </div>
     <div style="margin-right: 10px;">
-        <label for="cliente">Cliente:</label>
+            <label for="cliente"><strong>Cliente:</strong></label>
         <input type="text" id="cliente" name="cliente" value="@ViewBag.Cliente" />
     </div>
     <div style="margin-right: 10px;">
