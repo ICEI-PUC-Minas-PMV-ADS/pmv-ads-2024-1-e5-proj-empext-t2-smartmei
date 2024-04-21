@@ -37,3 +37,15 @@ nav.bg-custom-color {
     nav.bg-custom-color .nav-link {
         color: #fff !important;
     }
+
+.dropdown-menu {
+    background-color: #09547F;
+}
+
+.dropdown-item {
+    color: #fff !important;
+}
+
+    .dropdown-item:hover {
+        background-color: transparent !important;
+    }
