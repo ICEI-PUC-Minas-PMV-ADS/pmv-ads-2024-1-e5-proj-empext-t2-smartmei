@@ -25,7 +25,7 @@
 
     .projeto-card {
         width: calc(50% - 20px); /* Metade da largura da tela, com espaçamento entre os cards */
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -168,14 +168,19 @@
         align-items: center;
         margin-bottom: 50px;
         margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
     }
 
     input[type="text"], input[type="submit"] {
         padding: 10px;
         border-radius: 10px; /* Arredonda os cantos */
         border: 1px solid #ccc; /* Adiciona uma borda */
-        width: 300px; /* Define a largura desejada */
+        width: 400px; /* Define a largura desejada */
         height: 40px;
+        background-color: #fff;
     }
 
 </style>
@@ -192,6 +197,7 @@
 <!-- FILTRO -->
 
 <div style ="width: 100%; text-align: center;">
+    
     <form method="get" class="filtro">
     <div style="margin-right: 10px;">
             <label for="titulo"><strong>Título do projeto:</strong></label>

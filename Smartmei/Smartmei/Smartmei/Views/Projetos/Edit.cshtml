@@ -5,14 +5,8 @@
 }
 
 <style>
-
-    body {
-        background-color: #E7F9F9;
-    }
-
     .botoes {
-        padding: 20px 0;
-        margin-bottom: 10px;
+        padding: 10px 0;
     }
 
     .form-group {
@@ -24,95 +18,197 @@
     }
 
     .espacamento {
-        padding: 10px 0;
+        padding: 10px 0 30px 0;
+        text-align: center;
     }
 
+    body {
+        background-image: url('/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-voltar {
+        background-color: black;
+        color: #fff;
+        border-color: black;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-voltar:hover {
+            background-color: #292929;
+            border-color: #E7F9F9;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .col {
+        align-items: center;
+        width: 100%;
+    }
+
+    .form-control {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .form-select {
+        width: 100%;
+    }
+
+    .control-label {
+        width: 100%;
+    }
 </style>
 
 <div class="espacamento">
     <h2>Editar projeto</h2>
 </div>
-<hr />
 
-<div class="row">
-    <div class="col-md-4">
+<div class="container">
+    <div class="row">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Nome" class="control-label"></label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="ClienteId" class="control-label"></label>
+                            <select asp-for="ClienteId" class="form-select" asp-items="ViewBag.ClienteId"></select>
+                            <span asp-validation-for="ClienteId" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="DataInicioProjeto" class="control-label"></label>
+                            <input asp-for="DataInicioProjeto" type="date" class="form-control" />
+                            <span asp-validation-for="DataInicioProjeto" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="DataFimProjeto" class="control-label"></label>
+                            <input asp-for="DataFimProjeto" type="date" class="form-control" />
+                            <span asp-validation-for="DataFimProjeto" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="QuantidadeTelas" class="control-label"></label>
+                            <input asp-for="QuantidadeTelas" class="form-control" />
+                            <span asp-validation-for="QuantidadeTelas" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="ValorTela" class="control-label"></label>
+                            <input value="@Model.ValorTela" id="ValorTela" name="ValorTela" type="text" required data-val-required="É necessário informar o valor (R$) da tela." class="form-control" />
+                            <span asp-validation-for="ValorTela" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="ValorTotalProjeto" class="control-label"></label>
+                            <input value="@Model.ValorTotalProjeto" id="ValorTela" name="ValorTotalProjeto" type="text" required data-val-required="É necessário informar o valor (R$) total do projeto." class="form-control" />
+                            <span asp-validation-for="ValorTotalProjeto" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="PrazoPagamento" class="control-label"></label>
+                            <input asp-for="PrazoPagamento" class="form-control" />
+                            <span asp-validation-for="PrazoPagamento" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="DataEmissaoNF" class="control-label"></label>
+                            <input asp-for="DataEmissaoNF" type="date" class="form-control" />
+                            <span asp-validation-for="DataEmissaoNF" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="DataPagamentoNF" class="control-label"></label>
+                            <input asp-for="DataPagamentoNF" type="date" class="form-control" />
+                            <span asp-validation-for="DataPagamentoNF" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Acompanhamento" class="control-label"></label>
+                            <select asp-for="Acompanhamento" class="form-select" asp-items="Html.GetEnumSelectList<Acompanhamento>()"></select>
+                            <span asp-validation-for="Acompanhamento" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="LinkDrive" class="control-label"></label>
+                            <input asp-for="LinkDrive" class="form-control" />
+                            <span asp-validation-for="LinkDrive" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Observacao" class="control-label"></label>
+                            <input asp-for="Observacao" class="form-control" />
+                            <span asp-validation-for="Observacao" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="MeiId" class="control-label"></label>
+                            <select asp-for="MeiId" class="form-select" asp-items="ViewBag.MeiId"></select>
+                            <span asp-validation-for="MeiId" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label asp-for="ClienteId" class="control-label"></label>
-                <select asp-for="ClienteId" class="form-select" asp-items="ViewBag.ClienteId"></select>
-                <span asp-validation-for="ClienteId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataInicioProjeto" class="control-label"></label>
-                <input asp-for="DataInicioProjeto" type="date" class="form-control" />
-                <span asp-validation-for="DataInicioProjeto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataFimProjeto" class="control-label"></label>
-                <input asp-for="DataFimProjeto" type="date" class="form-control" />
-                <span asp-validation-for="DataFimProjeto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QuantidadeTelas" class="control-label"></label>
-                <input asp-for="QuantidadeTelas" class="form-control" />
-                <span asp-validation-for="QuantidadeTelas" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorTela" class="control-label"></label>
-                <input value="@Model.ValorTela" id="ValorTela" name="ValorTela" type="text" required data-val-required="É necessário informar o valor (R$) da tela." class="form-control" />
-                <span asp-validation-for="ValorTela" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorTotalProjeto" class="control-label"></label>
-                <input value="@Model.ValorTotalProjeto" id="ValorTela" name="ValorTotalProjeto" type="text" required data-val-required="É necessário informar o valor (R$) total do projeto." class="form-control" />
-                <span asp-validation-for="ValorTotalProjeto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PrazoPagamento" class="control-label"></label>
-                <input asp-for="PrazoPagamento" class="form-control" />
-                <span asp-validation-for="PrazoPagamento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataEmissaoNF" class="control-label"></label>
-                <input asp-for="DataEmissaoNF" type="date" class="form-control" />
-                <span asp-validation-for="DataEmissaoNF" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataPagamentoNF" class="control-label"></label>
-                <input asp-for="DataPagamentoNF" type="date" class="form-control" />
-                <span asp-validation-for="DataPagamentoNF" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acompanhamento" class="control-label"></label>
-                <select asp-for="Acompanhamento" class="form-select" asp-items="Html.GetEnumSelectList<Acompanhamento>()"></select>
-                <span asp-validation-for="Acompanhamento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LinkDrive" class="control-label"></label>
-                <input asp-for="LinkDrive" class="form-control" />
-                <span asp-validation-for="LinkDrive" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Observacao" class="control-label"></label>
-                <input asp-for="Observacao" class="form-control" />
-                <span asp-validation-for="Observacao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MeiId" class="control-label"></label>
-                <select asp-for="MeiId" class="form-select" asp-items="ViewBag.MeiId"></select>
-                <span asp-validation-for="MeiId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="botoes">
-                    <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+                <div class="botoes d-flex justify-content-end">
+                    <input class="btn btn-color" type="submit" value="Salvar" />
+                    <a class="btn btn-color-voltar" asp-action="Index">Voltar</a>
                 </div>
             </div>
         </form>
@@ -120,5 +216,8 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
