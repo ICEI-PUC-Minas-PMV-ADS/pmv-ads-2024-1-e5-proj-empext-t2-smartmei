@@ -1,55 +1,62 @@
 ﻿@model Smartmei.Models.Cliente
 
 @{
-    ViewData["Title"] = "Editar";
+    ViewData["Title"] = "Edit";
 }
 
 <style>
-     main {
-         padding-top: 20px;
-     }
+    main {
+        padding-top: 20px;
+    }
 
-     h5 {
-         text-align: center;
-         color: #09547F;
-     }
+    h5 {
+        text-align: center;
+        color: #09547F;
+    }
 
-     .col {
-         padding-top: 10px;
-         align-items: center;
-         width: 200%;
-     }
+    .container {
+        width: 100%; /* Defina a largura do contêiner */
+    }
 
-     body {
-         background-color: #E7F9F9;
-     }
+    .col {
+        margin-left: auto; /* Margem automática à esquerda */
+        margin-right: auto; /* Margem automática à direita */
+    }
 
-     .botoes {
-         padding: 20px 0;
-     }
+    .col {
+        padding-top: 10px;
+        align-items: center;
+        width: 70%;
+    }
 
-     .form-control {
-         border: 2px solid #09547F;
-     }
+    body {
+        background-color: #E7F9F9;
+    }
 
-     .form-group {
-         padding: 5px 0;
-     }
+    .botoes {
+        padding: 20px 0;
+    }
 
-     .control-label {
-         font-weight: bold;
-         text-align: left;
-         color: #09547F;
-     }
+    .form-control {
+        border: 2px solid #09547F;
+    }
 
-     .espacamento {
-         padding: 10px 0;
-     }
+    .form-group {
+        padding: 5px 0;
+        width: 100%;
+    }
 
+    .control-label {
+        font-weight: bold;
+        text-align: left;
+        color: #09547F;
+    }
+
+    .espacamento {
+        padding: 10px 0;
+    }
 </style>
-
-
-    <h5>Editar cliente</h5>
+<h5>Edite seus cliente:</h5>
 
 <div class="container">
     <div class="row">
@@ -65,43 +72,50 @@
                     </div>
                     <div class="col">
                         <label asp-for="CNPJ" class="control-label"></label>
-                        <input value="@Model.CNPJ" id="Nome" name="CNPJ" required class="form-control" />
+                        <input value="@Model.CNPJ" id="CNPJ" name="CNPJ" required class="form-control" />
                         <span asp-validation-for="CNPJ" class="text-danger"></span>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col">
                         <label asp-for="Telefone" class="control-label"></label>
-                        <input value="@Model.Telefone" id="Nome" name="Telefone" required class="form-control" />
+                        <input value="@Model.Telefone" id="Telefone" name="Telefone" required class="form-control" />
                         <span asp-validation-for="Telefone" class="text-danger"></span>
                     </div>
                     <div class="col">
                         <label asp-for="Email" class="control-label"></label>
-                        <input value="@Model.Email" id="Nome" name="Email" required class="form-control" />
+                        <input value="@Model.Email" id="Email" name="Email" required class="form-control" />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col">
                         <label asp-for="Cidade" class="control-label"></label>
-                        <input value="@Model.Cidade" id="Nome" name="Cidade" required class="form-control" />
+                        <input value="@Model.Cidade" id="Cidade" name="Cidade" required class="form-control" />
                         <span asp-validation-for="Cidade" class="text-danger"></span>
-                     </div>
-                    <div class="col">
-                        <label asp-for="Estado" class="control-label"></label>
-                        <input value="@Model.Estado" id="Nome" name="Estado" required class="form-control" />
-                        <select asp-for="Estado" class="form-select" asp-items="Html.GetEnumSelectList<Estado>()"></select>
-                        <span asp-validation-for="Estado" class="text-danger"></span>
                     </div>
                     <div class="col">
+                        <label asp-for="Estado" class="control-label"></label>
+                        <select value="@Model.Estado" id="Estado" name="Estado" class="form-control" asp-for="Estado" asp-items="Html.GetEnumSelectList<Estado>()">
+                            <option value="">Selecione o estado</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
                         <label asp-for="ProductOwner" class="control-label"></label>
-                        <input value="@Model.ProductOwner" id="Nome" name="ProductOwner" required class="form-control" />
+                        <input value="@Model.ProductOwner" id="ProductOwner" name="ProductOwner" required class="form-control" />
                         <span asp-validation-for="ProductOwner" class="text-danger"></span>
                     </div>
                     <div class="col">
                         <label asp-for="Observacao" class="control-label"></label>
-                        <input value="@Model.Observacao" id="Nome" name="Observacao" required class="form-control" />
+                        <input value="@Model.Observacao" id="Observacao" name="Observacao" required class="form-control" />
                         <span asp-validation-for="Observacao" class="text-danger"></span>
                     </div>
-
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="col text-center">
                     <input type="submit" id="botoes" value="Salvar" class="btn btn-primary" />
@@ -111,12 +125,13 @@
         </form>
     </div>
 </div>
-
              
     
      
            
             
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -5,6 +5,29 @@
 }
 
 <style>
+    main {
+        padding-top: 20px;
+    }
+
+    h5 {
+        text-align: center;
+        color: #09547F;
+    }
+
+    .container {
+        width: 100%; /* Defina a largura do contêiner */
+    }
+
+    .col {
+        margin-left: auto; /* Margem automática à esquerda */
+        margin-right: auto; /* Margem automática à direita */
+    }
+
+    .col {
+        padding-top: 10px;
+        align-items: center;
+        width: 70%;
+    }
 
     body {
         background-color: #E7F9F9;
@@ -12,74 +35,85 @@
 
     .botoes {
         padding: 20px 0;
-        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border: 2px solid #09547F;
     }
 
     .form-group {
         padding: 5px 0;
+        width: 100%;
     }
 
     .control-label {
         font-weight: bold;
+        text-align: left;
+        color: #09547F;
     }
 
     .espacamento {
         padding: 10px 0;
     }
-
 </style>
-
-<div class="espacamento">
-    <h2>Editar evento</h2>
-</div>
-<hr/>
+<h5>Edite seu evento:</h5>
 
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="row">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="ProjetoId" class="control-label"></label>
-                <select asp-for="ProjetoId" class="form-control" asp-items="ViewBag.ProjetoId"></select>
-                <span asp-validation-for="ProjetoId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataEventoInicio" class="control-label"></label>
-                <input asp-for="DataEventoInicio" class="form-control" />
-                <span asp-validation-for="DataEventoInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataEventoFim" class="control-label"></label>
-                <input asp-for="DataEventoFim" class="form-control" />
-                <span asp-validation-for="DataEventoFim" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorDiaria" class="control-label"></label>
-                <input asp-for="ValorDiaria" class="form-control" />
-                <span asp-validation-for="ValorDiaria" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cidade" class="control-label"></label>
-                <input asp-for="Cidade" class="form-control" />
-                <span asp-validation-for="Cidade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado" class="control-label"></label>
-                <select asp-for="Estado" class="form-select" asp-items="Html.GetEnumSelectList<Estado>()"></select>
-                <span asp-validation-for="Estado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="botoes">
-                    <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="ProjetoId" class="control-label"></label>
+                        <select asp-for="ProjetoId" class="form-control" asp-items="ViewBag.ProjetoId"></select>
+                        <span asp-validation-for="ProjetoId" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="DataEventoInicio" class="control-label"></label>
+                        <input value="@Model.DataEventoInicio.ToString("dd/MM/yyyy")" id="DataEventoInicio" name="DataEventoInicio" required class="form-control" />
+                        <span asp-validation-for="DataEventoInicio" class="text-danger"></span>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="DataEventoFim" class="control-label"></label>
+                        <input value="@Model.DataEventoFim.ToString("dd/MM/yyyy")" id="DataEventoFim" name="DataEventoFim" required class="form-control" />
+                        <span asp-validation-for="DataEventoFim" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="ValorDiaria" class="control-label"></label>
+                        <input value="@Model.ValorDiaria" id="ValorDiaria" name="ValorDiaria" required class="form-control" />
+                        <span asp-validation-for="ValorDiaria" class="text-danger"></span>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Cidade" class="control-label"></label>
+                        <input value="@Model.Cidade" id="Cidade" name="Cidade" required class="form-control" />
+                        <span asp-validation-for="Cidade" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Estado" class="control-label"></label>
+                        <select value="@Model.Estado" id="Estado" name="Estado" class="form-control" asp-for="Estado" asp-items="Html.GetEnumSelectList<Estado>()">
+                            <option value="">Selecione o estado</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+           <div class="form-group text-center"> 
+    <div class="botoes">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+        <a class="btn btn-dark" asp-action="Index">Voltar</a>
+    </div>
+</div>
         </form>
     </div>
 </div>
-
 
 
 @section Scripts {
