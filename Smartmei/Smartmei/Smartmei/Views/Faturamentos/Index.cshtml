@@ -4,7 +4,19 @@
     ViewData["Title"] = "Index";
 }
 <style>
+    .titulo {
+        text-align: center;
+        padding: 10px;
+        position: center
+    }
 
+    .espacamento {
+        padding-bottom: 20px;
+    }
+
+        .espacamento h1 {
+            font-weight: 600;
+        }
 
     body {
         background-image: url('/bg.jpg');
@@ -85,21 +97,13 @@
             text-decoration: none;
             cursor: pointer;
         }
-    /* TÍTULO */
-
-
-    .titulo {
-        text-align: center;
-        padding: 10px;
+    .btn-color-add{
+        background-color: #FA983C;
+        color: black;
+        border-color: #FA983C;
+        margin-bottom:15px;
     }
 
-    .espacamento {
-        padding-bottom: 20px;
-    }
-
-        .espacamento h1 {
-            font-weight: 600;
-        }
 
     /* Modal */
     .modal {
@@ -153,16 +157,40 @@
             text-decoration: none;
             cursor: pointer;
         }
-
+    .filtro-container{
+        text-align: right;
+        display: flex;
+        margin-bottom:20px;
+    }
 
 </style>
 
 
 <div class="titulo">
     <div class="espacamento">
-        <h1>Faturamentos</h1>
+        <h2>Faturamentos</h2>
     </div>
-    <p><a class="btn btn-color" asp-action="Create">Adicionar</a></p>
+    <p><a class="btn btn-color-add" asp-action="Create">Adicionar</a></p>
+</div>
+
+<div>
+  
+    <form method="get" class="filtro-container">
+        <div style="margin-right: 10px;">
+            <label for="mes">Mês:</label>
+            <input type="text" id="mes" name="mes" value="@ViewBag.Mes" />
+        </div>
+        <div style="margin-right: 10px;">
+            <label for="ano">Ano:</label>
+            <input type="text" id="ano" name="ano" value="@ViewBag.Ano" />
+        </div>
+        <div style="margin-right: 10px;">
+            <button class="btn btn-color" type="submit">Filtrar</button>
+        </div>
+        <div>
+            <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
+        </div>
+    </form>
 </div>
 
 
