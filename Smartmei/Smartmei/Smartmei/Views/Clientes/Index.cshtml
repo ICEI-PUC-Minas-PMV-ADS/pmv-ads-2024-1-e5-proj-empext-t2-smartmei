@@ -86,6 +86,12 @@
             cursor: pointer;
         }
 
+    .btn-color-add {
+        background-color: #FA983C;
+        color: black;
+        border-color: #FA983C;
+    }
+
     /* TÍTULO */
 
 
@@ -155,15 +161,36 @@
             cursor: pointer;
         }
 
+    .filtro-container {
+        text-align: right;
+        display: flex;
+        margin-bottom: 20px;
+    }
+
 </style>
 
 <div class="titulo">
     <div class="espacamento">
         <h1>Clientes</h1>
     </div>
-    <p>
-        <a a class="btn btn-color" asp-action="Create">Adicionar</a></p>
+    <p>  <a a class="btn btn-color-add" asp-action="Create">Adicionar</a></p>
         </div>
+        
+        <div>
+          <form method="get" class="filtro-container">
+    <div style="margin-right: 10px;">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="@ViewBag.Nome" />
+    </div>
+     <div style="margin-right: 10px;">
+        <button class="btn btn-color" type="submit">Filtrar</button>
+    </div>
+    <div>
+        <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
+    </div>
+</form>
+</div>
+
         
 
     <div class="container">
@@ -217,7 +244,7 @@
     function openModal(id, nome) {
         document.getElementById('confirmDeleteModal').style.display = 'block';
         document.getElementById('clienteId').value = id;
-        document.getElementById('clienteNome').innerText = 'Você confirma a exclusão dos dados do cliente ' + nome + '?';
+        document.getElementById('clienteNome').innerText = 'Você confirma a exclusão do cliente ' + nome + '?';
     }
 
     function closeModal() {

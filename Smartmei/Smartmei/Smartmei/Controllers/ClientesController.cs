@@ -16,10 +16,23 @@ namespace Smartmei.Controllers
         }
 
         // GET: Clientes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string nome)
         {
-            return View(await _context.Clientes.ToListAsync());
+            var clienteQuery = _context.Clientes.AsQueryable();
+
+            // Aplicar filtros, se o nome do cliente for fornecido
+            if (!string.IsNullOrEmpty(nome))
+            {
+                clienteQuery = clienteQuery.Where(c => c.Nome.Contains(nome));
+            }
+
+            // Executar a consulta e converter em uma lista
+            var clientes = await clienteQuery.ToListAsync();
+
+            // Retornar a lista de clientes para a view
+            return View(clientes);
         }
+
 
         // GET: Clientes/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -13,13 +13,27 @@ public class EventosController : Controller
         _context = context;
     }
 
-    // GET: Eventos
-    public async Task<IActionResult> Index()
+
+    public async Task<IActionResult> Index(string projetoNome)
     {
-        var eventos = await _context.Eventos.Include(e => e.Projeto).ToListAsync();
+        // Query inicial
+        var eventoQuery = _context.Eventos.AsQueryable();
+
+        // Aplicar filtro pelo nome do projeto, se fornecido
+        if (!string.IsNullOrEmpty(projetoNome))
+        {
+            eventoQuery = eventoQuery.Where(e => e.Projeto.Nome.Contains(projetoNome));
+        }
+
+        // Incluir entidades relacionadas, se necessário
+        eventoQuery = eventoQuery.Include(e => e.Projeto);
+
+        // Executar a consulta e converter em uma lista
+        var eventos = await eventoQuery.ToListAsync();
+
+        // Retornar a lista de eventos para a view
         return View(eventos);
     }
-
 
     // GET: Eventos/Details/5
     public async Task<IActionResult> Details(int? id)

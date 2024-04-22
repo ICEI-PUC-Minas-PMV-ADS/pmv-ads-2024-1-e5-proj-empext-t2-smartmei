@@ -86,6 +86,12 @@
              cursor: pointer;
          }
 
+    .btn-color-add {
+        background-color: #FA983C;
+        color: black;
+        border-color: #FA983C;
+    }
+
      /* TÍTULO */
 
 
@@ -155,22 +161,50 @@
              cursor: pointer;
          }
 
+         
+    .filtro-container {
+        text-align: right;
+        display: flex;
+        margin-bottom: 20px;
+    }
+
 </style>
 <div class="titulo">
     <div class="espacamento">
         <h1>Eventos</h1>
     </div>
     <p>
-        <a a class="btn btn-color" asp-action="Create">Adicionar</a>
+        <a a class="btn btn-color-add" asp-action="Create">Adicionar</a>
     </p>
 </div>
 
 
-<div class="container">
+    <form method="get" class="filtro-container">
+        <div style="margin-right: 10px;">
+            <label for="projetoNome">Projeto:</label>
+            <input type="text" id="projetoNome" name="projetoNome" value="@ViewBag.ProjetoNome" />
+        </div>
+        <div style="margin-right: 10px;">
+            <button class="btn btn-color" type="submit">Filtrar</button>
+        </div>
+        <div>
+            <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
+        </div>
+    </form>
 
-                  
-     @foreach (var item in Model) {
-           
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    @foreach (var item in Model)
+    {
         <div class="evento-card">
             <div class="evento-card-header">
                 <h3>@item.Projeto.Nome</h3>
@@ -198,23 +232,24 @@
             </div>
         </div>
     }
-    <div id="confirmDeleteModal" class="modal">
-        <div class="modal-content">
-            <h4 id="projetoNome"></h4>
-            <form id="deleteForm" asp-action="Delete" method="post">
-                <input type="hidden" id="projetoId" name="Id" />
-                <button type="submit" class="btn-color-delete">Sim</button>
-                <button type="button" class="btn-color" onclick="closeModal()">Não</button>
-            </form>
-        </div>
+</div>
+
+<div id="confirmDeleteModal" class="modal">
+    <div class="modal-content">
+        <h4 id="modalProjetoNome"></h4>
+        <form id="deleteForm" asp-action="Delete" method="post">
+            <input type="hidden" id="modalProjetoId" name="Id" />
+            <button type="submit" class="btn-color-delete">Sim</button>
+            <button type="button" class="btn-color" onclick="closeModal()">Não</button>
+        </form>
     </div>
 </div>
 
 <script>
     function openModal(id, nome) {
         document.getElementById('confirmDeleteModal').style.display = 'block';
-        document.getElementById('projetoId').value = id;
-        document.getElementById('projetoNome').innerText = 'Você confirma a exclusão do evento ' + nome + '?';
+        document.getElementById('modalProjetoId').value = id;
+        document.getElementById('modalProjetoNome').innerText = 'Você confirma a exclusão do evento da ' + nome + '?';
     }
 
     function closeModal() {
