@@ -110,7 +110,7 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 | **Caso de Teste** 	| **CT-10 - Filtros**	|
 |	Requisito Associado 	| RF-010 - A aplicação deve permitir ao usuário filtrar os registros específicos de clientes, eventos, projetos, custos e faturamento. |
 | Objetivo do Teste 	| Verificar se o usuário consegue filtrar registros na aplicação. |
-| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar na página correspondente no menu superior <br> - Inserir os dados do registro que deseja recuperar no filtro <br> - Clicar no botão "Filtrar" <br> |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar na página correspondente no menu superior <br> - Inserir no filtro os dados do registro que deseja recuperar <br> - Clicar no botão "Filtrar" <br> |
 |Critério de Êxito | - Foi exibido o registro com o dado pesquisado. |
 |  	|  	|
 | **Caso de Teste** 	| **CT-12 - Gerenciamento de Faturamento - Cadastrar e visualizar**	|
