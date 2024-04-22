@@ -4,38 +4,182 @@
     ViewData["Title"] = "Perfil";
 }
 
-<h1>Perfil</h1>
+<style>
+    body {
+        background-image: url('/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+        background-position: center; /* Centraliza a imagem */
+    }
+
+    /* Adicionando estilo para a tabela com fundo branco */
+    .table {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Adicionando estilo para o contêiner */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* BOTÃO */
+
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    /* Modal */
+    .modal {
+        display: none; /* Oculta o modal por padrão */
+        position: fixed; /* Posição fixa na tela */
+        z-index: 1; /* Faz com que o modal fique sobre o conteúdo */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Adiciona scroll quando necessário */
+        background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* Centraliza verticalmente */
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 40%; /* Largura do modal */
+    }
+
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #9d0000;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+</style>
 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-           
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="container">
+    <h1>Perfil</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <div class="action-btns">
+                            <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        
+                            <a class="btn-color-delete" onclick="openModal('@item.Id', '@item.Nome')">Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<div id="confirmDeleteModal" class="modal">
+    <div class="modal-content">
+        <h4 id="contaNome"></h4>
+        <form id="deleteForm" asp-action="Delete" method="post">
+            <input type="hidden" id="contaId" name="Id" />
+            <button type="submit" class="btn-color-delete">Sim</button>
+            <button type="button" class="btn-color" onclick="closeModal()">Não</button>
+        </form>
+    </div>
+</div>
+    
+
+<script>
+    function openModal(id, nome) {
+        document.getElementById('confirmDeleteModal').style.display = 'block';
+        document.getElementById('contaId').value = id;
+        document.getElementById('contaNome').innerText = 'Você confirma a exclusão da conta ' + nome + '?';
+    }
+
+    function closeModal() {
+        document.getElementById('confirmDeleteModal').style.display = 'none';
+    }
+</script>
