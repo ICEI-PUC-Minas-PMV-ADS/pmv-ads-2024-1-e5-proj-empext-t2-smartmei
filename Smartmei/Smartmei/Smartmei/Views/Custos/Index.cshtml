@@ -86,6 +86,12 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+    .btn-color-add {
+        background-color: #FA983C;
+        color: black;
+        border-color: #FA983C;
+    }
     /* TÍTULO */
 
 
@@ -161,10 +167,11 @@
 
 <div class="titulo">
     <div class="espacamento">
-        <h1>Custos</h1>
+        <h2>Custos</h2>
     </div>
-    <p><a class="btn btn-color" asp-action="Create">Adicionar</a></p>
+    <p><a class="btn btn-color-add" asp-action="Create">Adicionar</a></p>
 </div>
+
 
 <div class="container">
      @foreach (var item in Model)

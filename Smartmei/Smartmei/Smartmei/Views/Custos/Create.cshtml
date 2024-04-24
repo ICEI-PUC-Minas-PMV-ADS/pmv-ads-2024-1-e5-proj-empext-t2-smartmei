@@ -5,20 +5,32 @@
 }
 <style>
     main {
+        padding-top: 20px;
+    }
+
+    h5 {
         text-align: center;
+        padding-bottom: 30px
+    }
+
+    .col {
+        align-items: center;
+        width: 100%;
+        padding: 0 70px 0 70px;
+        padding-bottom: 30px;
     }
 
     body {
         background-color: #E7F9F9;
     }
 
-    .botoes {
-        padding: 20px 0;
-        margin-bottom: 10px;
+    .form-control {
+        border: 2px solid #09547F;
     }
 
     .form-group {
-        padding: 5px 0;
+        padding: 20px 0;
+        text-align: center;
     }
 
     .control-label {
@@ -28,56 +40,61 @@
     .espacamento {
         padding: 10px 0;
     }
-
 </style>
 
 
-<h4>Adicionar novos custos</h4>
-<hr />
+<h5>Adicionar novos custos:</h5>
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-        <form asp-action="Create">
+    <div class="row">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PassagemAerea" class="control-label"></label>
-                <input id="PassagemAerea" name="PassagemAerea" required class="form-control" />
-                <span asp-validation-for="PassagemAerea" class="text-danger"></span>
+            <input type="hidden" asp-for="Id" />
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="PassagemAerea" class="control-label"></label>
+                        <input id="PassagemAerea" name="PassagemAerea" required class="form-control" />
+                        <span asp-validation-for="PassagemAerea" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Hospedagem" class="control-label"></label>
+                        <input id="Hospedagem" name="Hospedagem" required class="form-control" />
+                        <span asp-validation-for="Hospedagem" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Deslocamento" class="control-label"></label>
+                        <input id="Deslocamento" name="Deslocamento" required class="form-control" />
+                        <span asp-validation-for="Deslocamento" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Alimentacao" class="control-label"></label>
+                        <input id="Alimentacao" name="Alimentacao" required class="form-control" />
+                        <span asp-validation-for="Alimentacao" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="CustoTotal" class="control-label"></label>
+                        <input id="CustoTotal" name="CustoTotal" required class="form-control" />
+                        <span asp-validation-for="CustoTotal" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="ProjetoId" class="control-label"></label>
+                        <select asp-for="ProjetoId" class="form-control" asp-items="ViewBag.ProjetoId"></select>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Hospedagem" class="control-label"></label>
-                    <input id="Hospedagem" name="Hospedagem" required class="form-control" />
-                <span asp-validation-for="Hospedagem" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Deslocamento" class="control-label"></label>
-                <input id="Deslocamento" name="Deslocamento" required class="form-control" />
-                <span asp-validation-for="Deslocamento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Alimentacao" class="control-label"></label>
-                <input id="Alimentacao" name="Alimentacao" required class="form-control" />
-                <span asp-validation-for="Alimentacao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustoTotal" class="control-label"></label>
-                <input id="CustoTotal" name="CustoTotal" required class="form-control" />
-                <span asp-validation-for="CustoTotal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjetoId" class="control-label"></label>
-                <select asp-for="ProjetoId" class ="form-control" asp-items="ViewBag.ProjetoId"></select>
-            </div>
-            <div class="form-group">
-                <div class="botoes">
+            <div class="form-group" id="botoes">
                     <input type="submit" value="Salvar" class="btn btn-primary" />
                     <a class="btn btn-dark" asp-action="Index">Voltar</a>
-                </div>
             </div>
         </form>
     </div>
   </div>
-</div>
+
 
 
 @section Scripts {
