@@ -62,7 +62,44 @@
         .text-danger {
             color: red;
         }
+
+        .toggle-password {
+            position: absolute;
+            right: 22px;
+            top: 63%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .feather-eye {
+            width: 24px;
+            height: 24px;
+            stroke: #ccc;
+            transition: stroke 0.3s ease-in-out;
+        }
+
+            .feather-eye:hover {
+                stroke: #333;
+            }
+
+
     </style>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordInput = document.querySelector('.password-input');
+            const togglePassword = document.querySelector('.toggle-password');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('active');
+            });
+        });
+
+    </script>
+
 </head>
 <body>
     <div class="login-container">
@@ -76,8 +113,17 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
+                <label asp-for="Senha" class="control-label">Senha</label>
+                <div class="password-container">
+                    <input asp-for="Senha" class="form-control password-input" />
+                    <div class="toggle-password">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
+                            <circle cx="12" cy="12" r="3" />
+                            <path d="M19.88 12c-1.13-3.39-4.42-6-7.88-6s-6.75 2.61-7.88 6c1.13 3.39 4.42 6 7.88 6s6.75-2.61 7.88-6z" />
+                        </svg>
+
+                    </div>
+                </div>
                 <span asp-validation-for="Senha" class="text-danger"></span>
             </div>
             <div class="form-group">
