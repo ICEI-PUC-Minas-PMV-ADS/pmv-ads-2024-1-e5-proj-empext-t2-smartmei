@@ -10,31 +10,36 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+       
     }
 
-   
+    .titulo {
+        margin-bottom: 30px; /* Adiciona espaço entre o título e o formulário */
+        margin-top: 50px; /* Desce o título um pouco para baixo */
+    }
 
-    /* Estilo para o formulário */
-    .form-container {
-        max-width: 600px;
+    .form-centralizado {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-
-
+        max-width: 800px; /* Defina a largura máxima desejada */
+        margin: 0 auto;
+        margin-top: 40px;
     }
 
     /* Estilo para os campos de entrada */
     .form-group {
         width: 100%;
-        max-width: 300px; /* Defina a largura máxima conforme necessário */
-        margin-bottom: 20px;
+        max-width: 400px; /* Defina a largura máxima conforme necessário */
+        margin-bottom: 25px;
         align-items: center;
     }
+
 
     /* Estilo para os botões */
     .btn-container {
         width: 100%;
-        max-width: 300px; /* Defina a largura máxima conforme necessário */
-        margin-top: 20px;
+        max-width: 400px; /* Defina a largura máxima conforme necessário */
         display: flex;
         justify-content: space-between;
     }
@@ -77,6 +82,24 @@
         margin-left: 5px;
     }
 
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
         .btn-color-delete:hover {
             background-color: red;
             color: #fff;
@@ -101,12 +124,12 @@
 </style>
 
 <div class="container">
-    <div class="row justify-content-center align-items-center">
-        <div class="col-md-8 form-container">
-            <h1>Editar Cadastro</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h1 class="text-center titulo mb-4">Editar Cadastro</h1>
            
 
-            <form asp-action="Edit" id="editForm">
+            <form asp-action="Edit" id="editForm" class="form-centralizado">
                 <!-- Campo Nome -->
                 <div class="form-group">
                     <label asp-for="Nome" class="control-label"></label>
