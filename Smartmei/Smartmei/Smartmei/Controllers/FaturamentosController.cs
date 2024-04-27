@@ -18,29 +18,24 @@ namespace SmartMei.Controllers
         // GET: Faturamentos
         public async Task<IActionResult> Index(int? mes, int? ano)
         {
-            // Query inicial
             var faturamentoQuery = _context.Faturamentos.AsQueryable();
 
-            // Aplicar filtros, se os valores de mês e ano forem fornecidos
             if (mes.HasValue)
             {
                 faturamentoQuery = faturamentoQuery.Where(p => p.Mes == mes);
             }
-
 
             if (ano.HasValue)
             {
                 faturamentoQuery = faturamentoQuery.Where(p => p.Ano == ano);
             }
 
-            // Incluir entidades relacionadas, se necessário
             faturamentoQuery = faturamentoQuery.Include(p => p.Mei);
 
-            // Executar a consulta e converter em uma lista
+            
             var faturamentos = await faturamentoQuery.ToListAsync();
 
-
-            // Retornar a lista de faturamentos para a view
+ 
             return View(faturamentos);
         }
 

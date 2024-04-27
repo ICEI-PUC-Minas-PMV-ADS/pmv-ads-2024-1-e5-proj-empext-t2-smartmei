@@ -17,10 +17,18 @@ namespace SmartMei.Controllers
         }
 
         // GET: Custos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string projeto)
         {
-            var appDbContext = _context.Custos.Include(c => c.Projeto);
-            return View(await appDbContext.ToListAsync());
+            // Definindo a variável projetos como IQueryable<Projeto>
+            var custos = _context.Custos.AsQueryable();
+
+            if (!String.IsNullOrEmpty(projeto))
+            {
+                custos = custos.Where(p => p.Projeto.Nome.Contains(projeto));
+            }
+
+            // Convertendo a consulta em uma lista e incluindo a entidade Cliente se necessário
+            return View(await custos.Include(p => p.Projeto).ToListAsync());
         }
 
         // GET: Custos/Details/5

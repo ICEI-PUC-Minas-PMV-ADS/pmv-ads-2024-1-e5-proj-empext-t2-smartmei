@@ -163,6 +163,28 @@
         margin-bottom:20px;
     }
 
+    /* FILTRO */
+
+    .filtro {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
+    }
+
+    input[type="text"], input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
+        width: 400px; /* Define a largura desejada */
+        height: 40px;
+        background-color: #fff;
+    }
+
 </style>
 
 
@@ -175,8 +197,10 @@
 
 <div>
   
-    <form method="get" class="filtro-container">
-        <div style="margin-right: 10px;">
+    <div style="width: 100%; text-align: center;">
+
+        <form method="get" class="filtro">
+            <div style="margin-right: 10px;">
             <label for="mes">Mês:</label>
             <input type="text" id="mes" name="mes" value="@ViewBag.Mes" />
         </div>

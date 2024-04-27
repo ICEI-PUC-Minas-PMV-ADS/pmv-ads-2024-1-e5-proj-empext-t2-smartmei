@@ -161,6 +161,28 @@
             cursor: pointer;
         }
 
+    /* FILTRO */
+
+    .filtro {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
+    }
+
+    input[type="text"], input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
+        width: 400px; /* Define a largura desejada */
+        height: 40px;
+        background-color: #fff;
+    }
+
 
 </style>
 
@@ -172,6 +194,21 @@
     <p><a class="btn btn-color-add" asp-action="Create">Adicionar</a></p>
 </div>
 
+<div style ="width: 100%; text-align: center;">
+    
+    <form method="get" class="filtro">
+    <div style="margin-right: 10px;">
+            <label for="projeto"><strong>Projeto:</strong></label>
+        <input type="text" id="projeto" name="projeto" value="@ViewBag.Projeto" />
+    </div>
+    <div style="margin-right: 10px;">
+        <button class="btn btn-color" type="submit">Filtrar</button>
+    </div>
+    <div>
+        <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
+    </div>
+    </form>
+</div>
 
 <div class="container">
      @foreach (var item in Model)
@@ -180,6 +217,7 @@
                 <div class="custo-card-header">
                     <h3>Projeto: @item.Projeto.Nome</h3>
                 </div>
+    
                 <div class="custo-card-body">
                     <dl class="row list-unstyled">
                         <dt class="col-sm-4">Passagem Aérea (R$)</dt>
