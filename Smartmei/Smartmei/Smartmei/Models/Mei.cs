@@ -24,6 +24,12 @@ namespace Smartmei.Models
         [DataType(DataType.Password)]   
         public string Senha { get; set; }
 
+        [NotMapped] // Essa propriedade não será mapeada para o banco de dados
+        [DisplayName("Confirmar Senha")]
+        [Required(ErrorMessage = "Por favor, confirme a senha.")]
+        [DataType(DataType.Password)]
+        [Compare("Senha", ErrorMessage = "A senha e a confirmação de senha não correspondem.")]
+        public string ConfirmarSenha { get; set; }
         public ICollection<Projeto> Projetos { get; set; }
 
         public ICollection<Faturamento> Faturamentos { get; set; }

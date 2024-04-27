@@ -17,7 +17,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 400px;
             position: absolute;
             top: 45%;
             left: 50%;
@@ -71,7 +71,7 @@
         <hr />
         <div class="row">
             <div class="col-md-12">
-                <form asp-action="Create">
+                <form asp-action="Create" onsubmit="return validarSenha()">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Nome" class="control-label"></label>
@@ -87,7 +87,14 @@
                         <label asp-for="Senha" class="control-label"></label>
                         <input asp-for="Senha" class="form-control" />
                         <span asp-validation-for="Senha" class="text-danger"></span>
+                        <div id="senhaError" class="text-danger" style="display: none;">A senha deve conter pelo menos 8 caracteres.</div>
                     </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmarSenha" class="control-label"></label>
+                        <input asp-for="ConfirmarSenha" class="form-control" />
+                        <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                    </div>
+
                     <div class="form-group">
                         <input type="submit" value="Cadastrar" class="btn btn-success" />
                     </div>
@@ -103,6 +110,30 @@
             alert("@ViewBag.AlertMessage");
     </script>
     }
+
+
+    <script>
+        function validarSenha() {
+            var senha = document.getElementById("Senha").value;
+            var confirmarSenha = document.getElementById("ConfirmarSenha").value;
+            var senhaError = document.getElementById("senhaError");
+
+            if (senha.trim().length < 8) {
+                senhaError.style.display = "block";
+                return false;
+            } else {
+                senhaError.style.display = "none";
+            }
+
+            if (senha !== confirmarSenha) {
+                alert("A senha e a confirmação de senha não correspondem.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
 
 </body>
 </html>
