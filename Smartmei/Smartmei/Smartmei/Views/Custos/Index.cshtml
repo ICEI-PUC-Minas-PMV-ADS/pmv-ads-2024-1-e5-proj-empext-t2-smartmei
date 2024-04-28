@@ -8,10 +8,10 @@
 
 
     body {
-        background-image: url('/bg.jpg');
+        background-image: url('/bg.png');
         background-repeat: no-repeat;
-        background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
-        background-position: center; /* Centraliza a imagem */
+        background-size: cover;
+        background-position: center;
     }
 
     .container {
@@ -68,6 +68,23 @@
             text-decoration: none;
         }
 
+    .btn-color-add {
+        background-color: #FA983C;
+        color: black;
+        border-color: #ff8c00;
+        padding: 5px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+        .btn-color-add:hover {
+            background-color: #ffb11b;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
     .btn-color-delete {
         background-color: #9d0000;
         color: #fff;
@@ -86,12 +103,6 @@
             text-decoration: none;
             cursor: pointer;
         }
-
-    .btn-color-add {
-        background-color: #FA983C;
-        color: black;
-        border-color: #FA983C;
-    }
     /* TÍTULO */
 
 
@@ -189,7 +200,7 @@
 
 <div class="titulo">
     <div class="espacamento">
-        <h2>Custos</h2>
+        <h1>Custos</h1>
     </div>
     <p><a class="btn btn-color-add" asp-action="Create">Adicionar</a></p>
 </div>
