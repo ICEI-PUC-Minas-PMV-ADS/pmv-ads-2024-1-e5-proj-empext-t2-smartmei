@@ -78,7 +78,7 @@
     }
 
     body {
-        background-image: url('/bg.jpg');
+        background-image: url('/bg.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -128,7 +128,7 @@
                         <div class="form-group">
                            <label asp-for="CustoMensal" class="control-label"></label>
                             <input value="@Model.CustoMensal" id="CustoMensal" name="CustoMensal" required class="form-control" />
-                            <span asp-validation-for="CustoMensal" class="text-danger"></span>>
+                            <span asp-validation-for="CustoMensal" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                     <div class="col">
                         <div class="form-group">
                            <label asp-for="MeiId" class="control-label"></label>
-                            <select asp-for="MeiId" class="form-control" asp-items="ViewBag.MeiId"></select>
+                            <select asp-for="MeiId" class="form-select" asp-items="ViewBag.MeiId"></select>
                             <span asp-validation-for="MeiId" class="text-danger"></span>
                         </div>
                     </div>
