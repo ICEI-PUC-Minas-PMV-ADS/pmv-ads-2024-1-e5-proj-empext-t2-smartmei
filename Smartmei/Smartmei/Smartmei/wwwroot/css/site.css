@@ -49,3 +49,87 @@ nav.bg-custom-color {
     .dropdown-item:hover {
         background-color: transparent !important;
     }
+
+/*TESTE RESPONSIVIDADE*/
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.servicos-home-lista li {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .servicos-home-lista li {
+        width: auto;
+    }
+}
+
+.servicos-home-lista li img {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .servicos-home-lista li img {
+        width: 300px;
+    }
+}
+
+.servicos-home-lista li .texto-servico {
+    width: calc(100% - 320px);
+}
+
+@media (min-width: 768px) {
+    .servicos-home-lista li .texto-servico {
+        width: calc(100% - 360px);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+                                                                                      
+    body {
+        overflow-x: hidden;
+    }
+}
+
+
+/*PÁGINA*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('../home.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*BOTÕES*/
+
