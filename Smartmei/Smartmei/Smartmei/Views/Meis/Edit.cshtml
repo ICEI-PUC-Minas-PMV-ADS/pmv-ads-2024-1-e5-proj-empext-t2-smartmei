@@ -129,7 +129,8 @@
             <h1 class="text-center titulo mb-4">Editar Cadastro</h1>
            
 
-            <form asp-action="Edit" id="editForm" class="form-centralizado">
+            <form asp-action="Edit" onsubmit="return validarSenha()"
+                id="editForm" class="form-centralizado">
                 <!-- Campo Nome -->
                 <div class="form-group">
                     <label asp-for="Nome" class="control-label"></label>
@@ -147,12 +148,19 @@
                     <label asp-for="Senha" class="control-label"></label>
                     <input asp-for="Senha" class="form-control" />
                     <span asp-validation-for="Senha" class="text-danger"></span>
+                    <div id="senhaError" class="text-danger" style="display: none;">A senha deve conter pelo menos 8 caracteres.</div>
                 </div>
-
+                <div class="form-group">
+                    <label asp-for="ConfirmarSenha" class="control-label"></label>
+                    <input asp-for="ConfirmarSenha" class="form-control" />
+                    <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                </div>
                 <!-- Botões -->
                 <div class="btn-container">
-                    <input type="submit" value="Salvar" class="btn btn-primary btn-salvar" />
-                    <button class="btn btn-danger" onclick="openModal('@Model.Id', '@Model.Nome')">Excluir conta</button>
+                    <input type="submit" value="Salvar" class="btn btn-primary btn-salvar" id="btnSalvar" />
+                    <button type="button" class="btn btn-danger" onclick="excluirConta('@Model.Id', '@Model.Nome')" id="btnExcluir">Excluir conta</button>
+
+
                 </div>
             </form>
             <!-- Div para exibir o alerta -->
@@ -181,27 +189,32 @@
     }
 
     <script>
-        // Função para exibir o alerta após o envio do formulário
         function showSuccessAlert() {
             document.getElementById('alert').style.display = 'block';
-            // Esconde o alerta após 3 segundos (3000 milissegundos)
             setTimeout(function () {
                 document.getElementById('alert').style.display = 'none';
-            }, 3000);
+            }, 8000);
         }
 
-        // Adicionar um listener para o evento submit do formulário
+        function excluirConta(id, nome) {
+            openModal(id, nome);
+        }
+
         document.getElementById('editForm').addEventListener('submit', function (event) {
-            // Verifica se o botão clicado é o botão de salvar
-            if (event.submitter && event.submitter.classList.contains('btn-salvar')) {
-                // Chama a função para exibir o alerta
+            // Executa a validação da senha manualmente
+            if (validarSenha()) {
                 showSuccessAlert();
+            } else {
+                // Se a validação falhar, impede a submissão do formulário
+                event.preventDefault();
             }
         });
 
-    </script>
 
-    <script>
+        document.getElementById('btnExcluir').addEventListener('click', function (event) {
+            event.stopPropagation();
+        });
+
         function openModal(id, nome) {
             document.getElementById('confirmDeleteModal').style.display = 'block';
             document.getElementById('contaId').value = id;
@@ -211,8 +224,26 @@
         function closeModal() {
             document.getElementById('confirmDeleteModal').style.display = 'none';
         }
+
+        function validarSenha() {
+            var senha = document.getElementById("Senha").value;
+            var confirmarSenha = document.getElementById("ConfirmarSenha").value;
+            var senhaError = document.getElementById("senhaError");
+
+            if (senha.trim().length < 8) {
+                senhaError.style.display = "block";
+                return false;
+            } else {
+                senhaError.style.display = "none";
+            }
+
+            if (senha !== confirmarSenha) {
+                alert("A senha e a confirmação de senha não correspondem.");
+                return false;
+            }
+
+            return true;
+        }
+
     </script>
-
-  
 }
-
