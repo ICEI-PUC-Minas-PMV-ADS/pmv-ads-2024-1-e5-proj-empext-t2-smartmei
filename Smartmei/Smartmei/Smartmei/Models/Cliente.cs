@@ -16,14 +16,16 @@ namespace Smartmei.Models
         public string Nome { get; set; }
                      
         [Required(ErrorMessage = "Por favor, informe o CNPJ do cliente/empresa.")]
+        [RegularExpression(@"^\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}$", ErrorMessage = "Formato de CNPJ inválido")]
         public string CNPJ { get; set; }
-
+               
         [Required(ErrorMessage = "Obrigatório informar o telefone")]
         [RegularExpression(@"^\(?\d{2}\)?[-.\s]?\d{4,5}[-.\s]?\d{4}$", ErrorMessage = "Formato de telefone inválido")]
         public string Telefone { get; set; }
 
         [Display(Name = "E-mail")]
         [Required(ErrorMessage = "Por favor, informe o e-mail do cliente/empresa.")]
+        [EmailAddress(ErrorMessage = "O e-mail fornecido não é válido.")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a cidade")]

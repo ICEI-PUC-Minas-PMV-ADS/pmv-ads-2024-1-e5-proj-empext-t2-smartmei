@@ -5,6 +5,29 @@
 }
 
 <style>
+    main {
+        padding-top: 20px;
+    }
+
+    h5 {
+        text-align: center;
+        color: #09547F;
+    }
+
+    .container {
+        width: 100%; /* Defina a largura do contêiner */
+    }
+
+    .col {
+        margin-left: auto; /* Margem automática à esquerda */
+        margin-right: auto; /* Margem automática à direita */
+    }
+
+    .col {
+        padding-top: 10px;
+        align-items: center;
+        width: 70%;
+    }
 
     body {
         background-color: #E7F9F9;
@@ -12,84 +35,95 @@
 
     .botoes {
         padding: 20px 0;
-        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border: 2px solid #09547F;
     }
 
     .form-group {
         padding: 5px 0;
+        width: 100%;
     }
 
     .control-label {
         font-weight: bold;
+        text-align: left;
+        color: #09547F;
     }
 
     .espacamento {
         padding: 10px 0;
     }
-
 </style>
-
-<div class="espacamento">
-    <h2>Adicionar novo cliente</h2>
-</div>
-<hr/>
-
-
-<div class="row">
-    <div class="col-md-4">
+<h5>Adicionar novo cliente:</h5>
+        
+<div class="container">
+    <div class="row">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+            <input type="hidden" asp-for="Id" />
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Nome" class="control-label"></label>
+                        <input value="@Model.Nome" id="Nome" name="Nome" required class="form-control" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="CNPJ" class="control-label"></label>
+                        <input value="@Model.CNPJ" id="CNPJ" name="CNPJ" required class="form-control" />
+                        <span asp-validation-for="CNPJ" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Telefone" class="control-label"></label>
+                        <input value="@Model.Telefone" id="Telefone" name="Telefone" required class="form-control" />
+                        <span asp-validation-for="Telefone" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input value="@Model.Email" id="Email" name="Email" required class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Cidade" class="control-label"></label>
+                        <input value="@Model.Cidade" id="Cidade" name="Cidade" required class="form-control" />
+                        <span asp-validation-for="Cidade" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Estado" class="control-label"></label>
+                        <select value="@Model.Estado" id="Estado" name="Estado" class="form-select form-control" asp-items="Html.GetEnumSelectList<Estado>()"><option value="">Selecione</option></select>
+                         <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="ProductOwner" class="control-label"></label>
+                        <input value="@Model.ProductOwner" id="ProductOwner" name="ProductOwner" required class="form-control" />
+                        <span asp-validation-for="ProductOwner" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Observacao" class="control-label"></label>
+                        <input value="@Model.Observacao" id="Observacao" name="Observacao" required class="form-control" />
+                        <span asp-validation-for="Observacao" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
+
             <div class="form-group">
-                <label asp-for="CNPJ" class="control-label"></label>
-                <input asp-for="CNPJ" id="CNPJ" class="form-control" />
-                <span asp-validation-for="CNPJ" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Telefone" class="control-label"></label>
-                <input asp-for="Telefone" class="form-control" />
-                <span asp-validation-for="Telefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cidade" class="control-label"></label>
-                <input asp-for="Cidade" class="form-control" />
-                <span asp-validation-for="Cidade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado" class="control-label"></label>
-                <select asp-for="Estado" class="form-select" asp-items="Html.GetEnumSelectList<Estado>()"></select>
-                <span asp-validation-for="Estado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductOwner" class="control-label"></label>
-                <input asp-for="ProductOwner" class="form-control" />
-                <span asp-validation-for="ProductOwner" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Observacao" class="control-label"></label>
-                <input asp-for="Observacao" class="form-control" />
-                <span asp-validation-for="Observacao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="botoes">
-                    <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+                <div class="col text-center">
+                    <input type="submit" id="botoes" value="Salvar" class="btn btn-primary" />
+                    <a class="btn btn-dark" id="botoes" asp-action="Index">Voltar</a>
                 </div>
             </div>
         </form>
     </div>
 </div>
-
-
+            
    
 
 

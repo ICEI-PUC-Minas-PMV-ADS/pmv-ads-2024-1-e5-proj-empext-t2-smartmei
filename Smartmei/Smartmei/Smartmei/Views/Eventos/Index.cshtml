@@ -6,165 +6,264 @@
 
 <style>
 
-    body {
-        background-color: #E7F9F9;
-        margin: 0;
-        padding: 0;
+     body {
+         background-image: url('/bg.jpg');
+         background-repeat: no-repeat;
+         background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+         background-position: center; /* Centraliza a imagem */
+     }
+
+     .container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+     }
+
+     .evento-card {
+         width: calc(50% - 20px); /* Metade da largura da tela, com espaçamento entre os cards */
+         margin-bottom: 40px;
+         background-color: #fff;
+         border-radius: 10px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     }
+
+     .evento-card-header {
+         padding: 10px;
+         /*border-bottom: 1px solid #ccc;*/
+         background-color: #d9dadb;
+         border-top-left-radius: 10px;
+         border-top-right-radius: 10px;
+     }
+
+     .evento-card-body {
+         padding: 10px;
+     }
+
+         .evento-card-body dl {
+             margin: 0;
+         }
+
+     .action-btns {
+         padding: 15px;
+         text-align: right;
+     }
+
+     /* BOTÃO */
+
+     .btn-color {
+         background-color: #09547F;
+         color: #fff;
+         border-color: #09547F;
+         padding: 5px 10px;
+         text-decoration: none;
+         border-radius: 5px;
+         margin-left: 5px;
+     }
+
+         .btn-color:hover {
+             background-color: #0C71AB;
+             color: #fff;
+             border-color: #E7F9F9;
+             text-decoration: none;
+         }
+
+     .btn-color-delete {
+         background-color: #9d0000;
+         color: #fff;
+         border-color: #09547F;
+         padding: 5px 10px;
+         text-decoration: none;
+         border-radius: 5px;
+         margin-left: 5px;
+         cursor: pointer;
+     }
+
+         .btn-color-delete:hover {
+             background-color: red;
+             color: #fff;
+             border-color: #E7F9F9;
+             text-decoration: none;
+             cursor: pointer;
+         }
+
+    .btn-color-add {
+        background-color: #FA983C;
+        color: black;
+        border-color: #FA983C;
     }
 
-    /* TABELA */
+     /* TÍTULO */
 
-    div.table-container {
-        max-width: 100%;
-        overflow-x: auto;
-    }
 
-    table {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        border-collapse: collapse;
-        border-radius: 15px;
-        overflow: hidden;
-        background-color: white;
-    }
+     .titulo {
+         text-align: center;
+         padding: 10px;
+     }
 
-    td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 2px solid #09547F;
-    }
+     .espacamento {
+         padding-bottom: 20px;
+     }
 
-    dl {
-        padding: 15px 0 0 10px;
-    }
+         .espacamento h1 {
+             font-weight: 600;
+         }
 
-    tbody tr:nth-child(even) {
-        background-color: #F6F6F6;
-    }
+     /* Modal */
+     .modal {
+         display: none; /* Oculta o modal por padrão */
+         position: fixed; /* Posição fixa na tela */
+         z-index: 1; /* Faz com que o modal fique sobre o conteúdo */
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         overflow: auto; /* Adiciona scroll quando necessário */
+         background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
+     }
 
-    /* BOTÃO */
+     .modal-content {
+         background-color: #fefefe;
+         margin: 15% auto; /* Centraliza verticalmente */
+         padding: 20px;
+         border: 1px solid #888;
+         border-radius: 10px;
+         width: 40%; /* Largura do modal */
+     }
 
-    .btn-container {
-        margin-top: 20px;
+     .btn-color-delete {
+         background-color: #9d0000;
+         color: #fff;
+         border-color: #9d0000;
+         padding: 5px 10px;
+         text-decoration: none;
+         border-radius: 5px;
+         margin-left: 5px;
+     }
+
+         .btn-color-delete:hover {
+             background-color: red;
+             color: #fff;
+             border-color: #E7F9F9;
+             text-decoration: none;
+         }
+
+     .close {
+         color: #aaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+     }
+
+         .close:hover,
+         .close:focus {
+             color: black;
+             text-decoration: none;
+             cursor: pointer;
+         }
+
+         
+    .filtro-container {
         text-align: right;
-        margin-bottom: 30px;
+        display: flex;
+        margin-bottom: 20px;
     }
-
-        .btn-container a {
-            margin-left: 10px;
-        }
-
-    .btn-color {
-        background-color: #09547F;
-        color: #fff;
-        border-color: #09547F;
-        padding: 10px;
-        text-decoration: none;
-        border-radius: 5px;
-    }
-
-        .btn-color:hover {
-            background-color: #FA983C;
-            color: #09547F;
-            border-color: #E7F9F9;
-            text-decoration: none;
-        }
-
-    .action-btns {
-        white-space: nowrap;
-    }
-
-    /* TÍTULO */
-
-
-    .titulo {
-        text-align: center;
-        padding: 10px;
-    }
-
-    .espacamento {
-        padding-bottom: 20px;
-    }
-
-        .espacamento h1 {
-            font-weight: 600;
-        }
 
 </style>
-
 <div class="titulo">
     <div class="espacamento">
         <h1>Eventos</h1>
     </div>
-    <p><a class="btn btn-color" asp-action="Create">Adicionar</a></p>
+    <p>
+        <a a class="btn btn-color-add" asp-action="Create">Adicionar</a>
+    </p>
 </div>
-<hr/>
-
-<div class="btn-container">
-
-    <div class="table-container">
-        <div class="table-container">
-            <table class="table mx-auto align-middle table-hover">
-                <tbody class="table-group-divider">
-                   
-
-             @foreach (var item in Model) {
-            <tr>
 
 
-            <td>
-                   <dl class="row list-unstyled">
-                       <dt class="btn-color-sm-4">
-                                    <dt class="col-sm-4">
-                                            @Html.DisplayNameFor(model => model.Projeto.Nome)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                            @Html.DisplayFor(modelItem => item.Projeto.Nome)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                            @Html.DisplayNameFor(model => model.DataEventoInicio)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                            @Html.DisplayFor(modelItem => item.DataEventoInicio)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                            @Html.DisplayNameFor(model => model.DataEventoFim)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                            @Html.DisplayFor(modelItem => item.DataEventoFim)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                            @Html.DisplayNameFor(model => item.ValorDiaria)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                            @Html.DisplayFor(modelItem => item.ValorDiaria)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                            @Html.DisplayNameFor(model => item.Cidade)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                            @Html.DisplayFor(modelItem => item.Cidade)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                            @Html.DisplayNameFor(model => item.Estado)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                            @Html.DisplayFor(modelItem => item.Estado)
-                                    </dd>
-                                    </dl>
-
-
-
-                            <td class="action-btns">
-                                <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                                <a class="btn-color" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
-                                <a class="btn-color" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+    <form method="get" class="filtro-container">
+        <div style="margin-right: 10px;">
+            <label for="projetoNome">Projeto:</label>
+            <input type="text" id="projetoNome" name="projetoNome" value="@ViewBag.ProjetoNome" />
         </div>
+        <div style="margin-right: 10px;">
+            <button class="btn btn-color" type="submit">Filtrar</button>
+        </div>
+        <div>
+            <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="evento-card">
+            <div class="evento-card-header">
+                <h3>@item.Projeto.Nome</h3>
+            </div>
+            <div class="evento-card-body">
+                <dl class="row list-unstyled">
+                    <dt class="col-sm-4">Projeto</dt>
+                    <dd class="col-sm-8">@item.Projeto.Nome</dd>
+                    <dt class="col-sm-4">Data de Início</dt>
+                    <dd class="col-sm-8">@item.DataEventoInicio.ToShortDateString()</dd>
+                    <dt class="col-sm-4">Data de Término</dt>
+                    <dd class="col-sm-8">@item.DataEventoFim.ToShortDateString()</dd>
+                    <dt class="col-sm-4">Valor da Diária (R$)</dt>
+                    <dd class="col-sm-8">@item.ValorDiaria</dd>
+                    <dt class="col-sm-4">Cidade</dt>
+                    <dd class="col-sm-8">@item.Cidade</dd>
+                    <dt class="col-sm-4">Estado</dt>
+                    <dd class="col-sm-8">@item.Estado</dd>
+
+                </dl>
+                <div class="action-btns">
+                    <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn-color-delete" onclick="openModal('@item.Id', '@item.Projeto.Nome')">Excluir</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div id="confirmDeleteModal" class="modal">
+    <div class="modal-content">
+        <h4 id="modalProjetoNome"></h4>
+        <form id="deleteForm" asp-action="Delete" method="post">
+            <input type="hidden" id="modalProjetoId" name="Id" />
+            <button type="submit" class="btn-color-delete">Sim</button>
+            <button type="button" class="btn-color" onclick="closeModal()">Não</button>
+        </form>
     </div>
 </div>
+
+<script>
+    function openModal(id, nome) {
+        document.getElementById('confirmDeleteModal').style.display = 'block';
+        document.getElementById('modalProjetoId').value = id;
+        document.getElementById('modalProjetoNome').innerText = 'Você confirma a exclusão do evento da ' + nome + '?';
+    }
+
+    function closeModal() {
+        document.getElementById('confirmDeleteModal').style.display = 'none';
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
