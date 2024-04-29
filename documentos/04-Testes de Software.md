@@ -246,7 +246,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/97e1b307-ef33-43b5-8076-a14b65b5e084
 
+<hr>
 
+# Avaliação por pares
 
 
 
