@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Smartmei.Models;
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 
 namespace Smartmei.Controllers
 {
@@ -103,8 +104,18 @@ namespace Smartmei.Controllers
             if (existingUser)
             {
                 ViewBag.AlertMessage = "Cadastro bloqueado: Apenas um cadastro permitido.";
+                return View(mei); // Retorna a view de cadastro com a mensagem de alerta
             }
 
+            // Verificar se a senha atende aos critérios de senha forte
+            bool isStrongPassword = IsStrongPassword(mei.Senha);
+            if (!isStrongPassword)
+            {
+                ModelState.AddModelError("Senha", "A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.");
+                return View(mei);
+            }
+
+            // Se nenhum usuário existir e a senha for forte, então podemos proceder com o cadastro
             if (ModelState.IsValid)
             {
                 mei.Senha = BCrypt.Net.BCrypt.HashPassword(mei.Senha); //aqui estou criptografando a senha
@@ -113,10 +124,32 @@ namespace Smartmei.Controllers
                 return RedirectToAction("Index", "Home");
             }
             return View(mei);
+
         }
 
+        // Método para verificar se a senha atende aos critérios de senha forte
+        private static bool IsStrongPassword(string password)
+        {
+            // Define os critérios de senha forte
+            int minLength = 8;
 
-    public async Task<IActionResult> Edit(int? id)
+            // Verifica o comprimento mínimo
+            if (password.Length < minLength)
+                return false;
+
+            // Verifica se contém pelo menos uma letra maiúscula, uma minúscula e um dígito
+            if (!Regex.IsMatch(password, "[A-Z]"))
+                return false;
+            if (!Regex.IsMatch(password, "[a-z]"))
+                return false;
+            if (!Regex.IsMatch(password, "[0-9]"))
+                return false;
+
+            // Senha atende a todos os critérios
+            return true;
+        }
+
+        public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
             return NotFound();
@@ -134,6 +167,14 @@ namespace Smartmei.Controllers
         {
             if (id != mei.Id)
                 return NotFound();
+
+            // Verificar se a senha atende aos critérios de senha forte
+            bool isStrongPassword = IsStrongPassword(mei.Senha);
+            if (!isStrongPassword)
+            {
+                ModelState.AddModelError("Senha", "A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.");
+                return View(mei);
+            }
 
             if (ModelState.IsValid)
             {
