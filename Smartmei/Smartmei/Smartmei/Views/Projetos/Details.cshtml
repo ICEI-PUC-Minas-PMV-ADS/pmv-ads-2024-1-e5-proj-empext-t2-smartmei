@@ -9,8 +9,8 @@
     body {
         background-image: url('/bg.png');
         background-repeat: no-repeat;
-        background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
-        background-position: center; /* Centraliza a imagem */
+        background-size: cover;
+        background-position: center;
     }
 
     .botoes {
@@ -63,24 +63,24 @@
 
     /* Modal */
     .modal {
-        display: none; /* Oculta o modal por padrão */
-        position: fixed; /* Posição fixa na tela */
-        z-index: 1; /* Faz com que o modal fique sobre o conteúdo */
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        overflow: auto; /* Adiciona scroll quando necessário */
-        background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
     }
 
     .modal-content {
         background-color: #fefefe;
-        margin: 15% auto; /* Centraliza verticalmente */
+        margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
         border-radius: 10px;
-        width: 40%; /* Largura do modal */
+        width: 40%; 
     }
 
     .btn-color-delete {
@@ -115,6 +115,8 @@
         }
 
 </style>
+
+<link href="/css/site.css" rel="stylesheet" />
 
 <div class="espacamento">
     <h2>Detalhes do projeto <strong>@Html.DisplayFor(model => model.Nome)</strong>:</h2>
