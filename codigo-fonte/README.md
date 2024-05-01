@@ -16,7 +16,8 @@ O código-fonte da solução está disponível na branch Main deste repositório
 ### [0.2.0] - 12/05/2024
 #### Adicionado
 - Atualização do Menu;
-- Opção de mostrar a senha digitada no campo "Senha" do Login;
+- Opção de mostrar a senha digitada nos campos "Senha" e "Confirmar a senha";
 - Filtro nas páginas Projetos, Clientes, Eventos, Faturamentos e Custos;
 - Atualização do frontend das páginas Projetos, Clientes, Eventos, Faturamentos, Custos, Editar cadastro e Login;
+- Responsividade;
 - Relatórios.
