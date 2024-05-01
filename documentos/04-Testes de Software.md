@@ -250,7 +250,10 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 # Avaliação por pares
 
-
+| **Caso de Teste** 	| **CT-01 - Cadastro de usuários** 	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Rúbia |
+| Testado por 	| Daiane |
 
 
 
