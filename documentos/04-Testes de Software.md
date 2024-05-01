@@ -255,3 +255,4 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 |	Desenvolvido por 	| Rúbia |
 | Testado por 	| Daiane |
 
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/4caf71ef-d63e-4605-87a6-bd97135abec6
