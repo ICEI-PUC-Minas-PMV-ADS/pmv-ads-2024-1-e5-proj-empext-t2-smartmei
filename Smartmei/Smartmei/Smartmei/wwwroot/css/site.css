@@ -109,6 +109,24 @@ nav.bg-custom-color {
         background-repeat: no-repeat;
         margin: 0;
     }
+
+    .filtro {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 300px;
+    }
+
+    form.filtro {
+        margin-bottom: 10px;
+        margin-top: 0;
+        max-width:300px;
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+
 }
 
 @media only screen and (max-width: 752px) {
@@ -154,5 +172,42 @@ nav.bg-custom-color {
 
     .servicos-home-lista li .texto-servico {
         border-radius: 0 0 15px 15px;
+    }
+
+    .filtro {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    form.filtro {
+        margin-bottom: 10px;
+        margin-top: 0;
+        width: 300px;
+    }
+
+    input[type="text"], input[type="submit"] {
+        width: 300px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+
+    .filtro {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    form.filtro {
+        margin-bottom: 10px;
+        margin-top: 0;
+        width: 300px;
+    }
+
+    input[type="text"], input[type="submit"] {
+        width: 300px;
+        margin-bottom: 10px;
     }
 }

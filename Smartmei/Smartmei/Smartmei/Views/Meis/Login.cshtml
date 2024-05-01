@@ -1,9 +1,5 @@
 ﻿@model Smartmei.Models.Mei
 
-@{
-    ViewData["Title"] = "Login";
-}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,21 +21,22 @@
             transform: translate(-50%, -50%);
         }
 
-        .login-container h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+            .login-container h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
 
         .form-group {
             margin-bottom: 20px;
         }
 
-        .form-group label {
-            font-weight: bold;
-        }
+            .form-group label {
+                font-weight: bold;
+            }
 
         .form-control {
             width: 100%;
+            padding-right: 40px;
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
@@ -55,9 +52,9 @@
             cursor: pointer;
         }
 
-        .btn-success:hover {
-            background-color: #073c5d;
-        }
+            .btn-success:hover {
+                background-color: #073c5d;
+            }
 
         .text-danger {
             color: red;
@@ -65,8 +62,8 @@
 
         .toggle-password {
             position: absolute;
-            right: 22px;
-            top: 63%;
+            right: 10px;
+            top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
         }
@@ -82,10 +79,10 @@
                 stroke: #333;
             }
 
-
     </style>
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const passwordInput = document.querySelector('.password-input');
@@ -97,7 +94,6 @@
                 this.classList.toggle('active');
             });
         });
-
     </script>
 
 </head>
@@ -114,10 +110,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Senha" class="control-label">Senha</label>
-                <div class="password-container">
+                <div class="password-container" style="position: relative;">
                     <input asp-for="Senha" class="form-control password-input" />
                     <div class="toggle-password">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-eye">
                             <circle cx="12" cy="12" r="3" />
                             <path d="M19.88 12c-1.13-3.39-4.42-6-7.88-6s-6.75 2.61-7.88 6c1.13 3.39 4.42 6 7.88 6s6.75-2.61 7.88-6z" />
                         </svg>
@@ -133,3 +129,4 @@
     </div>
 </body>
 </html>
+

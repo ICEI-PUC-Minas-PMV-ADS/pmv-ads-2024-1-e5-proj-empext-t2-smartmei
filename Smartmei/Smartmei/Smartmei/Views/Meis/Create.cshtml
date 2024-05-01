@@ -1,17 +1,15 @@
 ﻿@model Smartmei.Models.Mei
 
-@{
-    ViewData["Title"] = "Cadastro";
-}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-
-
         .cadastro-container {
             background-color: white;
             padding: 20px;
@@ -31,6 +29,7 @@
 
         .form-group {
             margin-bottom: 20px;
+            position: relative;
         }
 
             .form-group label {
@@ -61,58 +60,41 @@
         .text-danger {
             color: red;
         }
+
+        .toggle-password {
+            position: absolute;
+            right: 0;
+            top: 55%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 10px;
+        }
+
+            .toggle-password i {
+                width: 24px;
+                height: 24px;
+                color: gray;
+            }
+
+                .toggle-password i:hover {
+                    color: #333;
+                }
     </style>
-</head>
-<body>
-    <div class="cadastro-container">
-
-        <h1>Cadastro</h1>
-
-        <hr />
-        <div class="row">
-            <div class="col-md-12">
-                <form asp-action="Create" onsubmit="return validarSenha()">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="Nome" class="control-label"></label>
-                        <input asp-for="Nome" class="form-control" />
-                        <span asp-validation-for="Nome" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Email" class="control-label"></label>
-                        <input asp-for="Email" class="form-control" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Senha" class="control-label"></label>
-                        <input asp-for="Senha" class="form-control" />
-                        <span asp-validation-for="Senha" class="text-danger"></span>
-                        <div id="senhaError" class="text-danger" style="display: none;">A senha deve conter pelo menos 8 caracteres.</div>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="ConfirmarSenha" class="control-label"></label>
-                        <input asp-for="ConfirmarSenha" class="form-control" />
-                        <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" value="Cadastrar" class="btn btn-success" />
-                    </div>
-                </form>
-            </div>
-        </div>
-
-    </div>
-
-    @if (!string.IsNullOrEmpty(ViewBag.AlertMessage))
-    {
-    <script>
-            alert("@ViewBag.AlertMessage");
-    </script>
-    }
-
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const togglePassword = document.querySelectorAll('.toggle-password');
+
+            togglePassword.forEach(function (element) {
+                element.addEventListener('click', function () {
+                    const passwordInput = this.closest('.password-container').querySelector('.password-input');
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    this.classList.toggle('active');
+                });
+            });
+        });
+
         function validarSenha() {
             var senha = document.getElementById("Senha").value;
             var confirmarSenha = document.getElementById("ConfirmarSenha").value;
@@ -133,13 +115,76 @@
             return true;
         }
     </script>
+</head>
+<body>
+    <div class="cadastro-container">
+        <h1>Cadastro</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Create" onsubmit="return validarSenha()">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Nome" class="control-label">Nome</label>
+                        <input asp-for="Nome" class="form-control" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label">Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Senha" class="control-label">Senha</label>
+                        <div class="password-container" style="position: relative;">
+                            <input asp-for="Senha" class="form-control password-input" />
+                            <div class="toggle-password">
+                                <i class="far fa-eye"></i>
+                            </div>
+                        </div>
+                        <span asp-validation-for="Senha" class="text-danger"></span>
+                    </div>
 
+                    <div class="form-group">
+                        <label asp-for="ConfirmarSenha" class="control-label">Confirmar Senha</label>
+                        <div class="password-container" style="position: relative;">
+                            <input asp-for="ConfirmarSenha" class="form-control password-input" />
+                            <div class="toggle-password">
+                                <i class="far fa-eye"></i>
+                            </div>
+                        </div>
+                        <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                    </div>
 
+                    <div class="form-group">
+                        <input type="submit" value="Cadastrar" class="btn btn-success" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @if (!string.IsNullOrEmpty(ViewBag.AlertMessage))
+    {
+        <script>
+            alert("@ViewBag.AlertMessage");
+        </script>
+    }
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
 </body>
 </html>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+
+
+
+
+
+
+
+
+
