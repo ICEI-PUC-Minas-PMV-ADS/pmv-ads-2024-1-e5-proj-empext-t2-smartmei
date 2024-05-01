@@ -250,11 +250,8 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 # Avaliação por pares
 
-| **Caso de Teste** 	| **CT-01 - Cadastro de usuários** 	|
+| **Caso de Teste** 	| **CT-01 - Cadastro de usuários, CT-02 - Efetuar login e CT-03 - Efetuar logout**	|
 |:---:	|:---:	|
 |	Desenvolvido por 	| Rúbia |
 | Testado por 	| Daiane |
-
-
-
 
