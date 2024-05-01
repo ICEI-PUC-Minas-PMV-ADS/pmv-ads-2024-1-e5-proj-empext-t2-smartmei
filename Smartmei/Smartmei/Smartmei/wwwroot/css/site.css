@@ -163,6 +163,7 @@ nav.bg-custom-color {
 
     .botoes {
         margin-left: 15px;
+        margin-bottom: 10px;
     }
 
     .btn-color-voltar {
@@ -173,6 +174,7 @@ nav.bg-custom-color {
         text-decoration: none;
         border-radius: 10px;
         width: 160px;
+        margin-bottom: 30px;
     }
         .btn-color-voltar:hover {
             background-color: #292929;
@@ -274,6 +276,59 @@ nav.bg-custom-color {
         width: 100%; 
         margin-bottom: 30px;
     }
+
+    .col {
+        padding: 0 15px;
+        padding-bottom: 20px;
+    }
+
+    h5 {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border: 2px solid #fff;
+    }
+
+    .form-select {
+        border: 2px solid #fff;
+    }
+
+    .botoes {
+        margin: 0;
+    }
+
+    .btn-color-voltar {
+        background-color: black;
+        color: #fff;
+        border-color: black;
+        padding-top: 10px;
+        text-decoration: none;
+        border-radius: 10px;
+        width: 160px;
+    }
+
+        .btn-color-voltar:hover {
+            background-color: #292929;
+            border-color: #E7F9F9;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .botoes input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        background-color: #09547F;
+        color: #fff;
+        text-decoration: none;
+        width: 160px;
+    }
+
+        .botoes input[type="submit"]:hover {
+            background-color: #0C71AB;
+            border-color: #E7F9F9;
+        }
 }
 
 @media only screen and (max-width: 1098px) {
@@ -308,4 +363,53 @@ nav.bg-custom-color {
         width: 100%;
         margin-bottom: 30px;
     }
+
+    .col {
+        padding: 0 15px;
+        padding-bottom: 20px;
+    }
+
+    h5 {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border: 2px solid #fff;
+    }
+
+    .form-select {
+        border: 2px solid #fff;
+    }
+
+    .btn-color-voltar {
+        background-color: black;
+        color: #fff;
+        border-color: black;
+        padding-top: 10px;
+        text-decoration: none;
+        border-radius: 10px;
+        width: 160px;
+    }
+
+        .btn-color-voltar:hover {
+            background-color: #292929;
+            border-color: #E7F9F9;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .botoes input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        background-color: #09547F;
+        color: #fff;
+        text-decoration: none;
+        width: 160px;
+    }
+
+        .botoes input[type="submit"]:hover {
+            background-color: #0C71AB;
+            border-color: #E7F9F9;
+        }
 }
