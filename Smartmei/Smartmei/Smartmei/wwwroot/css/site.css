@@ -33,7 +33,6 @@ body {
 
 /*MENU*/
 
-
 nav.bg-custom-color {
     background-color: #09547F !important;
 }
@@ -54,6 +53,9 @@ nav.bg-custom-color {
     .dropdown-item:hover {
         background-color: transparent !important;
     }
+
+
+/*RESPONSIVIDADE*/
 
 @media only screen and (max-width: 430px) {
     
@@ -90,6 +92,7 @@ nav.bg-custom-color {
     h3, h2, p {
         text-align: left;
         margin: 0;
+        font-weight: bold;
     }
 
     .container {
@@ -111,25 +114,30 @@ nav.bg-custom-color {
     }
 
     .filtro {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-width: 300px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Organiza os elementos em uma grade responsiva */
+        gap: 10px; /* Adiciona espaçamento entre os elementos */
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 0px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
     }
 
-    form.filtro {
-        margin-bottom: 10px;
-        margin-top: 0;
-        max-width:300px;
+    input[type="text"],
+    input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 40px;
+        background-color: #fff;
     }
-
-    input {
-        margin-bottom: 10px;
-    }
-
 }
 
-@media only screen and (max-width: 752px) {
+@media only screen and (max-width: 770px) {
 
     .servicos-home-lista li {
         grid-template-columns: 1fr;
@@ -174,40 +182,51 @@ nav.bg-custom-color {
         border-radius: 0 0 15px 15px;
     }
 
-    .filtro {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        .filtro {
+        display: grid;
+        grid-template-columns: repeat(minmax(150px, 1fr)); /* Organiza os elementos em uma grade responsiva */
+        gap: 10px; /* Adiciona espaçamento entre os elementos */
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 0px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
     }
 
-    form.filtro {
-        margin-bottom: 10px;
-        margin-top: 0;
-        width: 300px;
-    }
-
-    input[type="text"], input[type="submit"] {
-        width: 300px;
-        margin-bottom: 10px;
+    input[type="text"],
+    input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 40px;
+        background-color: #fff;
     }
 }
 
-@media only screen and (max-width: 820px) {
-
+@media only screen and (max-width: 1098px) {
     .filtro {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(minmax(150px, 1fr)); /* Organiza os elementos em uma grade responsiva */
+        gap: 10px; /* Adiciona espaçamento entre os elementos */
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 0px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
     }
 
-    form.filtro {
-        margin-bottom: 10px;
-        margin-top: 0;
-        width: 300px;
-    }
-
-    input[type="text"], input[type="submit"] {
-        width: 300px;
-        margin-bottom: 10px;
+    input[type="text"],
+    input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 40px;
+        background-color: #fff;
     }
 }
