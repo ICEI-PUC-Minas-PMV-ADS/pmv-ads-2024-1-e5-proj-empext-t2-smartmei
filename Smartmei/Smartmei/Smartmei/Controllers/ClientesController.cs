@@ -133,7 +133,7 @@ namespace Smartmei.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> GerarPDF()
+        public async Task<IActionResult> GerarPDFClientes()
         {
             // Busca todos os clientes no banco de dados
             var clientes = await _context.Clientes.ToListAsync();
