@@ -16,7 +16,7 @@ namespace Smartmei.Controllers
         }
 
         // GET: Clientes
-        public async Task<IActionResult> Index(string nome)
+        public async Task<IActionResult> Index(string nome, string productOwner)
         {
             var clienteQuery = _context.Clientes.AsQueryable();
 
@@ -26,12 +26,20 @@ namespace Smartmei.Controllers
                 clienteQuery = clienteQuery.Where(c => c.Nome.Contains(nome));
             }
 
+            // Aplicar filtro por ProductOwner, se fornecido
+            if (!string.IsNullOrEmpty(productOwner))
+            {
+                clienteQuery = clienteQuery.Where(c => c.ProductOwner.Contains(productOwner));
+            }
+
             // Executar a consulta e converter em uma lista
             var clientes = await clienteQuery.ToListAsync();
 
             // Retornar a lista de clientes para a view
             return View(clientes);
         }
+
+
 
 
         // GET: Clientes/Details/5

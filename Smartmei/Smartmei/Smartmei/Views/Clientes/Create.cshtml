@@ -5,55 +5,81 @@
 }
 
 <style>
-    main {
-        padding-top: 20px;
-    }
 
-    h5 {
-        text-align: center;
-        color: #09547F;
-    }
-
-    .container {
-        width: 100%; /* Defina a largura do contêiner */
-    }
-
-    .col {
-        margin-left: auto; /* Margem automática à esquerda */
-        margin-right: auto; /* Margem automática à direita */
-    }
-
-    .col {
-        padding-top: 10px;
-        align-items: center;
-        width: 70%;
-    }
-
-    body {
-        background-color: #E7F9F9;
-    }
+    /*Botões*/
 
     .botoes {
-        padding: 20px 0;
+        padding: 0 10px 10px 0;
+        margin-bottom: 30px;
+        margin-right: 120px;
+    }
+
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-voltar {
+        background-color: black;
+        color: #fff;
+        border-color: black;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-voltar:hover {
+            background-color: #292929;
+            border-color: #E7F9F9;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    /*Formulário*/
+
+    .control-label {
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .form-select {
+        width: 100%;
+        border: 2px solid #09547F;
+    }
+
+    .col {
+        align-items: center;
+        width: 100%;
+        padding: 0 70px 0 70px;
+        padding-bottom: 25px;
     }
 
     .form-control {
         border: 2px solid #09547F;
     }
 
-    .form-group {
-        padding: 5px 0;
-        width: 100%;
-    }
+    /*PÁGINA*/
 
-    .control-label {
-        font-weight: bold;
-        text-align: left;
-        color: #09547F;
+    main {
+        padding-top: 10px;
     }
 
     .espacamento {
-        padding: 10px 0;
+        padding: 10px 0 30px 0;
+        text-align: center;
     }
 
     body {
@@ -62,10 +88,21 @@
         background-size: cover;
         background-position: center;
     }
+
+    h5 {
+        text-align: center;
+    }
 </style>
-<h5>Adicionar novo cliente:</h5>
-        
-<div class="container">
+
+<link href="/css/site.css" rel="stylesheet" />
+
+
+
+<div class="espacamento">
+    <h5>Adicionar novo cliente:</h5>
+    </div>
+
+    <div class="container">
     <div class="row">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -122,9 +159,9 @@
             </div>
 
             <div class="form-group">
-                <div class="col text-center">
-                    <input type="submit" id="botoes" value="Salvar" class="btn btn-primary" />
-                    <a class="btn btn-dark" id="botoes" asp-action="Index">Voltar</a>
+                <div class="botoes d-flex justify-content-end">
+                    <input type="submit" value="Salvar" class="btn btn-color" />
+                    <a class="btn btn-color-voltar" asp-action="Index">Voltar</a>
                 </div>
             </div>
         </form>

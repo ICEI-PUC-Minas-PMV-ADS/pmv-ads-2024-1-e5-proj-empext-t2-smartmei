@@ -6,6 +6,8 @@
 
 <style>
 
+    /* BACKGROUND */
+
     body {
         background-image: url('/bg.png');
         background-repeat: no-repeat;
@@ -18,6 +20,8 @@
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
+    /* CARDS */
 
     .cliente-card {
         width: calc(50% - 20px); /* Metade da largura da tela, com espaçamento entre os cards */
@@ -67,6 +71,23 @@
             text-decoration: none;
         }
 
+    .btn-color-add {
+        background-color: #FA983C;
+        color: black;
+        border-color: #ff8c00;
+        padding: 5px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+        .btn-color-add:hover {
+            background-color: #ffb11b;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
     .btn-color-delete {
         background-color: #9d0000;
         color: #fff;
@@ -86,14 +107,7 @@
             cursor: pointer;
         }
 
-    .btn-color-add {
-        background-color: #FA983C;
-        color: black;
-        border-color: #FA983C;
-    }
-
     /* TÍTULO */
-
 
     .titulo {
         text-align: center;
@@ -108,22 +122,22 @@
             font-weight: 600;
         }
 
-    /* Modal */
+    /* MODAL */
+
     .modal {
-        display: none; /* Oculta o modal por padrão */
-        position: fixed; /* Posição fixa na tela */
-        z-index: 1; /* Faz com que o modal fique sobre o conteúdo */
+        display: none;
+        position: fixed;
+        z-index: 1;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        overflow: auto; /* Adiciona scroll quando necessário */
-        background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
+        background-color: rgba(0,0,0,0.4);
     }
 
     .modal-content {
         background-color: #fefefe;
-        margin: 15% auto; /* Centraliza verticalmente */
+        margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
         border-radius: 10px;
@@ -147,42 +161,52 @@
             text-decoration: none;
         }
 
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
+    /* FILTRO */
+
+    .filtro {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
     }
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-    .filtro-container {
-        text-align: right;
-        display: flex;
-        margin-bottom: 20px;
+    input[type="text"], input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
+        width: 340px; /* Define a largura desejada */
+        height: 40px;
+        background-color: #fff;
     }
 
 </style>
 
+<link href="/css/site.css" rel="stylesheet" />
+
 <div class="titulo">
     <div class="espacamento">
-        <h1>Clientes</h1>
+        <h2>Clientes</h2>
     </div>
-    <p>  <a a class="btn btn-color-add" asp-action="Create">Adicionar</a></p>
+    <p><a a class="btn btn-color-add" asp-action="Create">Adicionar</a></p>
         </div>
-        
-        <div>
-          <form method="get" class="filtro-container">
+
+<div style="width: 100%; text-align: center;">
+
+
+    <form method="get" class="filtro">
     <div style="margin-right: 10px;">
-        <label for="nome">Nome:</label>
+        <label for="nome"><strong>Nome Completo/Razão Social:</strong></label>
         <input type="text" id="nome" name="nome" value="@ViewBag.Nome" />
     </div>
-     <div style="margin-right: 10px;">
+    <div style="margin-right: 10px;">
+        <label for="productOwner"><strong>Product Owner:</strong></label>
+        <input type="text" id="productOwner" name="productOwner" value="@ViewBag.ProductOwner" />
+    </div>
+    <div style="margin-right: 10px;">
         <button class="btn btn-color" type="submit">Filtrar</button>
     </div>
     <div>
@@ -191,7 +215,9 @@
 </form>
 </div>
 
-        
+
+    
+              
 
     <div class="container">
 
@@ -204,21 +230,21 @@
             </div>
             <div class="cliente-card-body">
                 <dl class="row list-unstyled">
-                    <dt class="col-sm-4">Nome</dt>
+                    <dt class="col-sm-4">Nome/Razão Social:</dt>
                     <dd class="col-sm-8">@item.Nome</dd>
-                    <dt class="col-sm-4">CNPJ</dt>
+                    <dt class="col-sm-4">CNPJ:</dt>
                     <dd class="col-sm-8">@item.CNPJ</dd>
-                    <dt class="col-sm-4">Telefone</dt>
+                    <dt class="col-sm-4">Telefone:</dt>
                     <dd class="col-sm-8">@item.Telefone</dd>
-                    <dt class="col-sm-4">Email</dt>
+                    <dt class="col-sm-4">Email:</dt>
                     <dd class="col-sm-8">@item.Email</dd>
-                    <dt class="col-sm-4">Cidade</dt>
+                    <dt class="col-sm-4">Cidade:</dt>
                     <dd class="col-sm-8">@item.Cidade</dd>
-                    <dt class="col-sm-4">Estado</dt>
+                    <dt class="col-sm-4">Estado:</dt>
                     <dd class="col-sm-8">@item.Estado</dd>
-                    <dt class="col-sm-4">ProductOwner</dt>
+                    <dt class="col-sm-4">Product Owner:</dt>
                     <dd class="col-sm-8">@item.ProductOwner</dd>
-                    <dt class="col-sm-4"> Observacao</dt>
+                    <dt class="col-sm-4"> Observação:</dt>
                     <dd class="col-sm-8">@item.Observacao</dd>
                 </dl>
                 <div class="action-btns">

@@ -6,183 +6,227 @@
 
 <style>
 
-     body {
-         background-image: url('/bg.png');
-         background-repeat: no-repeat;
-         background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
-         background-position: center; /* Centraliza a imagem */
-     }
+    /* BACKGROUND */
 
-     .container {
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: space-between;
-     }
+    body {
+        background-image: url('/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 
-     .evento-card {
-         width: calc(50% - 20px); /* Metade da largura da tela, com espaçamento entre os cards */
-         margin-bottom: 40px;
-         background-color: #fff;
-         border-radius: 10px;
-         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-     }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
-     .evento-card-header {
-         padding: 10px;
-         /*border-bottom: 1px solid #ccc;*/
-         background-color: #d9dadb;
-         border-top-left-radius: 10px;
-         border-top-right-radius: 10px;
-     }
+    /* CARDS */
 
-     .evento-card-body {
-         padding: 10px;
-     }
+    .evento-card {
+        width: calc(50% - 20px); /* Metade da largura da tela, com espaçamento entre os cards */
+        margin-bottom: 40px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-         .evento-card-body dl {
-             margin: 0;
-         }
+    .evento-card-header {
+        padding: 10px;
+        /*border-bottom: 1px solid #ccc;*/
+        background-color: #d9dadb;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
 
-     .action-btns {
-         padding: 15px;
-         text-align: right;
-     }
+    .evento-card-body {
+        padding: 10px;
+    }
 
-     /* BOTÃO */
+        .evento-card-body dl {
+            margin: 0;
+        }
 
-     .btn-color {
-         background-color: #09547F;
-         color: #fff;
-         border-color: #09547F;
-         padding: 5px 10px;
-         text-decoration: none;
-         border-radius: 5px;
-         margin-left: 5px;
-     }
+    .action-btns {
+        padding: 15px;
+        text-align: right;
+    }
 
-         .btn-color:hover {
-             background-color: #0C71AB;
-             color: #fff;
-             border-color: #E7F9F9;
-             text-decoration: none;
-         }
+    /* BOTÃO */
 
-     .btn-color-delete {
-         background-color: #9d0000;
-         color: #fff;
-         border-color: #09547F;
-         padding: 5px 10px;
-         text-decoration: none;
-         border-radius: 5px;
-         margin-left: 5px;
-         cursor: pointer;
-     }
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
 
-         .btn-color-delete:hover {
-             background-color: red;
-             color: #fff;
-             border-color: #E7F9F9;
-             text-decoration: none;
-             cursor: pointer;
-         }
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
 
     .btn-color-add {
         background-color: #FA983C;
         color: black;
-        border-color: #FA983C;
+        border-color: #ff8c00;
+        padding: 5px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+        font-weight: bold;
     }
 
-     /* TÍTULO */
+        .btn-color-add:hover {
+            background-color: #ffb11b;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
 
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
 
-     .titulo {
-         text-align: center;
-         padding: 10px;
-     }
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-     .espacamento {
-         padding-bottom: 20px;
-     }
+    /* TÍTULO */
 
-         .espacamento h1 {
-             font-weight: 600;
-         }
+    .titulo {
+        text-align: center;
+        padding: 10px;
+    }
 
-     /* Modal */
-     .modal {
-         display: none; /* Oculta o modal por padrão */
-         position: fixed; /* Posição fixa na tela */
-         z-index: 1; /* Faz com que o modal fique sobre o conteúdo */
-         left: 0;
-         top: 0;
-         width: 100%;
-         height: 100%;
-         overflow: auto; /* Adiciona scroll quando necessário */
-         background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
-     }
+    .espacamento {
+        padding-bottom: 20px;
+    }
 
-     .modal-content {
-         background-color: #fefefe;
-         margin: 15% auto; /* Centraliza verticalmente */
-         padding: 20px;
-         border: 1px solid #888;
-         border-radius: 10px;
-         width: 40%; /* Largura do modal */
-     }
+        .espacamento h1 {
+            font-weight: 600;
+        }
 
-     .btn-color-delete {
-         background-color: #9d0000;
-         color: #fff;
-         border-color: #9d0000;
-         padding: 5px 10px;
-         text-decoration: none;
-         border-radius: 5px;
-         margin-left: 5px;
-     }
+    /* MODAL */
 
-         .btn-color-delete:hover {
-             background-color: red;
-             color: #fff;
-             border-color: #E7F9F9;
-             text-decoration: none;
-         }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+    }
 
-     .close {
-         color: #aaa;
-         float: right;
-         font-size: 28px;
-         font-weight: bold;
-     }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 40%; /* Largura do modal */
+    }
 
-         .close:hover,
-         .close:focus {
-             color: black;
-             text-decoration: none;
-             cursor: pointer;
-         }
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #9d0000;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
 
-         
-    .filtro-container {
-        text-align: right;
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    /* FILTRO */
+
+    .filtro {
         display: flex;
-        margin-bottom: 20px;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
     }
+
+    input[type="text"], input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px; /* Arredonda os cantos */
+        border: 1px solid #ccc; /* Adiciona uma borda */
+        width: 450px; /* Define a largura desejada */
+        height: 40px;
+        background-color: #fff;
+    }
+
+    /* Estilo para os campos de entrada */
+    .custom-input {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 490px;
+        height: 40px;
+        background-color: #fff;
+    }
+
+    /* Estilo específico para o campo dataEventoInicio */
+    #dataEventoInicio {
+        /* Aplica estilos semelhantes aos do campo projetoNome */
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 360px;
+        height: 40px;
+        background-color: #fff;
+    }
+
 
 </style>
+
+<link href="/css/site.css" rel="stylesheet" />
+
 <div class="titulo">
     <div class="espacamento">
-        <h1>Eventos</h1>
+        <h2>Eventos</h2>
     </div>
     <p>
         <a a class="btn btn-color-add" asp-action="Create">Adicionar</a>
     </p>
 </div>
 
-
-    <form method="get" class="filtro-container">
+<div style="width: 100%; text-align: center;">
+    <form method="get" class="filtro">
         <div style="margin-right: 10px;">
-            <label for="projetoNome">Projeto:</label>
+            <label for="projetoNome"><strong>Projeto:</strong></label>
             <input type="text" id="projetoNome" name="projetoNome" value="@ViewBag.ProjetoNome" />
+        </div>
+        <div style="margin-right: 10px;">
+            <label for="dataEventoInicio"><strong>Data de Início</strong></label>
+            <input type="date" id="dataEventoInicio" name="dataEventoInicio" value="@ViewBag.DataEventoInicio" class="custom-input" />
         </div>
         <div style="margin-right: 10px;">
             <button class="btn btn-color" type="submit">Filtrar</button>
@@ -191,12 +235,7 @@
             <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
         </div>
     </form>
-
-
-
-
-
-
+</div>
 
 
 
@@ -211,17 +250,17 @@
             </div>
             <div class="evento-card-body">
                 <dl class="row list-unstyled">
-                    <dt class="col-sm-4">Projeto</dt>
+                    <dt class="col-sm-4">Projeto:</dt>
                     <dd class="col-sm-8">@item.Projeto.Nome</dd>
-                    <dt class="col-sm-4">Data de Início</dt>
+                    <dt class="col-sm-4">Data de Início:</dt>
                     <dd class="col-sm-8">@item.DataEventoInicio.ToShortDateString()</dd>
-                    <dt class="col-sm-4">Data de Término</dt>
+                    <dt class="col-sm-4">Data de Término:</dt>
                     <dd class="col-sm-8">@item.DataEventoFim.ToShortDateString()</dd>
-                    <dt class="col-sm-4">Valor da Diária (R$)</dt>
+                    <dt class="col-sm-4">Valor da Diária (R$):</dt>
                     <dd class="col-sm-8">@item.ValorDiaria</dd>
-                    <dt class="col-sm-4">Cidade</dt>
+                    <dt class="col-sm-4">Cidade:</dt>
                     <dd class="col-sm-8">@item.Cidade</dd>
-                    <dt class="col-sm-4">Estado</dt>
+                    <dt class="col-sm-4">Estado:</dt>
                     <dd class="col-sm-8">@item.Estado</dd>
 
                 </dl>

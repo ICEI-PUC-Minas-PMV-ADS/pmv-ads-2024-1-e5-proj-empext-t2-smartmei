@@ -14,7 +14,7 @@ public class EventosController : Controller
     }
 
 
-    public async Task<IActionResult> Index(string projetoNome)
+    public async Task<IActionResult> Index(string projetoNome, DateTime? dataEventoInicio)
     {
         // Query inicial
         var eventoQuery = _context.Eventos.AsQueryable();
@@ -25,15 +25,20 @@ public class EventosController : Controller
             eventoQuery = eventoQuery.Where(e => e.Projeto.Nome.Contains(projetoNome));
         }
 
+        // Aplicar filtro pela data de início, se fornecida
+        if (dataEventoInicio.HasValue)
+        {
+            eventoQuery = eventoQuery.Where(p => p.DataEventoInicio.Date == dataEventoInicio.Value.Date);
+        }
+
         // Incluir entidades relacionadas, se necessário
         eventoQuery = eventoQuery.Include(e => e.Projeto);
 
-        // Executar a consulta e converter em uma lista
         var eventos = await eventoQuery.ToListAsync();
 
-        // Retornar a lista de eventos para a view
         return View(eventos);
     }
+
 
     // GET: Eventos/Details/5
     public async Task<IActionResult> Details(int? id)
@@ -70,13 +75,15 @@ public class EventosController : Controller
         {
             _context.Add(evento);
             await _context.SaveChangesAsync();
+
+            TempData["Mensagem"] = "Evento criado com sucesso!";
             return RedirectToAction(nameof(Index));
         }
         return View(evento);
     }
 
     // GET: Eventos/Edit/5
-    public async Task<IActionResult> Edit(int? id)
+    public async Task<IActionResult> Edit(int? id )
     {
         if (id == null || _context.Eventos == null)
         {
@@ -108,6 +115,8 @@ public class EventosController : Controller
             {
                 _context.Update(evento);
                 await _context.SaveChangesAsync();
+
+                TempData["Mensagem"] = "Evento atualizado com sucesso!";
             }
             catch (DbUpdateConcurrencyException)
             {
