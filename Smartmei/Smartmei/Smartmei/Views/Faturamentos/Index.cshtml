@@ -4,7 +4,6 @@
     ViewData["Title"] = "Index";
 }
 <style>
-
     body {
         background-image: url('/bg.png');
         background-repeat: no-repeat;
@@ -17,29 +16,18 @@
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    .titulo {
-        text-align: center;
-        padding: 10px;
-    }
 
-    .espacamento {
-        padding-bottom: 20px;
-    }
+    /* CARDS */
 
-        .espacamento h1 {
-            font-weight: 600;
-        }
-
-
-    .faturamento-card {
-        width: calc(50% - 20px); /* Metade da largura da tela, com espaçamento entre os cards */
-        margin-bottom: 20px;
+    .card {
+        width: calc(50% - 20px); 
+        margin-bottom: 30px;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .faturamento-card-header {
+    .card-header {
         padding: 10px;
         /*border-bottom: 1px solid #ccc;*/
         background-color: #d9dadb;
@@ -47,11 +35,11 @@
         border-top-right-radius: 10px;
     }
 
-    .faturamento-card-body {
+    .card-body {
         padding: 10px;
     }
 
-        .faturamento-card-body dl {
+        .card-body dl {
             margin: 0;
         }
 
@@ -60,7 +48,7 @@
         text-align: right;
     }
 
-    /* BOTÃO */
+
 
     .btn-color {
         background-color: #09547F;
@@ -115,26 +103,41 @@
             cursor: pointer;
         }
 
-    /* Modal */
+
+
+    .titulo {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .espacamento {
+        padding-bottom: 20px;
+    }
+
+        .espacamento h2 {
+            font-weight: 600;
+        }
+
+ 
+
     .modal {
-        display: none; /* Oculta o modal por padrão */
-        position: fixed; /* Posição fixa na tela */
-        z-index: 1; /* Faz com que o modal fique sobre o conteúdo */
+        display: none;
+        position: fixed;
+        z-index: 1;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        overflow: auto; /* Adiciona scroll quando necessário */
-        background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
+        background-color: rgba(0,0,0,0.4);
     }
 
     .modal-content {
         background-color: #fefefe;
-        margin: 15% auto; /* Centraliza verticalmente */
+        margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
         border-radius: 10px;
-        width: 40%; /* Largura do modal */
+        width: 40%; 
     }
 
     .btn-color-delete {
@@ -154,49 +157,30 @@
             text-decoration: none;
         }
 
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    .filtro-container{
-        text-align: right;
-        display: flex;
-        margin-bottom:20px;
-    }
-
-    /* FILTRO */
-
     .filtro {
         display: flex;
         align-items: center;
         margin-bottom: 50px;
         margin-top: 20px;
-        /*background-color: #fff;
+        background-color: #fff;
         padding: 20px;
-        border-radius: 10px; /* Arredonda os cantos */
-        /* border: 1px solid #ccc; /* Adiciona uma borda */
+        border-radius: 10px;
+        border: 1px solid #ccc;
     }
 
     input[type="text"], input[type="submit"] {
         padding: 10px;
-        border-radius: 10px; /* Arredonda os cantos */
-        border: 1px solid #ccc; /* Adiciona uma borda */
-        width: 400px; /* Define a largura desejada */
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 400px;
         height: 40px;
         background-color: #fff;
     }
 
+  
 </style>
 
+<link href="/css/site.css" rel="stylesheet" />
 
 <div class="titulo">
     <div class="espacamento">
@@ -209,7 +193,7 @@
 
         <form method="get" class="filtro">
             <div style="margin-right: 10px;">
-                <label for="mes"><strong>Mês:</strong></label>
+                <label for="mes"><strong>Mês de referência:</strong></label>
             <input type="text" id="mes" name="mes" value="@ViewBag.Mes" />
         </div>
         <div style="margin-right: 10px;">
@@ -229,11 +213,11 @@
 <div class="container">
     @foreach (var item in Model)
             {
-          <div class="faturamento-card">
-                <div class="faturamento-card-header">
-                    <h3>Referência: @item.Mes / @item.Ano</h3>
+          <div class="card">
+                <div class="card-header">
+                    <h4>Referência: @item.Mes / @item.Ano</h4>
                 </div>
-            <div class="faturamento-card-body">
+            <div class="card-body">
                 <dl class="row list-unstyled">
                     <dt class="col-sm-4">Mês</dt>
                     <dd class="col-sm-8">@item.Mes</dd>

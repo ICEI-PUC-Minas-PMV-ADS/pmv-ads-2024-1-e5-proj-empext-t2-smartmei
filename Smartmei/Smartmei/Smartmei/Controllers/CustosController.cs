@@ -17,7 +17,7 @@ namespace SmartMei.Controllers
         }
 
         // GET: Custos
-        public async Task<IActionResult> Index(string projeto)
+        public async Task<IActionResult> Index(string projeto,decimal? custoTotal)
         {
             // Definindo a variável projetos como IQueryable<Projeto>
             var custos = _context.Custos.AsQueryable();
@@ -25,6 +25,10 @@ namespace SmartMei.Controllers
             if (!String.IsNullOrEmpty(projeto))
             {
                 custos = custos.Where(p => p.Projeto.Nome.Contains(projeto));
+            }
+            if (custoTotal.HasValue)
+            {
+                custos = custos.Where(p => p.CustoTotal == custoTotal);
             }
 
             // Convertendo a consulta em uma lista e incluindo a entidade Cliente se necessário

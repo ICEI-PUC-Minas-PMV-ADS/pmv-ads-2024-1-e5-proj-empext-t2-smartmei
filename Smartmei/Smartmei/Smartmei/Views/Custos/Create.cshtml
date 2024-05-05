@@ -92,6 +92,8 @@
     }
 </style>
 
+<link href="/css/site.css" rel="stylesheet" />
+
 <div class="espacamento">
     <h5>Adicionar novos custos:</h5>
 </div>
@@ -105,14 +107,14 @@
                     <div class="col">
                         <div class="form-group">
                             <label asp-for="PassagemAerea" class="control-label"></label>
-                            <input id="PassagemAerea" name="PassagemAerea" required data-val="true" required data-val-required="É necessário informar o valor da passagem aérea." class="form-control" />
+                            <input id="PassagemAerea" name="PassagemAerea" required data-val="true"  data-val-required="É necessário informar o valor da passagem aérea." class="form-control" />
                             <span asp-validation-for="PassagemAerea" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label asp-for="Hospedagem" class="control-label"></label>
-                            <input id="Hospedagem" name="Hospedagem" required data-val="true" required data-val-required="É necessário informar o valor da hospedagem." class="form-control" />
+                            <input id="Hospedagem" name="Hospedagem" required data-val="true" data-val-required="É necessário informar o valor da hospedagem." class="form-control" />
                             <span asp-validation-for="Hospedagem" class="text-danger"></span>
                         </div>
                     </div>

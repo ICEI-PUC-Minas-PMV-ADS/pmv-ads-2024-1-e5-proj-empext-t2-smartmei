@@ -16,19 +16,19 @@
 
     .container {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap:wrap;
         justify-content: space-between;
     }
 
-    .custo-card {
+    .card {
         width: calc(50% - 20px); /* Metade da largura da tela, com espaçamento entre os cards */
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .custo-card-header {
+    .card-header {
         padding: 10px;
         /*border-bottom: 1px solid #ccc;*/
         background-color: #d9dadb;
@@ -36,11 +36,11 @@
         border-top-right-radius: 10px;
     }
 
-    .custo-card-body {
+    .card-body {
         padding: 10px;
     }
 
-        .custo-card-body dl {
+        .card-body dl {
             margin: 0;
         }
 
@@ -49,7 +49,6 @@
         text-align: right;
     }
 
-    /* BOTÃO */
 
     .btn-color {
         background-color: #09547F;
@@ -103,7 +102,7 @@
             text-decoration: none;
             cursor: pointer;
         }
-    /* TÍTULO */
+
 
 
     .titulo {
@@ -115,30 +114,29 @@
         padding-bottom: 20px;
     }
 
-        .espacamento h1 {
+        .espacamento h2 {
             font-weight: 600;
         }
 
-    /* Modal */
+  
     .modal {
-        display: none; /* Oculta o modal por padrão */
-        position: fixed; /* Posição fixa na tela */
-        z-index: 1; /* Faz com que o modal fique sobre o conteúdo */
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        overflow: auto; /* Adiciona scroll quando necessário */
-        background-color: rgba(0,0,0,0.4); /* Cor de fundo com transparência */
+        background-color: rgba(0,0,0,0.4); 
     }
 
     .modal-content {
         background-color: #fefefe;
-        margin: 15% auto; /* Centraliza verticalmente */
+        margin: 15% auto; 
         padding: 20px;
         border: 1px solid #888;
         border-radius: 10px;
-        width: 40%; /* Largura do modal */
+        width: 40%; 
     }
 
     .btn-color-delete {
@@ -172,7 +170,6 @@
             cursor: pointer;
         }
 
-    /* FILTRO */
 
     .filtro {
         display: flex;
@@ -181,21 +178,23 @@
         margin-top: 20px;
         background-color: #fff;
         padding: 20px;
-        border-radius: 10px; /* Arredonda os cantos */
-        border: 1px solid #ccc; /* Adiciona uma borda */
+        border-radius: 10px; 
+        border: 1px solid #ccc;
     }
 
     input[type="text"], input[type="submit"] {
         padding: 10px;
-        border-radius: 10px; /* Arredonda os cantos */
-        border: 1px solid #ccc; /* Adiciona uma borda */
-        width: 400px; /* Define a largura desejada */
+        border-radius: 10px; 
+        border: 1px solid #ccc; 
+        width: 400px; 
         height: 40px;
         background-color: #fff;
     }
 
 
 </style>
+
+<link href="/css/site.css" rel="stylesheet" />
 
 
 <div class="titulo">
@@ -206,30 +205,34 @@
 </div>
 
 <div style ="width: 100%; text-align: center;">
-    
-    <form method="get" class="filtro">
-    <div style="margin-right: 10px;">
-            <label for="projeto"><strong>Projeto:</strong></label>
-        <input type="text" id="projeto" name="projeto" value="@ViewBag.Projeto" />
+
+        <form method="get" class="filtro">
+            <div style="margin-right: 10px;">
+                <label for="mes"><strong>Projeto:</strong></label>
+                <input type="text" id="projeto" name="projeto" value="@ViewBag.Projeto" />
+            </div>
+            <div style="margin-right: 10px;">
+                <label for="custoTotal"><strong>Custo Total:</strong></label>
+                <input type="text" id="custoTotal" name="custoTotal" value="@ViewBag.CustoTotal" />
+            </div>
+            <div style="margin-right: 10px;">
+                <button class="btn btn-color" type="submit">Filtrar</button>
+            </div>
+            <div>
+                <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
+            </div>
+        </form>
     </div>
-    <div style="margin-right: 10px;">
-        <button class="btn btn-color" type="submit">Filtrar</button>
-    </div>
-    <div>
-        <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
-    </div>
-    </form>
-</div>
 
 <div class="container">
      @foreach (var item in Model)
        {
-         <div class="custo-card">
-                <div class="custo-card-header">
-                    <h3>Projeto: @item.Projeto.Nome</h3>
+         <div class="card">
+                <div class="card-header">
+                    <h4>Projeto: @item.Projeto.Nome</h4>
                 </div>
     
-                <div class="custo-card-body">
+                <div class="card-body">
                     <dl class="row list-unstyled">
                         <dt class="col-sm-4">Passagem Aérea (R$)</dt>
                         <dd class="col-sm-8">@item.PassagemAerea</dd>
