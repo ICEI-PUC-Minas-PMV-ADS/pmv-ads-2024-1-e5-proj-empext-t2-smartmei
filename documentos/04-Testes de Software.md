@@ -257,6 +257,7 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/4caf71ef-d63e-4605-87a6-bd97135abec6
 
+
 | **Caso de Teste** 	| **CT-07 - Administrar clientes - Cadastrar e visualizar**	|
 |:---:	|:---:	|
 |	Desenvolvido por 	| Juliana |
@@ -278,6 +279,12 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 |	Desenvolvido por 	| Juliana |
 | Testado por 	| Fernanda |
 
-
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/a01e6f65-0f69-4e45-86f6-9978559f7456
 
+
+| **Caso de Teste** 	| **CT-08 - Gerenciamento de custos - Cadastrar e visualizar, CT-08.1 - Gerenciamento de Custos - Editar, CT-08.2 - Gerenciamento de Custos - Excluir**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Fernanda |
+| Testado por 	| Daiane |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/bc5b0aa4-57dc-4b26-81a2-93846f3d242b
