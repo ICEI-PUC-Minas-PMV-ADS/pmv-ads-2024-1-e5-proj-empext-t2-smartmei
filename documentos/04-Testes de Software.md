@@ -256,3 +256,28 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 | Testado por 	| Daiane |
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/4caf71ef-d63e-4605-87a6-bd97135abec6
+
+| **Caso de Teste** 	| **CT-07 - Administrar clientes - Cadastrar e visualizar**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/e298605e-3c25-42a9-9400-67888fa4da1f
+
+
+| **Caso de Teste** 	| **CT-07.1 - Administrar clientes - Editar**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/bf532124-6e8d-41c3-842f-cbe75a06b67c
+
+
+| **Caso de Teste** 	| **CT-07.2 - Administrar clientes - Excluir**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/a01e6f65-0f69-4e45-86f6-9978559f7456
+
