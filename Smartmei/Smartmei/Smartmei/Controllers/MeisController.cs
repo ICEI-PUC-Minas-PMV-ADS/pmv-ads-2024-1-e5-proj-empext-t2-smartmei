@@ -166,7 +166,7 @@ namespace Smartmei.Controllers
             bool isStrongPassword = IsStrongPassword(mei.Senha);
             if (!isStrongPassword)
             {
-                ModelState.AddModelError("Senha", "A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.");
+                ModelState.AddModelError("Senha", "A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.");
                 return View(mei);
             }
 
