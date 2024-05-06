@@ -252,7 +252,7 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 | **Caso de Teste** 	| **CT-01 - Cadastro de usuários, CT-02 - Efetuar login e CT-03 - Efetuar logout**	|
 |:---:	|:---:	|
-|	Desenvolvido por 	| Rúbia |
+|	Desenvolvido por 	| Rúbia e Guilherme |
 | Testado por 	| Daiane |
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/4caf71ef-d63e-4605-87a6-bd97135abec6
