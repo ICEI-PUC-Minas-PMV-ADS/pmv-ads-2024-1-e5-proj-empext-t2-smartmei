@@ -79,7 +79,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Diagrama de Casos de Uso
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/47e704c9-d71d-4ff0-9ba4-7ef49658c54c)
+![Diagrama de caso de uso SMARTMEI](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/044e2371-f3e1-478d-917f-3402f58f0234)
+
 
 ## Modelo ER (Projeto Conceitual)
 
