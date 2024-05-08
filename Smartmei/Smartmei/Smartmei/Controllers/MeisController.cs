@@ -175,11 +175,27 @@ namespace Smartmei.Controllers
                 mei.Senha = BCrypt.Net.BCrypt.HashPassword(mei.Senha);
                 _context.Meis.Update(mei);
                 await _context.SaveChangesAsync();
+
+                // Atualize o nome do usuário na sessão
+                var user = HttpContext.User;
+                if (user.Identity.IsAuthenticated)
+                {
+                    var claimsIdentity = (ClaimsIdentity)User.Identity;
+                    var claim = claimsIdentity.FindFirst(ClaimTypes.Name);
+                    if (claim != null)
+                    {
+                        claimsIdentity.RemoveClaim(claim); // Remover o claim atual
+                        claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, mei.Nome)); // Adicionar o novo claim com o nome atualizado
+                    }
+                    await HttpContext.SignInAsync(user);
+                }
+
                 return RedirectToAction("Edit");
             }
 
             return View(mei);
         }
+
 
         public async Task<IActionResult> Details(int? id)
         {

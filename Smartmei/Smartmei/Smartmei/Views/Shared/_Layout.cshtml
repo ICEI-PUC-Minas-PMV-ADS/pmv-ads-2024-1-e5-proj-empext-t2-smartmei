@@ -62,7 +62,7 @@
                             <!-- Nome de usuário como um item dropdown -->
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="usuarioDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Olá, @User.Identity.Name
+                                    Olá, @(User.Identity.IsAuthenticated ? User.Identity.Name : "Visitante")
                                 </a>
                                 <div class="dropdown-menu bg-custom-color" aria-labelledby="usuarioDropdown">
                                     <a class="dropdown-item"  href="~/Meis/Edit/@GetUserId(User)">Editar Cadastro</a>
