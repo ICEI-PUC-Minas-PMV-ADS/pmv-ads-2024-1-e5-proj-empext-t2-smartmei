@@ -300,3 +300,12 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 | Testado por 	| Daiane |
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/bc5b0aa4-57dc-4b26-81a2-93846f3d242b
+
+
+| **Caso de Teste** 	| **CT-12 - Gerenciamento de Faturamento - Cadastrar e visualizar, CT-12.1 - Gerenciamento de Faturamento - Editar, CT-12.2 - Gerenciamento de Faturamento - Excluir**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Fernanda |
+| Testado por 	| Rubia |
+
+
+[teste-faturamento.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/98122346/5eec2cda-20b7-4fea-a1a9-cc97419d3ec3)
