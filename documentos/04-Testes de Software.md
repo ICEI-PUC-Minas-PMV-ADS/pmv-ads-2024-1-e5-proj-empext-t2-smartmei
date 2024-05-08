@@ -269,6 +269,41 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/4caf71ef-d63e-4605-87a6-bd97135abec6
 
+| **Caso de Teste** 	| **CT-04 - Gerenciamento de conta**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Rúbia e Guilherme |
+| Testado por 	| Juliana |
+<p>Gerenciamento de conta com erro. A atualização do cadastro, aparece somente após o logout.</p>
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/dc65ed62-55ac-4386-8e1a-f301c163873e
+
+| **Caso de Teste** 	| **CT-05- Redefinir Senha**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Rúbia e Guilherme |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/fae1e606-5681-4d20-b598-69b86d872cae
+
+| **Caso de Teste** 	| **CT-06 - Administrar projetos - Cadastrar e visualizar**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Daiane |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/121550ad-51a4-4377-9210-60852766db6b
+
+| **Caso de Teste** 	| **CT-06.01 - Administrar projetos -  Editar**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Daiane |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/81257366-df50-4845-8fcd-3aaffb42f412
+
+| **Caso de Teste** 	| **CT-06.2 - Administrar projetos - Excluir**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Daiane |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/ed47fa6b-1c01-4636-b4d0-92d5830a9c1b
 
 | **Caso de Teste** 	| **CT-07 - Administrar clientes - Cadastrar e visualizar**	|
 |:---:	|:---:	|
