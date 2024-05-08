@@ -238,10 +238,15 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 - Custos
 
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/a59afbf5-8185-463a-be39-c39ae6b39f1f
 
 - Eventos
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/0ab338d1-947e-4975-ae76-5822cb92c8a6
+
+- Faturamentos
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/0ba01d32-879f-45d3-84dd-e586a9e65b42
 
 **Caso de Teste 12**
 <br>
