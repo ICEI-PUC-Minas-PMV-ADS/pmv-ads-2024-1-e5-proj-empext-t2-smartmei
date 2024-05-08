@@ -71,6 +71,7 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Clientes” no menu superior <br> - Clicar no botão “Excluir” <br> - Confirmar a exclusão do registro dos dados do cliente, clicando no botão "Sim" <br> |
 |Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
 |  	|  	|
+|Critério de Êxito | - Os dados inseridos no filtro de pesquisa devem mostrar os produtos e receitas onde há o dado informado. |
 | **Caso de Teste** 	| **CT-08 - Gerenciamento de custos - Cadastrar e visualizar**	|
 |	Requisito Associado 	| RF-008 - A aplicação deve permitir ao usuário gerenciar seus custos. |
 | Objetivo do Teste 	| Verificar se o usuário consegue cadastrar e visualizar os custos registrados na aplicação. |
@@ -230,6 +231,17 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 - Projetos
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/9a395cdf-09df-4b25-914b-cdf88f4095ee
+
+- Clientes
+  
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/15952470-fb44-475e-bafe-e043aa7c5d7b
+
+- Custos
+
+
+- Eventos
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/0ab338d1-947e-4975-ae76-5822cb92c8a6
 
 **Caso de Teste 12**
 <br>
