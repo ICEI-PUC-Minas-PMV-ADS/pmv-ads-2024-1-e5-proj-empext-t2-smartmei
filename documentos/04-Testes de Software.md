@@ -341,6 +341,27 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/bc5b0aa4-57dc-4b26-81a2-93846f3d242b
 
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Daiane |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/b0098ae6-af06-43b7-87d7-98831cfe8c37
+
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/c7e76747-3c45-438f-9c0d-d328d0e87958
+
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/4c69d476-e9fa-4806-bfb9-76345cfa0500
+
 
 | **Caso de Teste** 	| **CT-12 - Gerenciamento de Faturamento - Cadastrar e visualizar, CT-12.1 - Gerenciamento de Faturamento - Editar, CT-12.2 - Gerenciamento de Faturamento - Excluir**	|
 |:---:	|:---:	|
