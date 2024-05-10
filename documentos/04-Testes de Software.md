@@ -278,9 +278,8 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 |:---:	|:---:	|
 |	Desenvolvido por 	| Rúbia e Guilherme |
 | Testado por 	| Juliana |
-<p>Gerenciamento de conta com erro. A atualização do cadastro, aparece somente após o logout.</p>
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/dc65ed62-55ac-4386-8e1a-f301c163873e
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/b8b890ee-627d-4ca0-a443-b9b5f8c71df7
 
 | **Caso de Teste** 	| **CT-05- Redefinir Senha**	|
 |:---:	|:---:	|
