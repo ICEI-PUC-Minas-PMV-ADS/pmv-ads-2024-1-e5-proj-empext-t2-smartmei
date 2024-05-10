@@ -102,7 +102,7 @@
 
 <div class="container">
     <div class="row">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="col">
@@ -114,32 +114,33 @@
                     </div>
                     <div class="col">
                         <label asp-for="DataEventoInicio" class="control-label"></label>
-                        <input asp-for="DataEventoInicio" type="date" required data-val-required="Por favor, informe a data de início do evento." class="form-control" />
+                        <input asp-for="DataEventoInicio" type="date" class="form-control" />
                         <span asp-validation-for="DataEventoInicio" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label asp-for="DataEventoFim" class="control-label"></label>
-                        <input asp-for="DataEventoFim" type="date" required data-val-required="Por favor, informe a data de início do evento." class="form-control" />
+                        <input asp-for="DataEventoFim" type="date" class="form-control" />
                         <span asp-validation-for="DataEventoFim" class="text-danger"></span>
                     </div>
                     <div class="col">
                         <label asp-for="ValorDiaria" class="control-label"></label>
-                        <input value="@Model.ValorDiaria" id="ValorDiaria" name="ValorDiaria" required class="form-control" />
+                        <input asp-for="ValorDiaria" class="form-control" />
                         <span asp-validation-for="ValorDiaria" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label asp-for="Cidade" class="control-label"></label>
-                        <input value="@Model.Cidade" id="Cidade" name="Cidade" required class="form-control" />
+                        <input asp-for="Cidade" class="form-control" />
                         <span asp-validation-for="Cidade" class="text-danger"></span>
                     </div>
                     <div class="col">
                         <label asp-for="Estado" class="control-label"></label>
-                        <select value="@Model.Estado" id="Estado" name="Estado" class="form-select form-control" asp-items="Html.GetEnumSelectList<Estado>()"><option value="">Selecione</option></select>
-                                          
+                        <select asp-for="Estado" class="form-select form-control" asp-items="Html.GetEnumSelectList<Estado>()">
+                            <option value="">Selecione</option>
+                        </select>
                         <span asp-validation-for="Estado" class="text-danger"></span>
                     </div>
                 </div>
@@ -154,6 +155,7 @@
         </form>
     </div>
 </div>
+
 
 @section Scripts {
     @{

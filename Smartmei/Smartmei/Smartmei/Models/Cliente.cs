@@ -11,7 +11,7 @@ namespace Smartmei.Models
         [Key]
         public int Id { get; set; }
 
-        [DisplayName("Nome completo/razão social")]
+        [DisplayName("Nome/razão social")]
         [Required(ErrorMessage = "Obrigatório preencher o campo")]
         public string Nome { get; set; }
                      
