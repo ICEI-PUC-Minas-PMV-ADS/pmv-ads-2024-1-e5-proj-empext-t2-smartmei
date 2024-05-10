@@ -132,6 +132,13 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Faturamentos” no menu superior <br> - Clicar no botão “Excluir” <br> - Confirmar a exclusão do registro do faturamento, clicando no botão "Sim" <br> |
 |Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
 |  	|  	|
+| **Caso de Teste** 	| **CT-13 - Relatórios de registros** |
+|	Requisito Associado 	| RF-013 - A aplicação deve permitir ao usuário gerar um relatório dos registros cadastrados. |
+| Objetivo do Teste 	| Verificar se o usuário consegue gerar os relatórios dos registros cadastrados na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Relatórios” no menu superior <br> - Clicar no relatório desejado |
+|Critério de Êxito | - Download do arquivo do relatório em .PDF. |
+|  	|  	|
+
 
 
 
