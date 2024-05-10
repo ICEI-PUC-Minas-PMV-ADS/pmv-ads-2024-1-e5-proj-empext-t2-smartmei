@@ -97,7 +97,7 @@
 <link href="/css/site.css" rel="stylesheet" />
 
 <div class="espacamento">
-<h5>Adicionar novo evento:</h5>
+    <h5>Adicionar novo evento:</h5>
 </div>
 
 <div class="container">
@@ -114,14 +114,14 @@
                     </div>
                     <div class="col">
                         <label asp-for="DataEventoInicio" class="control-label"></label>
-                        <input asp-for="DataEventoInicio" type="date" required data-val-required="Por favor, informe a data de início do evento." class="form-control" />
+                        <input asp-for="DataEventoInicio" type="date" id="dataInicio" required data-val-required="Por favor, informe a data de início do evento." class="form-control" />
                         <span asp-validation-for="DataEventoInicio" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label asp-for="DataEventoFim" class="control-label"></label>
-                        <input asp-for="DataEventoFim" type="date" required data-val-required="Por favor, informe a data de início do evento." class="form-control" />
+                        <input asp-for="DataEventoFim" type="date" id="dataFim" required data-val-required="Por favor, informe a data de início do evento." class="form-control" />
                         <span asp-validation-for="DataEventoFim" class="text-danger"></span>
                     </div>
                     <div class="col">
@@ -139,7 +139,7 @@
                     <div class="col">
                         <label asp-for="Estado" class="control-label"></label>
                         <select value="@Model.Estado" id="Estado" name="Estado" class="form-select form-control" asp-items="Html.GetEnumSelectList<Estado>()"><option value="">Selecione</option></select>
-                                          
+
                         <span asp-validation-for="Estado" class="text-danger"></span>
                     </div>
                 </div>
@@ -159,5 +159,23 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
 
+    <script>
+        $(document).ready(function () {
+            // Função para formatar a data
+            function formatarData(inputId) {
+                var input = document.getElementById(inputId);
+                var dataValue = input.value;
+
+                if (dataValue) {
+                    var dataFormatada = new Date(dataValue).toLocaleDateString('pt-BR');
+                    input.value = dataFormatada;
+                }
+            }
+
+            // Chame a função para formatar as datas de início e fim do evento
+            formatarData('dataInicio');
+            formatarData('dataFim');
+        });
+    </script>
+}
