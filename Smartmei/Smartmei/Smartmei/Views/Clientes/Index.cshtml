@@ -199,7 +199,7 @@
 
     <form method="get" class="filtro">
     <div style="margin-right: 10px;">
-        <label for="nome"><strong>Nome/Razão Social:</strong></label>
+        <label for="nome"><strong>Nome Completo/Razão Social:</strong></label>
         <input type="text" id="nome" name="nome" value="@ViewBag.Nome" />
     </div>
     <div style="margin-right: 10px;">
@@ -219,40 +219,49 @@
     
               
 
-             <dt class="col-sm-4">
-              @Html.DisplayNameFor(model => model.Estado)
-               </dt>
-             <dd class="col-sm-8">
-              @Html.DisplayFor(modelItem => item.Estado)
-             </dd>
+    <div class="container">
 
-              <dt class="col-sm-4">
-               @Html.DisplayNameFor(model => model.ProductOwner)
-              </dt>
-              <dd class="col-sm-8">
-               @Html.DisplayFor(modelItem => item.ProductOwner)
-              </dd>
-
-              <dt class="col-sm-4">
-              @Html.DisplayNameFor(model => model.Observacao)
-                </dt>
-               <dd class="col-sm-8">
-              @Html.DisplayFor(modelItem => item.Observacao)
-               </dd>
-               </dl>
-               </td>
-
-                            <td class="action-btns">
-                                <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                                <a class="btn-color" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
-                                <a class="btn-color" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-                                <a asp-action="GerarPDF" class="btn btn-primary">Gerar Relatório em PDF</a>
-
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+  @foreach (var item in Model) {
+               
+              
+        <div class="cliente-card">
+            <div class="cliente-card-header">
+                <h3>@item.Nome</h3>
+            </div>
+            <div class="cliente-card-body">
+                <dl class="row list-unstyled">
+                    <dt class="col-sm-4">Nome/Razão Social:</dt>
+                    <dd class="col-sm-8">@item.Nome</dd>
+                    <dt class="col-sm-4">CNPJ:</dt>
+                    <dd class="col-sm-8">@item.CNPJ</dd>
+                    <dt class="col-sm-4">Telefone:</dt>
+                    <dd class="col-sm-8">@item.Telefone</dd>
+                    <dt class="col-sm-4">Email:</dt>
+                    <dd class="col-sm-8">@item.Email</dd>
+                    <dt class="col-sm-4">Cidade:</dt>
+                    <dd class="col-sm-8">@item.Cidade</dd>
+                    <dt class="col-sm-4">Estado:</dt>
+                    <dd class="col-sm-8">@item.Estado</dd>
+                    <dt class="col-sm-4">Product Owner:</dt>
+                    <dd class="col-sm-8">@item.ProductOwner</dd>
+                    <dt class="col-sm-4"> Observação:</dt>
+                    <dd class="col-sm-8">@item.Observacao</dd>
+                </dl>
+                <div class="action-btns">
+                    <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn-color-delete" onclick="openModal('@item.Id', '@item.Nome')">Excluir</a>
+                </div>
+            </div>
+        </div>
+    }
+    <div id="confirmDeleteModal" class="modal">
+        <div class="modal-content">
+            <h4 id="clienteNome"></h4>
+            <form id="deleteForm" asp-action="Delete" method="post">
+                <input type="hidden" id="clienteId" name="Id" />
+                <button type="submit" class="btn-color-delete">Sim</button>
+                <button type="button" class="btn-color" onclick="closeModal()">Não</button>
+            </form>
         </div>
     </div>
 </div>
