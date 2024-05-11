@@ -19,18 +19,18 @@ namespace Smartmei.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        [DisplayName("Data do início do evento")]
+        [DisplayName("Data de início")]
         [Required(ErrorMessage = "Por favor, informe a data de início do evento")]
         public DateTime DataEventoInicio { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        [DisplayName("Data final do evento")]
+        [DisplayName("Data de término")]
         [Required(ErrorMessage = "Por favor, informe a data final do evento")]
         public DateTime DataEventoFim { get; set; }
                        
                      
-        [DisplayName("Valor da diária (R$)")]
+        [DisplayName("Valor da diária")]
         [Required(ErrorMessage = "Por favor, informe o valor da diária")]
         public decimal ValorDiaria { get; set; }
 
