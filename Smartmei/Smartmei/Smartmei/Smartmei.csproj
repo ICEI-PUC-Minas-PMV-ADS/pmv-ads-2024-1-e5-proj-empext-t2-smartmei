@@ -13,7 +13,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+		<PackageReference Include="BouncyCastle.NetCore" Version="2.2.1" />
 		<PackageReference Include="FontAwesome" Version="4.7.0" />
+		<PackageReference Include="itext7" Version="8.0.3" />
+		<PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.3" />
 		<PackageReference Include="Material.Icons" Version="2.1.4" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.25" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.25" />
