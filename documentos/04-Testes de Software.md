@@ -347,6 +347,13 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/bc5b0aa4-57dc-4b26-81a2-93846f3d242b
 
+| **Caso de Teste** 	| **CT-09 - Gerenciamento de Eventos - Cadastrar e visualizar, CT-09.1 - Gerenciamento de Eventos - Editar, CT-09.2 - Gerenciamento de Eventos - Excluir**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Rúbia |
+
+[teste-eventos.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/98122346/f447fa09-09cd-43c1-8c35-3c3f36de64ae)
+
 | **Caso de Teste** 	| **CT-10 - Filtros**		|
 |:---:	|:---:	|
 |	Desenvolvido por 	| Daiane |
