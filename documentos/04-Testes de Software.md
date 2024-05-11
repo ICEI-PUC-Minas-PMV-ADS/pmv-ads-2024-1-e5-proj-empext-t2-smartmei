@@ -383,3 +383,23 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 
 [teste-faturamento.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/98122346/5eec2cda-20b7-4fea-a1a9-cc97419d3ec3)
+
+
+| **Caso de Teste** 	| **CT-13 - Relatórios**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Guilherme |
+| Testado por 	| Juliana |
+
+- Relatório de Clientes 
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/1ab3eb20-2397-4c5c-bf63-482297b6ee08
+
+- Relatório de Projetos
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/f8683984-8215-4305-81eb-f8be6b34fa82
+
+
+
+
+
