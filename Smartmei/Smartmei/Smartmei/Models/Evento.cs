@@ -6,7 +6,6 @@ namespace Smartmei.Models
 {
     [Table("Eventos")]
     public class Evento
-
     {
         [Key]
         public int Id { get; set; }
@@ -18,19 +17,20 @@ namespace Smartmei.Models
         [ForeignKey("ProjetoId")]
         public Projeto Projeto { get; set; }
 
-        [DisplayName("Data do início do evento")]
-        [Required(ErrorMessage = "Por favor, informe a data de início do evento")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayName("Data de início")]
+        [Required(ErrorMessage = "Por favor, informe a data de início do evento")]
         public DateTime DataEventoInicio { get; set; }
 
-        [DisplayName("Data final do evento")]
-        [Required(ErrorMessage ="Por favor, informe a data final do evento")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayName("Data de término")]
+        [Required(ErrorMessage = "Por favor, informe a data final do evento")]
         public DateTime DataEventoFim { get; set; }
-
-        [DisplayName("Valor da diária (R$)")]
+                       
+                     
+        [DisplayName("Valor da diária")]
         [Required(ErrorMessage = "Por favor, informe o valor da diária")]
         public decimal ValorDiaria { get; set; }
 
@@ -39,8 +39,5 @@ namespace Smartmei.Models
 
         [Required(ErrorMessage = "Obrigatório selecionar o estado")]
         public Estado Estado { get; set; }
-
     }
-
-
 }

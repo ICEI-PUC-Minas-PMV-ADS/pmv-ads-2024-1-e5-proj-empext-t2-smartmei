@@ -16,11 +16,29 @@ namespace SmartMei.Controllers
         }
 
         // GET: Faturamentos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? mes, int? ano)
         {
-            var appDbContext = _context.Faturamentos.Include(f => f.Mei);
-            return View(await appDbContext.ToListAsync());
+            var faturamentoQuery = _context.Faturamentos.AsQueryable();
+
+            if (mes.HasValue)
+            {
+                faturamentoQuery = faturamentoQuery.Where(p => p.Mes == mes);
+            }
+
+            if (ano.HasValue)
+            {
+                faturamentoQuery = faturamentoQuery.Where(p => p.Ano == ano);
+            }
+
+            faturamentoQuery = faturamentoQuery.Include(p => p.Mei);
+
+            
+            var faturamentos = await faturamentoQuery.ToListAsync();
+
+ 
+            return View(faturamentos);
         }
+
 
         // GET: Faturamentos/Details/5
         public async Task<IActionResult> Details(int? id)

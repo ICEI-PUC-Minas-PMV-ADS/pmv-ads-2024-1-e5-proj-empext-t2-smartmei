@@ -6,73 +6,149 @@
 
 <style>
 
-    body {
-        background-color: #E7F9F9;
-    }
+    /*Botões*/
 
     .botoes {
-        padding: 20px 0;
-        margin-bottom: 10px;
+        padding: 0 10px 10px 0;
+        margin-bottom: 30px;
+        margin-right: 120px;
     }
 
-    .form-group {
-        padding: 5px 0;
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
     }
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-voltar {
+        background-color: black;
+        color: #fff;
+        border-color: black;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-voltar:hover {
+            background-color: #292929;
+            border-color: #E7F9F9;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    /*Formulário*/
 
     .control-label {
         font-weight: bold;
+        width: 100%;
+    }
+
+    .form-select {
+        width: 100%;
+        border: 2px solid #09547F;
+    }
+
+    .col {
+        align-items: center;
+        width: 100%;
+        padding: 0 70px 0 70px;
+        padding-bottom: 25px;
+    }
+
+    .form-control {
+        border: 2px solid #09547F;
+    }
+
+    /*PÁGINA*/
+
+    main {
+        padding-top: 10px;
     }
 
     .espacamento {
-        padding: 10px 0;
+        padding: 10px 0 30px 0;
+        text-align: center;
     }
 
+    body {
+        background-image: url('/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    h5 {
+        text-align: center;
+    }
 </style>
+
+<link href="/css/site.css" rel="stylesheet" />
+
 <div class="espacamento">
-    <h2>Adicionar novo evento</h2>
+    <h5>Adicionar novo evento:</h5>
 </div>
-<hr/>
- 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+
+<div class="container">
+    <div class="row">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="ProjetoId" class="control-label"></label>
+                        <select asp-for="ProjetoId" class="form-control" asp-items="ViewBag.ProjetoId"></select>
+                        <span asp-validation-for="ProjetoId" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="DataEventoInicio" class="control-label"></label>
+                        <input asp-for="DataEventoInicio" type="date" id="dataInicio" required data-val-required="Por favor, informe a data de início do evento." class="form-control" />
+                        <span asp-validation-for="DataEventoInicio" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="DataEventoFim" class="control-label"></label>
+                        <input asp-for="DataEventoFim" type="date" id="dataFim" required data-val-required="Por favor, informe a data de início do evento." class="form-control" />
+                        <span asp-validation-for="DataEventoFim" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="ValorDiaria" class="control-label"></label>
+                        <input asp-for="ValorDiaria" class="form-control" />
+                        <span asp-validation-for="ValorDiaria" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Cidade" class="control-label"></label>
+                        <input asp-for="Cidade" class="form-control" />
+                        <span asp-validation-for="Cidade" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Estado" class="control-label"></label>
+                        <select value="@Model.Estado" id="Estado" name="Estado" class="form-select form-control" asp-items="Html.GetEnumSelectList<Estado>()"><option value="">Selecione</option></select>
+
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
 
             <div class="form-group">
-                <label asp-for="ProjetoId" class="control-label"></label>
-                <select asp-for="ProjetoId" class ="form-control" asp-items="ViewBag.ProjetoId"></select>
-                <span asp-validation-for="ProjetoId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataEventoInicio" class="control-label"></label>
-                <input asp-for="DataEventoInicio" type="date" class="form-control" />
-                <span asp-validation-for="DataEventoInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataEventoFim" class="control-label"></label>
-                <input asp-for="DataEventoFim" type="date" class="form-control" />
-                <span asp-validation-for="DataEventoFim" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorDiaria" class="control-label"></label>
-                <input asp-for="ValorDiaria" class="form-control" />
-                <span asp-validation-for="ValorDiaria" class="text-danger"></span>
-               
-            </div>
-            <div class="form-group">
-                <label asp-for="Cidade" class="control-label"></label>
-                <input asp-for="Cidade" class="form-control" />
-                <span asp-validation-for="Cidade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado" class="control-label"></label>
-                <select asp-for="Estado" class="form-select" asp-items="Html.GetEnumSelectList<Estado>()"></select>
-                <span asp-validation-for="Estado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="botoes">
-                    <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+                <div class="botoes d-flex justify-content-end">
+                    <input type="submit" value="Salvar" class="btn btn-color" />
+                    <a class="btn btn-color-voltar" asp-action="Index">Voltar</a>
                 </div>
             </div>
         </form>
@@ -80,7 +156,27 @@
 </div>
 
 
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            // Função para formatar a data
+            function formatarData(inputId) {
+                var input = document.getElementById(inputId);
+                var dataValue = input.value;
+
+                if (dataValue) {
+                    var dataFormatada = new Date(dataValue).toLocaleDateString('pt-BR');
+                    input.value = dataFormatada;
+                }
+            }
+
+            // Chame a função para formatar as datas de início e fim do evento
+            formatarData('dataInicio');
+            formatarData('dataFim');
+        });
+    </script>
 }

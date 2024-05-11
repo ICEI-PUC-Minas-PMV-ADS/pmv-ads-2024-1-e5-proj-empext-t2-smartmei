@@ -4,82 +4,169 @@
     ViewData["Title"] = "Create";
 }
 <style>
+
+    /*Botões*/
+
+    .botoes {
+        padding: 0 10px 10px 0;
+        margin-bottom: 30px;
+        margin-right: 120px;
+    }
+
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-voltar {
+        background-color: black;
+        color: #fff;
+        border-color: black;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-voltar:hover {
+            background-color: #292929;
+            border-color: #E7F9F9;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    /*Formulário*/
+
+    .control-label {
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .form-select {
+        width: 100%;
+        border: 2px solid #09547F;
+    }
+
+    .col {
+        align-items: center;
+        width: 100%;
+        padding: 0 70px 0 70px;
+        padding-bottom: 25px;
+    }
+
+    .form-control {
+        border: 2px solid #09547F;
+    }
+
+    /*PÁGINA*/
+
     main {
+        padding-top: 10px;
+    }
+
+    .espacamento {
+        padding: 10px 0 30px 0;
         text-align: center;
     }
 
     body {
-        background-color: #E7F9F9;
+        background-image: url('/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
-    .botoes {
-        padding: 20px 0;
-        margin-bottom: 10px;
-    }
-
-    .form-group {
-        padding: 5px 0;
-    }
-
-    .control-label {
-        font-weight: bold;
-    }
-
-    .espacamento {
-        padding: 10px 0;
+    h5 {
+        text-align: center;
     }
 
 </style>
 
+<link href="/css/site.css" rel="stylesheet" />
 
-<h4>Adicionar novo faturamento</h4>
+<div class="espacamento">
+    <h5>Adicionar novo faturamento:</h5>
+</div>
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+    <div class="row">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Mes" class="control-label"></label>
-                <input asp-for="Mes" class="form-control" />
-                <span asp-validation-for="Mes" class="text-danger"></span>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Mes" class="control-label"></label>
+                            <input asp-for="Mes" required data-val="true"  data-val-required="É necessário informar o mês." class="form-control" />
+                            <span asp-validation-for="Mes" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Ano" class="control-label"></label>
+                            <input asp-for="Ano" required data-val="true" data-val-required="É necessário informar o ano." class="form-control" />
+                            <span asp-validation-for="Ano" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="ValorBruto" class="control-label"></label>
+                            <input id="ValorBruto" name="ValorBruto" required data-val="true" data-val-required="É necessário informar o valor bruto." class="form-control" />
+                            <span asp-validation-for="ValorBruto" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="CustoMensal" class="control-label"></label>
+                            <input id="CustoMensal" name="CustoMensal" required data-val="true" data-val-required="É necessário informar o custo mensal." class="form-control" />
+                            <span asp-validation-for="CustoMensal" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="ValorLiquidoMensal" class="control-label"></label>
+                            <input id="ValorLiquidoMensal" name="ValorLiquidoMensal" required data-val="true" data-val-required="É necessário informar o valor líquido mensal." class="form-control" />
+                            <span asp-validation-for="ValorLiquidoMensal" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="MeiId" class="control-label"></label>
+                            <select asp-for="MeiId" class="form-select" asp-items="ViewBag.MeiId"></select>
+                        </div>
+                    </div>
+                </div>  
             </div>
             <div class="form-group">
-                <label asp-for="Ano" class="control-label"></label>
-                <input asp-for="Ano" class="form-control" />
-                <span asp-validation-for="Ano" class="text-danger"></span>
+                <div class="botoes d-flex justify-content-end">
+                    <input type="submit" value="Salvar" class="btn btn-color" />
+                    <a class="btn btn-color-voltar" asp-action="Index">Voltar</a>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ValorBruto" class="control-label"></label>
-                <input id="ValorBruto" name="ValorBruto" required class="form-control" />
-                <span asp-validation-for="ValorBruto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustoMensal" class="control-label"></label>
-                 <input id="CustoMensal" name="CustoMensal" required class="form-control" />
-                <span asp-validation-for="CustoMensal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorLiquidoMensal" class="control-label"></label>
-                <input id="ValorLiquidoMensal" name="ValorLiquidoMensal" required class="form-control" />
-                <span asp-validation-for="ValorLiquidoMensal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MeiId" class="control-label"></label>
-                <select asp-for="MeiId" class ="form-control" asp-items="ViewBag.MeiId"></select>
-            </div>
-            <div class="form-group">
-                <div class="botoes">
-                    <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
-                     </div>
-                 </div>
-            </form>
-         </div>
+        </form>
     </div>
 </div>
 
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Smartmei.Models;
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 
 namespace Smartmei.Controllers
 {
@@ -63,7 +64,7 @@ namespace Smartmei.Controllers
 
                 await HttpContext.SignInAsync(principal, props);
 
-                return Redirect("/");
+                return Redirect("/Home/Index");
             }
             else
             {
@@ -86,7 +87,6 @@ namespace Smartmei.Controllers
             var existingUser = await _context.Meis.AnyAsync();
             if (existingUser)
             {
-                // Definir uma mensagem de alerta
                 ViewBag.AlertMessage = "Cadastro bloqueado: Apenas um cadastro  permitido.";
 
                 return RedirectToAction("Login");
@@ -98,25 +98,52 @@ namespace Smartmei.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Mei mei)
         {
-            // Verificar se já existe algum usuário cadastrado
             var existingUser = await _context.Meis.AnyAsync();
             if (existingUser)
             {
                 ViewBag.AlertMessage = "Cadastro bloqueado: Apenas um cadastro permitido.";
+                return View(mei);
             }
 
+            // Verifica se a senha atende aos critérios de senha forte
+            bool isStrongPassword = IsStrongPassword(mei.Senha);
+            if (!isStrongPassword)
+            {
+                ModelState.AddModelError("Senha", "A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.");
+                return View(mei);
+            }
+
+            // Se nenhum usuário existir e a senha for forte, então é feito o cadastro
             if (ModelState.IsValid)
             {
                 mei.Senha = BCrypt.Net.BCrypt.HashPassword(mei.Senha); //aqui estou criptografando a senha
                 _context.Meis.Add(mei);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(mei);
+
         }
 
+        // Verifica se a senha é forte
+        private static bool IsStrongPassword(string password)
+        {
+            int minLength = 8;
 
-    public async Task<IActionResult> Edit(int? id)
+            if (password.Length < minLength)
+                return false;
+            if (!Regex.IsMatch(password, "[A-Z]"))
+                return false;
+            if (!Regex.IsMatch(password, "[a-z]"))
+                return false;
+            if (!Regex.IsMatch(password, "[0-9]"))
+                return false;
+
+            // Senha atende a todos os critérios
+            return true;
+        }
+
+        public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
             return NotFound();
@@ -135,16 +162,40 @@ namespace Smartmei.Controllers
             if (id != mei.Id)
                 return NotFound();
 
+            // Verificar se a senha atende aos critérios de senha forte
+            bool isStrongPassword = IsStrongPassword(mei.Senha);
+            if (!isStrongPassword)
+            {
+                ModelState.AddModelError("Senha", "A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.");
+                return View(mei);
+            }
+
             if (ModelState.IsValid)
             {
                 mei.Senha = BCrypt.Net.BCrypt.HashPassword(mei.Senha);
                 _context.Meis.Update(mei);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+
+                // Atualize o nome do usuário na sessão
+                var user = HttpContext.User;
+                if (user.Identity.IsAuthenticated)
+                {
+                    var claimsIdentity = (ClaimsIdentity)User.Identity;
+                    var claim = claimsIdentity.FindFirst(ClaimTypes.Name);
+                    if (claim != null)
+                    {
+                        claimsIdentity.RemoveClaim(claim); // Remover o claim atual
+                        claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, mei.Nome)); // Adicionar o novo claim com o nome atualizado
+                    }
+                    await HttpContext.SignInAsync(user);
+                }
+
+                return RedirectToAction("Edit");
             }
 
             return View(mei);
         }
+
 
         public async Task<IActionResult> Details(int? id)
         {
@@ -165,7 +216,7 @@ namespace Smartmei.Controllers
 
             var dados = await _context.Meis.FindAsync(id);
 
-            if (id == null)
+            if (dados == null)
                 return NotFound();
 
             return View(dados);
@@ -178,13 +229,16 @@ namespace Smartmei.Controllers
 
             var dados = await _context.Meis.FindAsync(id);
 
-            if (id == null)
+            if (dados == null)
                 return NotFound();
 
             _context.Meis.Remove(dados);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+            // Realiza o logout do usuário
+            await HttpContext.SignOutAsync();
+
+            return RedirectToAction("Login");
         }
     }
 }

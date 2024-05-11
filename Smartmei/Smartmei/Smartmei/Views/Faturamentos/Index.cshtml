@@ -4,77 +4,105 @@
     ViewData["Title"] = "Index";
 }
 <style>
-
     body {
-        background-color: #E7F9F9;
-        margin: 0;
-        padding: 0;
+        background-image: url('/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
-    /* TABELA */
-
-    div.table-container {
-        max-width: 100%;
-        overflow-x: auto;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
-    table {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        border-collapse: collapse;
-        border-radius: 15px;
-        overflow: hidden;
-        background-color: white;
-    }
+    /* CARDS */
 
-    td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 2px solid #09547F;
-    }
-
-    dl {
-        padding: 15px 0 0 10px;
-    }
-
-    tbody tr:nth-child(even) {
-        background-color: #F6F6F6;
-    }
-
-    /* BOTÃO */
-
-    .btn-container {
-        margin-top: 20px;
-        text-align: right;
+    .card {
+        width: calc(50% - 20px); 
         margin-bottom: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-        .btn-container a {
-            margin-left: 10px;
+    .card-header {
+        padding: 10px;
+        /*border-bottom: 1px solid #ccc;*/
+        background-color: #d9dadb;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+        .card-body dl {
+            margin: 0;
         }
+
+    .action-btns {
+        padding: 15px;
+        text-align: right;
+    }
+
+
 
     .btn-color {
         background-color: #09547F;
         color: #fff;
         border-color: #09547F;
-        padding: 10px;
+        padding: 5px 10px;
         text-decoration: none;
         border-radius: 5px;
+        margin-left: 5px;
     }
 
         .btn-color:hover {
-            background-color: #FA983C;
-            color: #09547F;
+            background-color: #0C71AB;
+            color: #fff;
             border-color: #E7F9F9;
             text-decoration: none;
         }
 
-    .action-btns {
-        white-space: nowrap;
+    .btn-color-add {
+        background-color: #FA983C;
+        color: black;
+        border-color: #ff8c00;
+        padding: 5px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+        font-weight: bold;
     }
 
-    /* TÍTULO */
+        .btn-color-add:hover {
+            background-color: #ffb11b;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
 
 
     .titulo {
@@ -86,77 +114,150 @@
         padding-bottom: 20px;
     }
 
-        .espacamento h1 {
+        .espacamento h2 {
             font-weight: 600;
         }
 
+ 
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 40%; 
+    }
+
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #9d0000;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .filtro {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+    input[type="text"], input[type="submit"] {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        width: 400px;
+        height: 40px;
+        background-color: #fff;
+    }
+
+  
 </style>
+
+<link href="/css/site.css" rel="stylesheet" />
 
 <div class="titulo">
     <div class="espacamento">
-        <h1>Faturamentos</h1>
+        <h2>Faturamentos</h2>
     </div>
-    <p><a class="btn btn-color" asp-action="Create">Adicionar</a></p>
+    <p><a class="btn btn-color-add" asp-action="Create">Adicionar</a></p>
 </div>
-<hr />
-<div class="btn-container">
+  
+    <div style="width: 100%; text-align: center;">
 
-    <div class="table-container">
-        <div class="table-container">
-            <table class="table mx-auto align-middle table-hover">
-                <tbody class="table-group-divider">
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                <dl class="row list-unstyled">
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.Mes)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.Mes)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.Ano)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.Ano)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.ValorBruto)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.ValorBruto)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.CustoMensal)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.CustoMensal)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.ValorLiquidoMensal)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.ValorLiquidoMensal)
-                                    </dd>
-                                    <dt class="col-sm-4">
-                                        @Html.DisplayNameFor(model => model.Mei)
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        @Html.DisplayFor(modelItem => item.Mei.Nome)
-                                    </dd>
-                                </dl>
-                            </td>
-                            <td class="action-btns">
-                                <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                                <a class="btn-color" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+        <form method="get" class="filtro">
+            <div style="margin-right: 10px;">
+                <label for="mes"><strong>Mês de referência:</strong></label>
+            <input type="text" id="mes" name="mes" value="@ViewBag.Mes" />
         </div>
-    </div>
+        <div style="margin-right: 10px;">
+                <label for="ano"><strong>Ano:</strong></label>
+            <input type="text" id="ano" name="ano" value="@ViewBag.Ano" />
+        </div>
+        <div style="margin-right: 10px;">
+            <button class="btn btn-color" type="submit">Filtrar</button>
+        </div>
+        <div>
+            <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
+        </div>
+    </form>
 </div>
 
+
+<div class="container">
+    @foreach (var item in Model)
+            {
+          <div class="card">
+                <div class="card-header">
+                    <h4>Referência: @item.Mes / @item.Ano</h4>
+                </div>
+            <div class="card-body">
+                <dl class="row list-unstyled">
+                    <dt class="col-sm-4">Mês</dt>
+                    <dd class="col-sm-8">@item.Mes</dd>
+                    <dt class="col-sm-4">Ano</dt>
+                    <dd class="col-sm-8">@item.Ano</dd>
+                    <dt class="col-sm-4">Valor Bruto</dt>
+                    <dd class="col-sm-8">@item.ValorBruto</dd>
+                    <dt class="col-sm-4">Custo Mensal</dt>
+                    <dd class="col-sm-8">@item.CustoMensal</dd>
+                    <dt class="col-sm-4">Valor Líquido Mensal</dt>
+                    <dd class="col-sm-8">@item.ValorLiquidoMensal</dd>
+                    <dt class="col-sm-4">Profissional</dt>
+                    <dd class="col-sm-8">@item.Mei.Nome</dd>
+                </dl>
+                <div class="action-btns">
+                   <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn-color-delete" onclick="openModal('@item.Id', '@item.Mes')">Excluir</a>
+                </div>
+           </div>
+</div>
+            }
+        <div id="confirmDeleteModal" class="modal">
+            <div class="modal-content">
+                <h4 id="faturamentoMes"></h4>
+                <form id="deleteForm" asp-action="Delete" method="post">
+                    <input type="hidden" id="faturamentoId" name="Id" />
+                    <button type="submit" class="btn-color-delete">Sim</button>
+                    <button type="button" class="btn-color" onclick="closeModal()">Não</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    <script>
+        function openModal(id, mes) {
+            document.getElementById('confirmDeleteModal').style.display = 'block';
+            document.getElementById('faturamentoId').value = id;
+            document.getElementById('faturamentoMes').innerText = 'Você confirma a exclusão do faturamento referente ao mês ' + mes + '?';
+        }
+
+        function closeModal() {
+            document.getElementById('confirmDeleteModal').style.display = 'none';
+        }
+    </script>

@@ -6,80 +6,158 @@
 
 <style>
 
-    body {
-        background-color: #E7F9F9;
-    }
+    /*Botões*/
 
     .botoes {
-        padding: 20px 0;
-        margin-bottom: 10px;
+        padding: 0 10px 10px 0;
+        margin-bottom: 30px;
+        margin-right: 120px;
     }
 
-    .form-group {
-        padding: 5px 0;
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
     }
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-voltar {
+        background-color: black;
+        color: #fff;
+        border-color: black;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-voltar:hover {
+            background-color: #292929;
+            border-color: #E7F9F9;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    /*Formulário*/
 
     .control-label {
         font-weight: bold;
+        width: 100%;
+    }
+
+    .form-select {
+        width: 100%;
+        border: 2px solid #09547F;
+    }
+
+    .col {
+        align-items: center;
+        width: 100%;
+        padding: 0 70px 0 70px;
+        padding-bottom: 25px;
+    }
+
+    .form-control {
+        border: 2px solid #09547F;
+    }
+
+    /*PÁGINA*/
+
+    main {
+        padding-top: 10px;
     }
 
     .espacamento {
-        padding: 10px 0;
+        padding: 10px 0 30px 0;
+        text-align: center;
+    }
+
+    body {
+        background-image: url('/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    h5 {
+        text-align: center;
     }
 
 </style>
 
+<link href="/css/site.css" rel="stylesheet" />
+
 <div class="espacamento">
-    <h2>Editar evento</h2>
+<h5>Edite seu evento:</h5>
 </div>
-<hr/>
 
-
+<div class="container">
 <div class="row">
-    <div class="col-md-4">
+   
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="ProjetoId" class="control-label"></label>
-                <select asp-for="ProjetoId" class="form-control" asp-items="ViewBag.ProjetoId"></select>
-                <span asp-validation-for="ProjetoId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataEventoInicio" class="control-label"></label>
-                <input asp-for="DataEventoInicio" class="form-control" />
-                <span asp-validation-for="DataEventoInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataEventoFim" class="control-label"></label>
-                <input asp-for="DataEventoFim" class="form-control" />
-                <span asp-validation-for="DataEventoFim" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorDiaria" class="control-label"></label>
-                <input asp-for="ValorDiaria" class="form-control" />
-                <span asp-validation-for="ValorDiaria" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cidade" class="control-label"></label>
-                <input asp-for="Cidade" class="form-control" />
-                <span asp-validation-for="Cidade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado" class="control-label"></label>
-                <select asp-for="Estado" class="form-select" asp-items="Html.GetEnumSelectList<Estado>()"></select>
-                <span asp-validation-for="Estado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="botoes">
-                    <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="ProjetoId" class="control-label"></label>
+                        <select asp-for="ProjetoId" class="form-control" asp-items="ViewBag.ProjetoId"></select>
+                        <span asp-validation-for="ProjetoId" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="DataEventoInicio" class="control-label"></label>
+                        <input value="@Model.DataEventoInicio.ToString("dd/MM/yyyy")" id="DataEventoInicio" name="DataEventoInicio" required class="form-control" />
+                        <span asp-validation-for="DataEventoInicio" class="text-danger"></span>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="DataEventoFim" class="control-label"></label>
+                        <input value="@Model.DataEventoFim.ToString("dd/MM/yyyy")" id="DataEventoFim" name="DataEventoFim" required class="form-control" />
+                        <span asp-validation-for="DataEventoFim" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="ValorDiaria" class="control-label"></label>
+                        <input value="@Model.ValorDiaria" id="ValorDiaria" name="ValorDiaria" required class="form-control" />
+                        <span asp-validation-for="ValorDiaria" class="text-danger"></span>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Cidade" class="control-label"></label>
+                        <input value="@Model.Cidade" id="Cidade" name="Cidade" required class="form-control" />
+                        <span asp-validation-for="Cidade" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Estado" class="control-label"></label>
+                        <select value="@Model.Estado" id="Estado" name="Estado" class="form-control" asp-for="Estado" asp-items="Html.GetEnumSelectList<Estado>()">
+                            <option value="">Selecione o estado</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="botoes d-flex justify-content-end">
+                    <input class="btn btn-color" type="submit" value="Salvar" />
+                    <a class="btn btn-color-voltar" asp-action="Index">Voltar</a>
+                </div>
+            </div>
         </form>
     </div>
 </div>
-
 
 
 @section Scripts {

@@ -4,82 +4,169 @@
     ViewData["Title"] = "Edit";
 }
 
+
 <style>
+  
+    .botoes {
+        padding: 0 10px 10px 0;
+        margin-bottom: 30px;
+        margin-right: 120px;
+    }
+
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-voltar {
+        background-color: black;
+        color: #fff;
+        border-color: black;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-voltar:hover {
+            background-color: #292929;
+            border-color: #E7F9F9;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .control-label {
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .form-select {
+        width: 100%;
+        border: 2px solid #09547F;
+    }
+
+    .col {
+        align-items: center;
+        width: 100%;
+        padding: 0 70px 0 70px;
+        padding-bottom: 25px;
+    }
+
+    .form-control {
+        border: 2px solid #09547F;
+    }
+
     main {
+        padding-top: 10px;
+    }
+
+    .espacamento {
+        padding: 10px 0 30px 0;
         text-align: center;
     }
 
     body {
-        background-color: #E7F9F9;
+        background-image: url('/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
-    .botoes {
-        padding: 20px 0;
-        margin-bottom: 10px;
+    h5 {
+        text-align: center;
     }
 
-    .form-group {
-        padding: 5px 0;
-    }
-
-    .control-label {
-        font-weight: bold;
-    }
-
-    .espacamento {
-        padding: 10px 0;
-    }
 
 </style>
 
-<h4>Edite seus custos</h4>
-<hr />
+<link href="/css/site.css" rel="stylesheet" />
+
+<div class="espacamento">
+    <h5>Edite seus custos:</h5>
+</div>
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+    <div class="row">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="PassagemAerea" class="control-label"></label>
-                <input value="@Model.PassagemAerea" id="PassagemAerea" name="PassagemAerea" required class="form-control" />
-                <span asp-validation-for="PassagemAerea" class="text-danger"></span>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="PassagemAerea" class="control-label"></label>
+                            <input value="@Model.PassagemAerea" id="PassagemAerea" name="PassagemAerea" required class="form-control" />
+                            <span asp-validation-for="PassagemAerea" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Hospedagem" class="control-label"></label>
+                            <input value="@Model.Hospedagem" id="Hospedagem" name="Hospedagem" required class="form-control" />
+                            <span asp-validation-for="Hospedagem" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Deslocamento" class="control-label"></label>
+                            <input value="@Model.Deslocamento" id="Deslocamento" name="Deslocamento" required class="form-control" />
+                            <span asp-validation-for="Deslocamento" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Alimentacao" class="control-label"></label>
+                            <input value="@Model.Alimentacao" id="Alimentacao" name="Alimentacao" required class="form-control" />
+                            <span asp-validation-for="Alimentacao" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="CustoTotal" class="control-label"></label>
+                            <input value="@Model.CustoTotal" id="CustoTotal" name="CustoTotal" required class="form-control" />
+                            <span asp-validation-for="CustoTotal" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="ProjetoId" class="control-label"></label>
+                            <select asp-for="ProjetoId" class="form-select" asp-items="ViewBag.ProjetoId"></select>
+                            <span asp-validation-for="ProjetoId" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="form-group">
-                <label asp-for="Hospedagem" class="control-label"></label>
-                 <input value="@Model.Hospedagem" id="Hospedagem" name="Hospedagem" required class="form-control" />
-                <span asp-validation-for="Hospedagem" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Deslocamento" class="control-label"></label>
-                 <input value="@Model.Deslocamento" id="Deslocamento" name="Deslocamento" required class="form-control" />
-                <span asp-validation-for="Deslocamento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Alimentacao" class="control-label"></label>
-                 <input value="@Model.Alimentacao" id="Alimentacao" name="Alimentacao" required class="form-control" />
-                <span asp-validation-for="Alimentacao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustoTotal" class="control-label"></label>
-                <input value="@Model.CustoTotal" id="CustoTotal" name="CustoTotal" required class="form-control" />
-                <span asp-validation-for="CustoTotal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjetoId" class="control-label"></label>
-                <select asp-for="ProjetoId" class="form-control" asp-items="ViewBag.ProjetoId"></select>
-                <span asp-validation-for="ProjetoId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                    <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+                <div class="botoes d-flex justify-content-end">
+                    <input class="btn btn-color" type="submit" value="Salvar" />
+                    <a class="btn btn-color-voltar" asp-action="Index">Voltar</a>
+                </div>
             </div>
         </form>
     </div>
- </div>
 </div>
 
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+

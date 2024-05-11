@@ -1,96 +1,180 @@
 ﻿@model Smartmei.Models.Cliente
 
 @{
-    ViewData["Title"] = "Editar";
+    ViewData["Title"] = "Edit";
 }
 
 <style>
 
-    body {
-        background-color: #E7F9F9;
-    }
+    /*Botões*/
 
     .botoes {
-        padding: 20px 0;
-        margin-bottom: 10px;
+        padding: 0 10px 10px 0;
+        margin-bottom: 30px;
+        margin-right: 120px;
     }
 
-    .form-group {
-        padding: 5px 0;
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
     }
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .btn-color-voltar {
+        background-color: black;
+        color: #fff;
+        border-color: black;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-voltar:hover {
+            background-color: #292929;
+            border-color: #E7F9F9;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    /*Formulário*/
 
     .control-label {
         font-weight: bold;
+        width: 100%;
+    }
+
+    .form-select {
+        width: 100%;
+        border: 2px solid #09547F;
+    }
+
+    .col {
+        align-items: center;
+        width: 100%;
+        padding: 0 70px 0 70px;
+        padding-bottom: 25px;
+    }
+
+    .form-control {
+        border: 2px solid #09547F;
+    }
+
+    /*PÁGINA*/
+
+    main {
+        padding-top: 10px;
     }
 
     .espacamento {
-        padding: 10px 0;
+        padding: 10px 0 30px 0;
+        text-align: center;
+    }
+
+    body {
+        background-image: url('/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    h5 {
+        text-align: center;
     }
 
 </style>
 
-<div class="espacamento">
-    <h2>Editar cliente</h2>
-</div>
-<hr/>
+<link href="/css/site.css" rel="stylesheet" />
 
-<div class="row">
-    <div class="col-md-4">
+<div class="espacamento">
+<h5>Edite seus cliente:</h5>
+</div>
+
+<div class="container">
+    <div class="row">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Nome" class="control-label"></label>
+                        <input value="@Model.Nome" id="Nome" name="Nome" required class="form-control" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="CNPJ" class="control-label"></label>
+                        <input value="@Model.CNPJ" id="CNPJ" name="CNPJ" required class="form-control" />
+                        <span asp-validation-for="CNPJ" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Telefone" class="control-label"></label>
+                        <input value="@Model.Telefone" id="Telefone" name="Telefone" required class="form-control" />
+                        <span asp-validation-for="Telefone" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input value="@Model.Email" id="Email" name="Email" required class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Cidade" class="control-label"></label>
+                        <input value="@Model.Cidade" id="Cidade" name="Cidade" required class="form-control" />
+                        <span asp-validation-for="Cidade" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Estado" class="control-label"></label>
+                        <select value="@Model.Estado" id="Estado" name="Estado" class="form-control" asp-for="Estado" asp-items="Html.GetEnumSelectList<Estado>()">
+                            <option value="">Selecione o estado</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="ProductOwner" class="control-label"></label>
+                        <input value="@Model.ProductOwner" id="ProductOwner" name="ProductOwner" required class="form-control" />
+                        <span asp-validation-for="ProductOwner" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Observacao" class="control-label"></label>
+                        <input value="@Model.Observacao" id="Observacao" name="Observacao" required class="form-control" />
+                        <span asp-validation-for="Observacao" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
+
             <div class="form-group">
-                <label asp-for="CNPJ" class="control-label"></label>
-                <input asp-for="CNPJ" class="form-control" />
-                <span asp-validation-for="CNPJ" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Telefone" class="control-label"></label>
-                <input asp-for="Telefone" class="form-control" />
-                <span asp-validation-for="Telefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cidade" class="control-label"></label>
-                <input asp-for="Cidade" class="form-control" />
-                <span asp-validation-for="Cidade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado" class="control-label"></label>
-                <select asp-for="Estado" class="form-select" asp-items="Html.GetEnumSelectList<Estado>()"></select>
-                <span asp-validation-for="Estado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductOwner" class="control-label"></label>
-                <input asp-for="ProductOwner" class="form-control" />
-                <span asp-validation-for="ProductOwner" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Observacao" class="control-label"></label>
-                <input asp-for="Observacao" class="form-control" />
-                <span asp-validation-for="Observacao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="botoes">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-                <a class="btn btn-dark" asp-action="Index">Voltar</a>
-            </div>
+                <div class="botoes d-flex justify-content-end">
+                    <input class="btn btn-color" type="submit" value="Salvar" />
+                    <a class="btn btn-color-voltar" asp-action="Index">Voltar</a>
+                </div>
             </div>
         </form>
     </div>
 </div>
-
-
-
+             
+    
+     
+           
+            
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -7,115 +7,228 @@
 <style>
 
     body {
-        background-color: #E7F9F9;
+        background-image: url('/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
     .botoes {
         margin-bottom: 35px;
+        padding: 15px;
+        text-align: right;
     }
 
     .espacamento {
         padding: 10px 0;
+        margin: 20px 20px 20px 0px;
     }
 
     .bg {
         background-color: white;
-        padding: 15px;
+        padding: 15px 15px 0px 15px ;
         border-color: white;
         border-radius: 10px;
         margin-bottom: 15px;
     }
 
+    .projeto-card {
+        width: calc(50% - 20px); /* Metade da largura da tela, com espaçamento entre os cards */
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .linha-cinza {
+        background-color: #d9dadb;
+        }
+
+    .btn-color {
+        background-color: #09547F;
+        color: #fff;
+        border-color: #09547F;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color:hover {
+            background-color: #0C71AB;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    /* Modal */
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 40%; 
+    }
+
+    .btn-color-delete {
+        background-color: #9d0000;
+        color: #fff;
+        border-color: #9d0000;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+        .btn-color-delete:hover {
+            background-color: red;
+            color: #fff;
+            border-color: #E7F9F9;
+            text-decoration: none;
+        }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
 </style>
+
+<link href="/css/site.css" rel="stylesheet" />
 
 <div class="espacamento">
     <h2>Detalhes do projeto <strong>@Html.DisplayFor(model => model.Nome)</strong>:</h2>
 </div>
-<hr />
 
+<div class="projeto-card">
 <div class="bg">
     <dl class="row">
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.Nome)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.Cliente)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.Cliente.Nome)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.DataInicioProjeto)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.DataInicioProjeto)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.DataFimProjeto)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.DataFimProjeto)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.QuantidadeTelas)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.QuantidadeTelas)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.ValorTela)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.ValorTela)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.ValorTotalProjeto)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.ValorTotalProjeto)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.PrazoPagamento)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.PrazoPagamento)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.DataEmissaoNF)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.DataEmissaoNF)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.DataPagamentoNF)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.DataPagamentoNF)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.Acompanhamento)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.Acompanhamento)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.LinkDrive)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.LinkDrive)
         </dd>
-        <dt class="col-sm-4">
+        <dt class="col-sm-5">
             @Html.DisplayNameFor(model => model.Observacao)
         </dt>
-        <dd class="col-sm-8">
+        <dd class="col-sm-7">
             @Html.DisplayFor(model => model.Observacao)
         </dd>
     </dl>
 </div>
 <div class="botoes">
-    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
-    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+    <a class="btn btn-color" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+    <a class="btn btn-color-delete" onclick="openModal()">Excluir</a>
+    <a class="btn btn-color" asp-action="Index">Voltar</a>
 </div>
+
+    <div id="confirmDeleteModal" class="modal">
+        <div class="modal-content">
+            <h4>Você confirma a exclusão do projeto <strong>@Html.DisplayFor(model => model.Nome)</strong>?</h4>
+            <form id="deleteForm" asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn-color-delete">Sim</button>
+                <button type="button" class="btn-color" onclick="closeModal()">Não</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById('confirmDeleteModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('confirmDeleteModal').style.display = 'none';
+    }
+</script>
