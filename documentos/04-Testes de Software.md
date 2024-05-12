@@ -373,6 +373,25 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 |	Desenvolvido por 	| Juliana |
 | Testado por 	| Fernanda |
 
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100742971/d94016d4-9c0b-446d-8718-cf2d82153a83
+
+
+
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Guilherme |
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100742971/873a8770-3e32-4bcf-aaad-61e8b227f0e1
+
+
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Guilherme |
+
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/4c69d476-e9fa-4806-bfb9-76345cfa0500
 
 
