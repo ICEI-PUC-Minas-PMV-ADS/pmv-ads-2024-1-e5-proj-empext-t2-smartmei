@@ -142,6 +142,7 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 
 
 
+
 # Evidências de Testes de Software
 
 **Caso de Teste 01**
@@ -269,6 +270,11 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 <br>
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/97e1b307-ef33-43b5-8076-a14b65b5e084
+
+**Caso de Teste 13**
+<br>
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100742971/334dcb4c-ca99-4e5c-9cac-87c67cf435f8
 
 <hr>
 
