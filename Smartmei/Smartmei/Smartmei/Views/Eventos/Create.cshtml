@@ -94,7 +94,7 @@
     }
 </style>
 
-<link href="/css/site.css" rel="stylesheet" />
+<link href="/css/responsividade.css" rel="stylesheet" />
 
 <div class="espacamento">
     <h5>Adicionar novo evento:</h5>
@@ -109,7 +109,7 @@
                 <div class="row">
                     <div class="col">
                         <label asp-for="ProjetoId" class="control-label"></label>
-                        <select asp-for="ProjetoId" class="form-control" asp-items="ViewBag.ProjetoId"></select>
+                        <select asp-for="ProjetoId" class=" form-select form-control" asp-items="ViewBag.ProjetoId"></select>
                         <span asp-validation-for="ProjetoId" class="text-danger"></span>
                     </div>
                     <div class="col">
