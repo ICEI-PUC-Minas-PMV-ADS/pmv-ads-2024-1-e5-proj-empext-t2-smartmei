@@ -42,6 +42,11 @@
         margin-bottom: 30px;
     }
 
+    .card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
     .col {
         padding: 0 15px;
         padding-bottom: 20px;
@@ -197,6 +202,11 @@
     }
 
     .projeto-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .card {
         width: 100%;
         margin-bottom: 30px;
     }
@@ -412,6 +422,11 @@
     }
 
     .projeto-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .card {
         width: 100%;
         margin-bottom: 30px;
     }
