@@ -163,5 +163,25 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        // Função para calcular e preencher automaticamente o campo ValorLiquidoMensal
+        function calcularValorLiquidoMensal() {
+            var valorBruto = parseFloat(document.getElementById("ValorBruto").value.replace(',', '.')) || 0;
+            var custoMensal = parseFloat(document.getElementById("CustoMensal").value.replace(',', '.')) || 0;
+            var valorLiquidoMensal = valorBruto - custoMensal;
+            document.getElementById("ValorLiquidoMensal").value = valorLiquidoMensal;
+        }
+
+        // Associando o evento onchange aos campos relevantes
+        document.getElementById("ValorBruto").onchange = calcularValorLiquidoMensal;
+        document.getElementById("CustoMensal").onchange = calcularValorLiquidoMensal;
+
+        // Chamando a função de cálculo ao carregar a página
+        window.onload = calcularValorLiquidoMensal;
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
