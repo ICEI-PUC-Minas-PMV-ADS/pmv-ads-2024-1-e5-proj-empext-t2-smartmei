@@ -18,27 +18,57 @@ namespace SmartMei.Controllers
         // GET: Faturamentos
         public async Task<IActionResult> Index(int? mes, int? ano)
         {
-            var faturamentoQuery = _context.Faturamentos.AsQueryable();
+            var faturamentoQuery = _context.Faturamentos
+                .Include(f => f.Mei)
+                .AsQueryable();
 
+            // Filtragem por mês e ano, se fornecidos
             if (mes.HasValue)
             {
-                faturamentoQuery = faturamentoQuery.Where(p => p.Mes == mes);
+                faturamentoQuery = faturamentoQuery.Where(f => f.Mes == mes.Value);
             }
 
             if (ano.HasValue)
             {
-                faturamentoQuery = faturamentoQuery.Where(p => p.Ano == ano);
+                faturamentoQuery = faturamentoQuery.Where(f => f.Ano == ano.Value);
             }
 
-            faturamentoQuery = faturamentoQuery.Include(p => p.Mei);
+            var faturamentos = await faturamentoQuery
+                .OrderByDescending(f => f.Ano)
+                .ThenByDescending(f => f.Mes)
+                .ToListAsync();
 
-            
-            var faturamentos = await faturamentoQuery.ToListAsync();
+            ViewData["SomaValorBruto"] = faturamentos.Sum(f => f.ValorBruto);
+            ViewData["SomaCustoMensal"] = faturamentos.Sum(f => f.CustoMensal);
+            ViewData["SomaValorLiquidoMensal"] = faturamentos.Sum(f => f.ValorLiquidoMensal);
 
- 
+
+            var anoVigente = DateTime.Now.Year;
+            var faturamentosAnoVigente = faturamentos.Where(f => f.Ano == anoVigente || f.Ano > anoVigente).ToList();
+
+         
+            var tetoMEI = 81000m;
+            var limite = 97200m;
+            var valorBrutoAnoVigente = faturamentosAnoVigente.Where(f => f.Ano == anoVigente).Sum(f => f.ValorBruto);
+            var valorRestanteTetoMEI = Math.Max(0, tetoMEI - valorBrutoAnoVigente);
+            var valorRestanteLimite = Math.Max(0, limite - valorBrutoAnoVigente);
+
+            ViewData["ValorRestanteTetoMEI"] = valorRestanteTetoMEI;
+            ViewData["ValorRestanteLimite"] = valorRestanteLimite;
+
+            if (valorBrutoAnoVigente >= tetoMEI)
+            {
+                TempData["MensagemNotificacao"] = "ATENÇÃO: O valor bruto atingiu ou ultrapassou o teto MEI de R$81.000.";
+            }
+
+            if (valorBrutoAnoVigente >= limite)
+            {
+                TempData["MensagemNotificacao"] = " ATENÇÃO: O valor bruto atingiu ou ultrapassou o limite de R$97.200.";
+            }
+
+
             return View(faturamentos);
         }
-
 
         // GET: Faturamentos/Details/5
         public async Task<IActionResult> Details(int? id)
