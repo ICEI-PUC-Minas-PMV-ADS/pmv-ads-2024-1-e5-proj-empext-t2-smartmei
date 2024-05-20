@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using iText.Kernel.Pdf;
+using iText.Layout.Element;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Smartmei.Controllers;
+using iText.Layout;
 using Smartmei.Models;
 
 public class EventosController : Controller
@@ -167,6 +169,49 @@ public class EventosController : Controller
     {
         return _context.Eventos.Any(e => e.Id == id);
     }
+
+    public async Task<IActionResult> GerarPDFEventos()
+    {
+        // Busca todos os eventos no banco de dados
+        var eventos = await _context.Eventos.ToListAsync();
+
+        // Cria um stream de memória para armazenar o PDF
+        MemoryStream memoryStream = new MemoryStream();
+        PdfWriter writer = new PdfWriter(memoryStream);
+        PdfDocument pdf = new PdfDocument(writer);
+        Document document = new Document(pdf);
+
+        // Adiciona um título ao documento
+        Paragraph title = new Paragraph("Relatório de Eventos").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+        document.Add(title);
+
+        // Adiciona os dados dos eventos ao PDF
+        foreach (var evento in eventos)
+        {
+            // Recuperar o nome do projeto com base no ID
+            var projeto = await _context.Projetos.FirstOrDefaultAsync(p => p.Id == evento.ProjetoId);
+            var nomeProjeto = projeto != null ? projeto.Nome : "Projeto não encontrado";
+
+            // Adiciona os detalhes de cada evento
+            document.Add(new Paragraph($"Projeto: {nomeProjeto}"));
+            document.Add(new Paragraph($"Data de início do evento: {evento.DataEventoInicio}"));
+            document.Add(new Paragraph($"Data final do evento: {evento.DataEventoFim}"));
+            document.Add(new Paragraph($"Valor da diária (R$): {evento.ValorDiaria}"));
+            document.Add(new Paragraph($"Cidade: {evento.Cidade}"));
+            document.Add(new Paragraph($"Estado: {evento.Estado}"));
+
+            // Adiciona uma linha em branco entre os eventos
+            document.Add(new Paragraph("\n"));
+        }
+
+        // Fecha o documento
+        document.Close();
+        writer.Close();
+
+        // Retorna o PDF gerado como um arquivo para download
+        return File(memoryStream.ToArray(), "application/pdf", "RelatorioEventos.pdf");
+    }
+
 }
 
 
