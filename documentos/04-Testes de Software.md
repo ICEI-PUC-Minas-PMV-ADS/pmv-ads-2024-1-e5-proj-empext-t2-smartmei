@@ -71,6 +71,7 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Clientes” no menu superior <br> - Clicar no botão “Excluir” <br> - Confirmar a exclusão do registro dos dados do cliente, clicando no botão "Sim" <br> |
 |Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
 |  	|  	|
+|Critério de Êxito | - Os dados inseridos no filtro de pesquisa devem mostrar os produtos e receitas onde há o dado informado. |
 | **Caso de Teste** 	| **CT-08 - Gerenciamento de custos - Cadastrar e visualizar**	|
 |	Requisito Associado 	| RF-008 - A aplicação deve permitir ao usuário gerenciar seus custos. |
 | Objetivo do Teste 	| Verificar se o usuário consegue cadastrar e visualizar os custos registrados na aplicação. |
@@ -107,6 +108,12 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Eventos” no menu superior <br> - Clicar no botão “Excluir” <br> - Confirmar a exclusão do registro do evento, clicando no botão "Sim" <br> |
 |Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
 |  	|  	|
+| **Caso de Teste** 	| **CT-10 - Filtros**	|
+|	Requisito Associado 	| RF-010 - A aplicação deve permitir ao usuário filtrar os registros específicos de clientes, eventos, projetos, custos e faturamento. |
+| Objetivo do Teste 	| Verificar se o usuário consegue filtrar registros na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar na página correspondente no menu superior <br> - Inserir no filtro os dados do registro que deseja recuperar <br> - Clicar no botão "Filtrar" <br> |
+|Critério de Êxito | - Foi exibido o registro com o dado pesquisado. |
+|  	|  	|
 | **Caso de Teste** 	| **CT-12 - Gerenciamento de Faturamento - Cadastrar e visualizar**	|
 |	Requisito Associado 	| RF-012 - A aplicação deve permitir ao usuário gerenciar seu faturamento. |
 | Objetivo do Teste 	| Verificar se o usuário consegue cadastrar e visualizar os faturamentos registrados na aplicação. |
@@ -125,6 +132,14 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Faturamentos” no menu superior <br> - Clicar no botão “Excluir” <br> - Confirmar a exclusão do registro do faturamento, clicando no botão "Sim" <br> |
 |Critério de Êxito | - A tela foi redirecionada para a exibição de registros cadastrados não exibindo o registro excluído. |
 |  	|  	|
+| **Caso de Teste** 	| **CT-13 - Relatórios de registros** |
+|	Requisito Associado 	| RF-013 - A aplicação deve permitir ao usuário gerar um relatório dos registros cadastrados. |
+| Objetivo do Teste 	| Verificar se o usuário consegue gerar os relatórios dos registros cadastrados na aplicação. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Relatórios” no menu superior <br> - Clicar no relatório desejado |
+|Critério de Êxito | - Download do arquivo do relatório na extensão PDF. |
+|  	|  	|
+
+
 
 
 
@@ -218,6 +233,29 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/8db65b36-62e9-4cf1-a22d-a2466f6e57de
 
+**Caso de Teste 10**
+<br>
+
+- Projetos
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/9a395cdf-09df-4b25-914b-cdf88f4095ee
+
+- Clientes
+  
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/15952470-fb44-475e-bafe-e043aa7c5d7b
+
+- Custos
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/a59afbf5-8185-463a-be39-c39ae6b39f1f
+
+- Eventos
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/0ab338d1-947e-4975-ae76-5822cb92c8a6
+
+- Faturamentos
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/0ba01d32-879f-45d3-84dd-e586a9e65b42
+
 **Caso de Teste 12**
 <br>
 
@@ -233,8 +271,159 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/97e1b307-ef33-43b5-8076-a14b65b5e084
 
+**Caso de Teste 13**
+<br>
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100742971/334dcb4c-ca99-4e5c-9cac-87c67cf435f8
+
+<hr>
+
+# Avaliação por pares
+
+| **Caso de Teste** 	| **CT-01 - Cadastro de usuários, CT-02 - Efetuar login e CT-03 - Efetuar logout**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Rúbia e Guilherme |
+| Testado por 	| Daiane |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/4caf71ef-d63e-4605-87a6-bd97135abec6
+
+| **Caso de Teste** 	| **CT-04 - Gerenciamento de conta**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Rúbia e Guilherme |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/b8b890ee-627d-4ca0-a443-b9b5f8c71df7
+
+| **Caso de Teste** 	| **CT-05- Redefinir Senha**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Rúbia e Guilherme |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/fae1e606-5681-4d20-b598-69b86d872cae
+
+| **Caso de Teste** 	| **CT-06 - Administrar projetos - Cadastrar e visualizar**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Daiane |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/121550ad-51a4-4377-9210-60852766db6b
+
+| **Caso de Teste** 	| **CT-06.01 - Administrar projetos -  Editar**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Daiane |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/81257366-df50-4845-8fcd-3aaffb42f412
+
+| **Caso de Teste** 	| **CT-06.2 - Administrar projetos - Excluir**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Daiane |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/ed47fa6b-1c01-4636-b4d0-92d5830a9c1b
+
+| **Caso de Teste** 	| **CT-07 - Administrar clientes - Cadastrar e visualizar**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/e298605e-3c25-42a9-9400-67888fa4da1f
 
 
+| **Caso de Teste** 	| **CT-07.1 - Administrar clientes - Editar**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/bf532124-6e8d-41c3-842f-cbe75a06b67c
+
+
+| **Caso de Teste** 	| **CT-07.2 - Administrar clientes - Excluir**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/a01e6f65-0f69-4e45-86f6-9978559f7456
+
+
+| **Caso de Teste** 	| **CT-08 - Gerenciamento de custos - Cadastrar e visualizar, CT-08.1 - Gerenciamento de Custos - Editar, CT-08.2 - Gerenciamento de Custos - Excluir**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Fernanda |
+| Testado por 	| Daiane |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/bc5b0aa4-57dc-4b26-81a2-93846f3d242b
+
+| **Caso de Teste** 	| **CT-09 - Gerenciamento de Eventos - Cadastrar e visualizar, CT-09.1 - Gerenciamento de Eventos - Editar, CT-09.2 - Gerenciamento de Eventos - Excluir**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Rúbia |
+
+[teste-eventos.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/98122346/f447fa09-09cd-43c1-8c35-3c3f36de64ae)
+
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Daiane |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/b0098ae6-af06-43b7-87d7-98831cfe8c37
+
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/c7e76747-3c45-438f-9c0d-d328d0e87958
+
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Fernanda |
+
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100742971/332ba6fb-bf98-41e5-aa2d-cca87f15aaf4
+
+
+
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Guilherme |
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100742971/873a8770-3e32-4bcf-aaad-61e8b227f0e1
+
+
+| **Caso de Teste** 	| **CT-10 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Juliana |
+| Testado por 	| Guilherme |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/4c69d476-e9fa-4806-bfb9-76345cfa0500
+
+
+| **Caso de Teste** 	| **CT-12 - Gerenciamento de Faturamento - Cadastrar e visualizar, CT-12.1 - Gerenciamento de Faturamento - Editar, CT-12.2 - Gerenciamento de Faturamento - Excluir**	|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Fernanda |
+| Testado por 	| Rubia |
+
+
+[teste-faturamento.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/98122346/5eec2cda-20b7-4fea-a1a9-cc97419d3ec3)
+
+
+| **Caso de Teste** 	| **CT-13 - Relatórios**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Guilherme |
+| Testado por 	| Juliana |
+
+- Relatório de Clientes 
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/1ab3eb20-2397-4c5c-bf63-482297b6ee08
+
+- Relatório de Projetos
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/f8683984-8215-4305-81eb-f8be6b34fa82
 
 
 

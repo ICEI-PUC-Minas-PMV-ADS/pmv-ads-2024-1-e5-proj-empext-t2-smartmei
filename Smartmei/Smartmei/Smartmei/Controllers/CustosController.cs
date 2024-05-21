@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Smartmei.Models;
 using SmartMei.Models;
+using iText.Layout;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
 
 namespace SmartMei.Controllers
 {
@@ -169,6 +172,48 @@ namespace SmartMei.Controllers
         {
             return _context.Custos.Any(e => e.Id == id);
         }
+        public async Task<IActionResult> GerarPDFCustos()
+        {
+            // Busca todos os custos no banco de dados
+            var custos = await _context.Custos.ToListAsync();
+
+            // Cria um stream de memória para armazenar o PDF
+            MemoryStream memoryStream = new MemoryStream();
+            PdfWriter writer = new PdfWriter(memoryStream);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+
+            // Adiciona um título ao documento
+            Paragraph title = new Paragraph("Relatório de Custos").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+            document.Add(title);
+
+            // Adiciona os dados dos custos ao PDF
+            foreach (var custo in custos)
+            {
+                // Recuperar nome do projeto com base no ID
+                var projeto = await _context.Projetos.FirstOrDefaultAsync(p => p.Id == custo.ProjetoId);
+                var nomeProjeto = projeto != null ? projeto.Nome : "Projeto não encontrado";
+
+                // Adiciona os detalhes de cada custo
+                document.Add(new Paragraph($"Projeto: {nomeProjeto}"));
+                document.Add(new Paragraph($"Passagem Aérea (R$): {custo.PassagemAerea}"));
+                document.Add(new Paragraph($"Hospedagem (R$): {custo.Hospedagem}"));
+                document.Add(new Paragraph($"Deslocamento (R$): {custo.Deslocamento}"));
+                document.Add(new Paragraph($"Alimentação (R$): {custo.Alimentacao}"));
+                document.Add(new Paragraph($"Custo Total (R$): {custo.CustoTotal}"));
+
+                // Adiciona uma linha em branco entre os custos
+                document.Add(new Paragraph("\n"));
+            }
+
+            // Fecha o documento
+            document.Close();
+            writer.Close();
+
+            // Retorna o PDF gerado como um arquivo para download
+            return File(memoryStream.ToArray(), "application/pdf", "RelatorioCustos.pdf");
+        }
+
     }
 }
 

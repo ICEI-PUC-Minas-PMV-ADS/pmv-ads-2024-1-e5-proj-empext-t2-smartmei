@@ -60,9 +60,9 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" asp-controller="Projetos" asp-action="GerarPDFProjetos">Projetos</a></li>
                                     <li><a class="dropdown-item" asp-controller="Clientes" asp-action="GerarPDFClientes">Clientes</a></li>
-                                    <li><a class="dropdown-item" href="#">Eventos</a></li>
-                                    <li><a class="dropdown-item" href="#">Faturamentos</a></li>
-                                    <li><a class="dropdown-item" href="#">Custos</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Eventos" asp-action="GerarPDFEventos">Eventos</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Faturamentos" asp-action="GerarPDFFaturamentos">Faturamentos</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Custos" asp-action="GerarPDFCustos">Custos</a></li>
                                 </ul>
                             </li>
                         }

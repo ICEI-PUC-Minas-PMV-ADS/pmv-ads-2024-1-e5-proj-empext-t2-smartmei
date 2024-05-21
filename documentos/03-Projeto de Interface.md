@@ -29,7 +29,8 @@ Na tela de Cadastro teremos um pequeno formulário que, após preencher, o usuá
 
 Na tela de Login haverá um formulário com os campos E-mail e Senha, após preenchê-los e clicar em 'Entrar' o usuário será redirecionado para a tela Home.
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/072df674-1f64-4c76-b4c7-56fb03648c91)
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/96b61b4f-5182-44aa-a1ee-f2aac26b2f46)
 
 <hr>
 
@@ -102,10 +103,3 @@ Na tela de Cadastro de Faturamento haverá um formulário onde o usuário poder�
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/1a99923a-3327-433b-a0d3-8d419b4d1857)
 
 <hr>
-
-#### Perfil
-
-Na tela de perfil serão mostrados os dados informados pelo usuário na tela de Cadastro e a opção de editá-los.
-
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/516753f9-6a1f-400e-a46f-a1d6912929d1)
-
