@@ -202,23 +202,15 @@
     <p><strong>Limite:</strong> R$97.200.</p>
     <p><strong>Valor restante para o Teto MEI no ano vigente:</strong> <span>R$ @ViewData["ValorRestanteTetoMEI"]</span></p>
     <p><strong>Valor restante para o Limite no ano vigente:</strong> <span>R$ @ViewData["ValorRestanteLimite"]</span></p>
+    @if (!string.IsNullOrEmpty(TempData["MensagemNotificacao"]?.ToString()))
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["MensagemNotificacao"]
+        </div>
+    }
 </div>
   
-@if (!string.IsNullOrEmpty(TempData["MensagemNotificacao"]?.ToString()))
-{
-    <div class="modal fade" id="notificacaoModal" tabindex="-1" role="dialog" aria-labelledby="notificacaoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content border-danger">
-                <div class="modal-header">
-                    <h5 class="modal-title custom-modal-title" id="notificacaoModalLabel">Notificação</h5>
-                </div>
-                    <div class="modal-body custom-modal-body">
-                        @Html.Raw(TempData["MensagemNotificacao"])
-                    </div>
-            </div>
-        </div>
-    </div>
-}
+
 
     <div style="width: 100%; text-align: center;">
         <form method="get" class="filtro">
@@ -291,21 +283,5 @@
         function closeModal() {
             document.getElementById('confirmDeleteModal').style.display = 'none';
         }
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            var mensagemNotificacao = '@TempData["MensagemNotificacao"]';
-            console.log('Mensagem de notificação:', mensagemNotificacao);
-
-            if (mensagemNotificacao && mensagemNotificacao.trim()) {
-                $('#notificacaoModal .modal-body').html(mensagemNotificacao);
-                $('#notificacaoModal').modal('show');
-
-                setTimeout(function () {
-                    $('#notificacaoModal').modal('hide');
-                }, 2000);
-            }
-        });
     </script>
 }
