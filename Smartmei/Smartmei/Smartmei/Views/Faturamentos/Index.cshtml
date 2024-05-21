@@ -52,8 +52,6 @@
         text-align: right;
     }
 
-
-
     .btn-color {
         background-color: #09547F;
         color: #fff;
@@ -63,7 +61,6 @@
         border-radius: 5px;
         margin-left: 5px;
     }
-
         .btn-color:hover {
             background-color: #0C71AB;
             color: #fff;
@@ -98,7 +95,6 @@
         margin-left: 5px;
         cursor: pointer;
     }
-
         .btn-color-delete:hover {
             background-color: red;
             color: #fff;
@@ -106,8 +102,6 @@
             text-decoration: none;
             cursor: pointer;
         }
-
-
 
     .titulo {
         text-align: center;
@@ -121,8 +115,6 @@
         .espacamento h2 {
             font-weight: 600;
         }
-
- 
 
     .modal {
         display: none;
@@ -180,16 +172,14 @@
         height: 40px;
         background-color: #fff;
     }
+    
     .info{
         margin-top: 20px;
         background-color: #fff;
         padding: 20px;
         border-radius: 10px;
         border: 1px solid #ccc;
-    }
-
-
-  
+    }  
 </style>
 
 <link href="/css/responsividade.css" rel="stylesheet" />
@@ -209,11 +199,9 @@
 
 <div class="info">
     <p><strong>Teto MEI:</strong> R$81.000.</p>
-        <p><strong>Limite:</strong> R$97.200.</p>
+    <p><strong>Limite:</strong> R$97.200.</p>
     <p><strong>Valor restante para o Teto MEI no ano vigente:</strong> <span>R$ @ViewData["ValorRestanteTetoMEI"]</span></p>
-    <p>
-        <strong>Valor restante para o Limite no ano vigente:</strong> <span>R$ @ViewData["ValorRestanteLimite"]</span>
-    </p>
+    <p><strong>Valor restante para o Limite no ano vigente:</strong> <span>R$ @ViewData["ValorRestanteLimite"]</span></p>
 </div>
   
 @if (!string.IsNullOrEmpty(TempData["MensagemNotificacao"]?.ToString()))
@@ -223,34 +211,33 @@
             <div class="modal-content border-danger">
                 <div class="modal-header">
                     <h5 class="modal-title custom-modal-title" id="notificacaoModalLabel">Notificação</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
-                <div class="modal-body custom-modal-body">
-                    @Html.Raw(TempData["MensagemNotificacao"])
-                </div>
+                    <div class="modal-body custom-modal-body">
+                        @Html.Raw(TempData["MensagemNotificacao"])
+                    </div>
             </div>
         </div>
     </div>
 }
-    <div style="width: 100%; text-align: center;">
 
+    <div style="width: 100%; text-align: center;">
         <form method="get" class="filtro">
             <div style="margin-right: 10px;">
                 <label for="mes"><strong>Mês de referência:</strong></label>
-            <input type="text" id="mes" name="mes" value="@ViewBag.Mes" />
-        </div>
-        <div style="margin-right: 10px;">
+                <input type="text" id="mes" name="mes" value="@ViewBag.Mes" />
+            </div>
+            <div style="margin-right: 10px;">
                 <label for="ano"><strong>Ano:</strong></label>
-            <input type="text" id="ano" name="ano" value="@ViewBag.Ano" />
-        </div>
-        <div style="margin-right: 10px;">
-            <button class="btn btn-color" type="submit">Filtrar</button>
-        </div>
-        <div>
-            <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
-        </div>
-    </form>
-</div>
+                <input type="text" id="ano" name="ano" value="@ViewBag.Ano" />
+            </div>
+            <div style="margin-right: 10px;">
+                <button class="btn btn-color" type="submit">Filtrar</button>
+            </div>
+            <div>
+                <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
+            </div>
+        </form>
+    </div>
 
 
 <div class="container">
@@ -282,6 +269,7 @@
            </div>
 </div>
             }
+
         <div id="confirmDeleteModal" class="modal">
             <div class="modal-content">
                 <h4 id="faturamentoMes"></h4>
@@ -305,19 +293,19 @@
         }
     </script>
 
-<script>
-    $(document).ready(function () {
-        var mensagemNotificacao = '@TempData["MensagemNotificacao"]';
-        console.log('Mensagem de notificação:', mensagemNotificacao);
+    <script>
+        $(document).ready(function () {
+            var mensagemNotificacao = '@TempData["MensagemNotificacao"]';
+            console.log('Mensagem de notificação:', mensagemNotificacao);
 
-        if (mensagemNotificacao && mensagemNotificacao.trim()) {
-            $('#notificacaoModal .modal-body').html(mensagemNotificacao);
-            $('#notificacaoModal').modal('show');
+            if (mensagemNotificacao && mensagemNotificacao.trim()) {
+                $('#notificacaoModal .modal-body').html(mensagemNotificacao);
+                $('#notificacaoModal').modal('show');
 
-            setTimeout(function () {
-                $('#notificacaoModal').modal('hide');
-            }, 4000);
-        }
-    });
-</script>
+                setTimeout(function () {
+                    $('#notificacaoModal').modal('hide');
+                }, 2000);
+            }
+        });
+    </script>
 }

@@ -69,7 +69,6 @@ namespace SmartMei.Controllers
                 TempData["MensagemNotificacao"] = " ATENÇÃO: O valor bruto atingiu ou ultrapassou o limite de R$97.200.";
             }
 
-
             return View(faturamentos);
         }
 
