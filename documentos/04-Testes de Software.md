@@ -114,6 +114,12 @@ Apresentação dos cenários de testes utilizados na realização dos testes da 
 | Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar na página correspondente no menu superior <br> - Inserir no filtro os dados do registro que deseja recuperar <br> - Clicar no botão "Filtrar" <br> |
 |Critério de Êxito | - Foi exibido o registro com o dado pesquisado. |
 |  	|  	|
+| **Caso de Teste** 	| **CT-11 - Notificação**	|
+|	Requisito Associado 	| RF-011 - 	A aplicação deve notificar o usuário quando o faturamento ultrapassar o limite e teto MEI. |
+| Objetivo do Teste 	| Verificar se o usuário está sendo notificado ao cadastrar valores que ultrapassem o limite e teto MEI. |
+| Passos 	| - Acessar a aplicação web <br> - Fazer o login na aplicação web <br>  - Clicar em “Faturamentos” no menu superior <br> - Clicar no botão “Adicionar” <br> - Preencher os campos obrigatórios e inserir valores superiores a R$81.000 e R$97.200 <br> |
+|Critério de Êxito | - Foi exibida a respectiva notificação de acordo com o limite ultrapassado. |
+|  	|  	|
 | **Caso de Teste** 	| **CT-12 - Gerenciamento de Faturamento - Cadastrar e visualizar**	|
 |	Requisito Associado 	| RF-012 - A aplicação deve permitir ao usuário gerenciar seu faturamento. |
 | Objetivo do Teste 	| Verificar se o usuário consegue cadastrar e visualizar os faturamentos registrados na aplicação. |
@@ -255,6 +261,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 - Faturamentos
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/0ba01d32-879f-45d3-84dd-e586a9e65b42
+
+**Caso de Teste 11**
+<br>
 
 **Caso de Teste 12**
 <br>
