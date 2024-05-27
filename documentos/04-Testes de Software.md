@@ -443,7 +443,24 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/f8683984-8215-4305-81eb-f8be6b34fa82
 
+- Relatório de Eventos
 
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/05b42305-843b-4734-bfca-5a0a9aeeebd1
+
+- Relatório de Faturamentos
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/5e3399d6-930a-48f7-b9c9-4c6d3fee8ed3
+
+- Relatório de Custos
+  
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/e2c27d62-beae-462f-9459-6fc922c5f8dd
+
+
+
+
+
+
+  
 
 
 
