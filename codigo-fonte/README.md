@@ -2,7 +2,7 @@
 
 ## Instalação do Site
 
-O código-fonte da solução está disponível na branch Main deste repositório, na pasta Smartmei/Smartmei.
+O código-fonte da solução está disponível na branch Main deste repositório, na pasta Smartmei/Smartmei. Para ter acesso a aplicação, <a href="http://smartmei-001-site1.etempurl.com/">clique aqui.</a>
 
 ## Histórico de versões
 
@@ -21,3 +21,8 @@ O código-fonte da solução está disponível na branch Main deste repositório
 - Atualização do frontend das páginas Projetos, Clientes, Eventos, Faturamentos, Custos, Editar cadastro e Login;
 - Responsividade;
 - Relatórios.
+
+### [0.3.0] - 12/05/2024
+#### Adicionado
+- Notificação;
+- Hospedagem.
