@@ -413,6 +413,13 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/4c69d476-e9fa-4806-bfb9-76345cfa0500
 
 
+| **Caso de Teste** 	| **CT-11 - Filtros**		|
+|:---:	|:---:	|
+|	Desenvolvido por 	| Fernanda |
+| Testado por 	| Juliana |
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100734910/7b29e9a2-e9fe-4400-89f9-ea4e19cbb13c
+
 | **Caso de Teste** 	| **CT-12 - Gerenciamento de Faturamento - Cadastrar e visualizar, CT-12.1 - Gerenciamento de Faturamento - Editar, CT-12.2 - Gerenciamento de Faturamento - Excluir**	|
 |:---:	|:---:	|
 |	Desenvolvido por 	| Fernanda |
