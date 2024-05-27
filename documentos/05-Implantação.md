@@ -1,10 +1,8 @@
 # Implantação do Software
 
-Apresentação do planejamento da implantação: descrição de tecnologias e processo de implantação.
+A aplicação interativa foi hospedada em SmarterASP.NET com banco de dados MSSQL, através da opção Publicar do Microsoft Visual Studio 2022. Para ter acesso a aplicação, <a href="http://smartmei-001-site1.etempurl.com/">clique aqui.</a>
 
-<br>
-<br>
-<br>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/a2e747b0-db7f-4e13-b75c-829fd10cc0e4)
 
 # Metodologia
 
