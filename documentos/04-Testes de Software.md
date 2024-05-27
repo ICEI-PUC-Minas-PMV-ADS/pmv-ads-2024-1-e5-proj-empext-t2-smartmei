@@ -413,7 +413,7 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/81182674/4c69d476-e9fa-4806-bfb9-76345cfa0500
 
 
-| **Caso de Teste** 	| **CT-11 - Filtros**		|
+| **Caso de Teste** 	| **CT-11 - Notificação**		|
 |:---:	|:---:	|
 |	Desenvolvido por 	| Fernanda |
 | Testado por 	| Juliana |
