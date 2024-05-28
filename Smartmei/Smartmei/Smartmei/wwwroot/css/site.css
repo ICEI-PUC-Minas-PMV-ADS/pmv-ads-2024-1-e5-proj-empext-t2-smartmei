@@ -27,10 +27,11 @@ body {
     width: 100%;
     background-color: #09547F;
     text-align: center;
-    padding: 10px 0;
     font-size: 14px;
     font-weight: bold;
     color: #fff;
+    padding: 0;
+    line-height: 40px !important;
 }
 
 /*MENU*/

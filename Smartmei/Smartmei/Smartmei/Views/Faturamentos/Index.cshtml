@@ -235,32 +235,33 @@
 <div class="container">
     @foreach (var item in Model)
             {
-          <div class="card">
+            <div class="card">
                 <div class="card-header">
                     <h4>Referência: @item.Mes / @item.Ano</h4>
                 </div>
-            <div class="card-body">
-                <dl class="row list-unstyled">
-                    <dt class="col-sm-4">Mês</dt>
-                    <dd class="col-sm-8">@item.Mes</dd>
-                    <dt class="col-sm-4">Ano</dt>
-                    <dd class="col-sm-8">@item.Ano</dd>
-                    <dt class="col-sm-4">Valor Bruto</dt>
-                    <dd class="col-sm-8">@item.ValorBruto</dd>
-                    <dt class="col-sm-4">Custo Mensal</dt>
-                    <dd class="col-sm-8">@item.CustoMensal</dd>
-                    <dt class="col-sm-4">Valor Líquido Mensal</dt>
-                    <dd class="col-sm-8">@item.ValorLiquidoMensal</dd>
-                    <dt class="col-sm-4">Profissional</dt>
-                    <dd class="col-sm-8">@item.Mei.Nome</dd>
-                </dl>
-                <div class="action-btns">
-                   <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                        <a class="btn-color-delete" onclick="openModal('@item.Id', '@item.Mes')">Excluir</a>
-                </div>
-           </div>
-</div>
+                <div class="card-body">
+                    <dl class="row list-unstyled">
+                        <dt class="col-sm-4">Mês</dt>
+                        <dd class="col-sm-8">@item.Mes</dd>
+                        <dt class="col-sm-4">Ano</dt>
+                        <dd class="col-sm-8">@item.Ano</dd>
+                        <dt class="col-sm-4">Valor Bruto</dt>
+                        <dd class="col-sm-8">@item.ValorBruto</dd>
+                        <dt class="col-sm-4">Custo Mensal</dt>
+                        <dd class="col-sm-8">@item.CustoMensal</dd>
+                        <dt class="col-sm-4">Valor Líquido Mensal</dt>
+                        <dd class="col-sm-8">@item.ValorLiquidoMensal</dd>
+                        <dt class="col-sm-4">Profissional</dt>
+                        <dd class="col-sm-8">@item.Mei.Nome</dd>
+                    </dl>
+                    <div class="action-btns">
+                       <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                       <a class="btn-color-delete" onclick="openModal('@item.Id', '@item.Mes')">Excluir</a>
+                    </div>
+               </div>
+            </div>
             }
+</div>
 
         <div id="confirmDeleteModal" class="modal">
             <div class="modal-content">
@@ -272,7 +273,8 @@
                 </form>
             </div>
         </div>
-        </div>
+
+
     <script>
         function openModal(id, mes) {
             document.getElementById('confirmDeleteModal').style.display = 'block';
@@ -284,4 +286,3 @@
             document.getElementById('confirmDeleteModal').style.display = 'none';
         }
     </script>
-}
