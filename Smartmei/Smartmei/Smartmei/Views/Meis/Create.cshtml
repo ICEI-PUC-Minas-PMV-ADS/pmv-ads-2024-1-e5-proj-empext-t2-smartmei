@@ -10,16 +10,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
         .cadastro-container {
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 400px;
+            display: grid;
+            gap: 20px;
         }
 
             .cadastro-container h1 {
@@ -81,6 +96,8 @@
                 }
     </style>
 
+    <link href="/css/cadastro.css" rel="stylesheet" />
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const togglePassword = document.querySelectorAll('.toggle-password');
@@ -117,54 +134,56 @@
     </script>
 </head>
 <body>
-    <div class="cadastro-container">
-        <h1>Cadastro</h1>
-        <hr />
-        <div class="row">
-            <div class="col-md-12">
-                <form asp-action="Create" onsubmit="return validarSenha()">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="Nome" class="control-label">Nome</label>
-                        <input asp-for="Nome" class="form-control" />
-                        <span asp-validation-for="Nome" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Email" class="control-label">Email</label>
-                        <input asp-for="Email" class="form-control" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Senha" class="control-label">Senha</label>
-                        <div class="password-container" style="position: relative;">
-                            <input asp-for="Senha" class="form-control password-input" />
-                            <div class="toggle-password">
-                                <i class="far fa-eye"></i>
-                            </div>
+    <div class="content-wrapper">
+        <div class="cadastro-container">
+            <h1>Cadastro</h1>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    <form asp-action="Create" onsubmit="return validarSenha()">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Nome" class="control-label">Nome</label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
                         </div>
-                        <span asp-validation-for="Senha" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ConfirmarSenha" class="control-label">Confirmar Senha</label>
-                        <div class="password-container" style="position: relative;">
-                            <input asp-for="ConfirmarSenha" class="form-control password-input" />
-                            <div class="toggle-password">
-                                <i class="far fa-eye"></i>
-                            </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
-                        <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
-                    </div>
+                        <div class="form-group">
+                            <label asp-for="Senha" class="control-label">Senha</label>
+                            <div class="password-container" style="position: relative;">
+                                <input asp-for="Senha" class="form-control password-input" />
+                                <div class="toggle-password">
+                                    <i class="far fa-eye"></i>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Senha" class="text-danger"></span>
+                        </div>
 
-                    <div class="form-group">
-                        <input type="submit" value="Cadastrar" class="btn btn-success" />
-                        <span class="text-muted" style="font-size: 0.8em; display: block; margin-top: 10px;">
-                            • A senha deve conter pelo menos 8 caracteres.<br />
-                            • A senha deve conter ao menos 1 letra maiúscula e 1 número.<br />
-                            • Exemplo de senha: C0mplexz
-                        </span>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <label asp-for="ConfirmarSenha" class="control-label">Confirmar Senha</label>
+                            <div class="password-container" style="position: relative;">
+                                <input asp-for="ConfirmarSenha" class="form-control password-input" />
+                                <div class="toggle-password">
+                                    <i class="far fa-eye"></i>
+                                </div>
+                            </div>
+                            <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Cadastrar" class="btn btn-success" />
+                            <span class="text-muted" style="font-size: 0.8em; display: block; margin-top: 10px;">
+                                • A senha deve conter pelo menos 8 caracteres.<br />
+                                • A senha deve conter ao menos 1 letra maiúscula e 1 número.<br />
+                                • Exemplo de senha: C0mplexz
+                            </span>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -183,6 +202,7 @@
     }
 </body>
 </html>
+
 
 
 

@@ -91,7 +91,7 @@
 
 </style>
 
-<link href="/css/site.css" rel="stylesheet" />
+<link href="/css/responsividade.css" rel="stylesheet" />
 
 <div class="espacamento">
     <h5>Edite seus custos:</h5>
@@ -164,9 +164,28 @@
 </div>
 
 @section Scripts {
+    <script>
+        // Função para calcular e preencher automaticamente o campo CustoTotal
+        function calcularCustoTotal() {
+            var passagem = parseFloat(document.getElementById("PassagemAerea").value.replace(',', '.')) || 0;
+            var hospedagem = parseFloat(document.getElementById("Hospedagem").value.replace(',', '.')) || 0;
+            var deslocamento = parseFloat(document.getElementById("Deslocamento").value.replace(',', '.')) || 0;
+            var alimentacao = parseFloat(document.getElementById("Alimentacao").value.replace(',', '.')) || 0;
+            var custoTotal = passagem + hospedagem + deslocamento + alimentacao;
+            document.getElementById("CustoTotal").value = custoTotal;
+        }
+
+        // Associando o evento onchange aos campos relevantes
+        document.getElementById("PassagemAerea").onchange = calcularCustoTotal;
+        document.getElementById("Hospedagem").onchange = calcularCustoTotal;
+        document.getElementById("Deslocamento").onchange = calcularCustoTotal;
+        document.getElementById("Alimentacao").onchange = calcularCustoTotal;
+    </script>
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
 
 

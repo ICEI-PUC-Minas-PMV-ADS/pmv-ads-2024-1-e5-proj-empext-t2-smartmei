@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
     body {
         background-image: url('/bg.png');
@@ -48,8 +52,6 @@
         text-align: right;
     }
 
-
-
     .btn-color {
         background-color: #09547F;
         color: #fff;
@@ -59,7 +61,6 @@
         border-radius: 5px;
         margin-left: 5px;
     }
-
         .btn-color:hover {
             background-color: #0C71AB;
             color: #fff;
@@ -94,7 +95,6 @@
         margin-left: 5px;
         cursor: pointer;
     }
-
         .btn-color-delete:hover {
             background-color: red;
             color: #fff;
@@ -102,8 +102,6 @@
             text-decoration: none;
             cursor: pointer;
         }
-
-
 
     .titulo {
         text-align: center;
@@ -117,8 +115,6 @@
         .espacamento h2 {
             font-weight: 600;
         }
-
- 
 
     .modal {
         display: none;
@@ -176,11 +172,17 @@
         height: 40px;
         background-color: #fff;
     }
-
-  
+    
+    .info{
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }  
 </style>
 
-<link href="/css/site.css" rel="stylesheet" />
+<link href="/css/responsividade.css" rel="stylesheet" />
 
 <div class="titulo">
     <div class="espacamento">
@@ -188,57 +190,79 @@
     </div>
     <p><a class="btn btn-color-add" asp-action="Create">Adicionar</a></p>
 </div>
-  
-    <div style="width: 100%; text-align: center;">
 
+<div class="info">
+    <p><strong>Soma de todos os valores brutos recebidos:</strong> <span>R$ @ViewData["SomaValorBruto"]</span></p>
+    <p><strong>Soma de todos os custos mensais: </strong> <span>R$ @ViewData["SomaCustoMensal"]</span></p>
+    <p><strong>Soma de todos os valores líquidos mensais:</strong> <span>R$ @ViewData["SomaValorLiquidoMensal"]</span></p>
+</div>
+
+<div class="info">
+    <p><strong>Teto MEI:</strong> R$81.000.</p>
+    <p><strong>Limite:</strong> R$97.200.</p>
+    <p><strong>Valor restante para o Teto MEI no ano vigente:</strong> <span>R$ @ViewData["ValorRestanteTetoMEI"]</span></p>
+    <p><strong>Valor restante para o Limite no ano vigente:</strong> <span>R$ @ViewData["ValorRestanteLimite"]</span></p>
+    @if (!string.IsNullOrEmpty(TempData["MensagemNotificacao"]?.ToString()))
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["MensagemNotificacao"]
+        </div>
+    }
+</div>
+  
+
+
+    <div style="width: 100%; text-align: center;">
         <form method="get" class="filtro">
             <div style="margin-right: 10px;">
                 <label for="mes"><strong>Mês de referência:</strong></label>
-            <input type="text" id="mes" name="mes" value="@ViewBag.Mes" />
-        </div>
-        <div style="margin-right: 10px;">
+                <input type="text" id="mes" name="mes" value="@ViewBag.Mes" />
+            </div>
+            <div style="margin-right: 10px;">
                 <label for="ano"><strong>Ano:</strong></label>
-            <input type="text" id="ano" name="ano" value="@ViewBag.Ano" />
-        </div>
-        <div style="margin-right: 10px;">
-            <button class="btn btn-color" type="submit">Filtrar</button>
-        </div>
-        <div>
-            <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
-        </div>
-    </form>
-</div>
+                <input type="text" id="ano" name="ano" value="@ViewBag.Ano" />
+            </div>
+            <div style="margin-right: 10px;">
+                <button class="btn btn-color" type="submit">Filtrar</button>
+            </div>
+            <div>
+                <a href="@Url.Action("Index")"><button type="button" class="btn btn-color">Limpar filtro</button></a>
+            </div>
+        </form>
+    </div>
 
 
 <div class="container">
     @foreach (var item in Model)
             {
-          <div class="card">
+            <div class="card">
                 <div class="card-header">
                     <h4>Referência: @item.Mes / @item.Ano</h4>
                 </div>
-            <div class="card-body">
-                <dl class="row list-unstyled">
-                    <dt class="col-sm-4">Mês</dt>
-                    <dd class="col-sm-8">@item.Mes</dd>
-                    <dt class="col-sm-4">Ano</dt>
-                    <dd class="col-sm-8">@item.Ano</dd>
-                    <dt class="col-sm-4">Valor Bruto</dt>
-                    <dd class="col-sm-8">@item.ValorBruto</dd>
-                    <dt class="col-sm-4">Custo Mensal</dt>
-                    <dd class="col-sm-8">@item.CustoMensal</dd>
-                    <dt class="col-sm-4">Valor Líquido Mensal</dt>
-                    <dd class="col-sm-8">@item.ValorLiquidoMensal</dd>
-                    <dt class="col-sm-4">Profissional</dt>
-                    <dd class="col-sm-8">@item.Mei.Nome</dd>
-                </dl>
-                <div class="action-btns">
-                   <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                        <a class="btn-color-delete" onclick="openModal('@item.Id', '@item.Mes')">Excluir</a>
-                </div>
-           </div>
-</div>
+                <div class="card-body">
+                    <dl class="row list-unstyled">
+                        <dt class="col-sm-4">Mês</dt>
+                        <dd class="col-sm-8">@item.Mes</dd>
+                        <dt class="col-sm-4">Ano</dt>
+                        <dd class="col-sm-8">@item.Ano</dd>
+                        <dt class="col-sm-4">Valor Bruto</dt>
+                        <dd class="col-sm-8">@item.ValorBruto</dd>
+                        <dt class="col-sm-4">Custo Mensal</dt>
+                        <dd class="col-sm-8">@item.CustoMensal</dd>
+                        <dt class="col-sm-4">Valor Líquido Mensal</dt>
+                        <dd class="col-sm-8">@item.ValorLiquidoMensal</dd>
+                        <dt class="col-sm-4">Profissional</dt>
+                        <dd class="col-sm-8">@item.Mei.Nome</dd>
+                    </dl>
+                    <div class="action-btns">
+                       <a class="btn-color" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                       <a class="btn-color-delete" onclick="openModal('@item.Id', '@item.Mes')">Excluir</a>
+                    </div>
+               </div>
+            </div>
             }
+</div>
+
         <div id="confirmDeleteModal" class="modal">
             <div class="modal-content">
                 <h4 id="faturamentoMes"></h4>
@@ -249,7 +273,8 @@
                 </form>
             </div>
         </div>
-        </div>
+
+
     <script>
         function openModal(id, mes) {
             document.getElementById('confirmDeleteModal').style.display = 'block';

@@ -4,9 +4,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	  <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\login.cs" />
     <Content Remove="wwwroot\lib\bg.jpg" />
     <Content Remove="wwwroot\profile.jpg" />
   </ItemGroup>
