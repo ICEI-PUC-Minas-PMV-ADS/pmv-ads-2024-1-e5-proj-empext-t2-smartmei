@@ -22,7 +22,7 @@ O código-fonte da solução está disponível na branch Main deste repositório
 - Responsividade;
 - Relatórios.
 
-### [0.3.0] - 12/05/2024
+### [0.3.0] - 09/06/2024
 #### Adicionado
 - Notificação;
 - Hospedagem.
