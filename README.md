@@ -7,6 +7,31 @@
 
 `1/2024`
 
+[Uploading citation.cff…]()message: Please cite this software using these metadata.
+title: SmartMEI
+authors:
+  - family-names: Campos Procópio
+    given-names: Daiane
+  - family-names: Augusta de Barcelos Coura
+    given-names: Fernanda
+  - family-names: Faustini de Azevedo
+    given-names: Guilherme
+  - family-names: Calazans Rodrigues de Magalhães
+    given-names: Juliana
+  - family-names: Karina Prado Costa
+    given-names: Rúbia
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Lúcia da Silva
+    given-names: Soraia
+keywords:
+  - Gestão empresarial
+  - Microempreendedor individual
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei
+version: 1.0.0
+date-released: 2024-06-23
+
+
 Este projeto nasceu da necessidade de preencher uma lacuna existente no mercado de software empresarial, onde as soluções disponíveis muitas vezes são complexas, caras e inadequadas para as necessidades específicas dos microempreendedores individuais. Acreditamos que ao oferecer uma ferramenta intuitiva e acessível, podemos capacitar esses empreendedores a alcançarem todo o potencial de seus negócios.
 
 ## Integrantes
