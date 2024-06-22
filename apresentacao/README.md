@@ -2,7 +2,7 @@
 
 Vídeo:
 
-
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/a58bae7f-902d-46df-b621-e432ca713c12
 
 Slides:
 [Apresentação - Eixo 5.pdf](https://github.com/user-attachments/files/15938117/Apresentacao.-.Eixo.5.pdf).
