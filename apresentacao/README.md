@@ -7,6 +7,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smart
 ### Slides:
 [Apresentação - Eixo 5.pdf](https://github.com/user-attachments/files/15938117/Apresentacao.-.Eixo.5.pdf).
 
+### Slides para a Mostra de Projetos:
+[Modelo Mostra de Projetos Online.pdf](https://github.com/user-attachments/files/15990451/Modelo.Mostra.de.Projetos.Online.pdf)
+
 ### Depoimento do parceiro:
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-smartmei/assets/100447878/91bf5cc7-bc98-44e3-8c35-e4be5e1cce64
